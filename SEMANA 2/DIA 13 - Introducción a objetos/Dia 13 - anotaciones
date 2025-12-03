@@ -1,0 +1,15 @@
+Día 13 - Introducción a objetos
+
+Mientras que los arregles son colecciones ordenadas de valores, los Objetos son colecciones no ordenadas de datos, utilizados para representar entidades del mundo real (una persona, un producto, una configuración) mediante pares de clave-valor (o propiedad-valor).
+
+1. Pares clave-valor
+    * Clave (key) o Propiedad: Es el nombre único que identifica el dato (siempre se trata de un string). Ejemplo: nombre, edad.
+    * Valor (value): El dato asociado a la clave. Puede ser cualquier tipo: string, number, boolean, otro objeto o incluso un array.
+
+2. Notaciones para acceder a las propiedades
+Existen dos formas principales de acceder a las propiedades dentro de un objeto.
+    * Notación de punto (.): La forma más común y limpia. Ejemplo: persona.nombre.
+    * Notación de corchetes ([]). Útil cuando el nombre de la clave es dinámico (está almacenado en una variable) o si la clave contiene espacios o caracteres especiales. Ejemplo: persona['apellido paterno'] o persona[variableClave].
+
+3. Objetos también son mutables
+Al igual que los arreglos, los objetos también son mutables incluso si se declaran en const. Se puede cambiar el valor de sus propiedades, añadir nuevas o eliminarlas.

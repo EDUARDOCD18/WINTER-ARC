@@ -1,0 +1,20 @@
+JS es un lenguaje de tipado dimámico, lo que significa que no se tiene que declarar el tipo de una variable (let edad = 25;), Sin embargo, cada valor tiene un tipo.
+
+1. Tipos de Datos Primitivos (7 fundamentales)
+    Los tipos de datos primitivos representan un valor único e inmutable (no se pueden cambiar directamente). Los más importante son:
+        * String: Cadenas de texto. Se definen entre comillas simples ('Hola') o dobles ("Mundo").
+        * Number: Números enteros (10) o decimales (3.14). También incluye valores especiales como NaN (Not a Number) e Infinity.
+        * Boolean: Valores lógicos, solo pueden ser true o false.
+        * null: Respresentan la ausencia intencional de cualquier valor de objeto. Es un valor que se asigna. 
+        * undefined: Representa la ausencia de valor. Se asigna automáticamente a las varibles que han sido declaradas pero aún no inicializadas.
+        * (Opcional: BigInt y Symbol, para casos muy avanzado.).
+
+2. Tipos de Objeto (No Primitivos)
+    Son colecciones más complejas de datos.
+        * Object: (Objetos literales, funciones).
+        * Array: Arreglo de datos.
+
+3. Coerción de tipos
+    Es el proceso por el cual JS aútomáticamente convierte un tipo de dato a otro cuando se encuentra con operados que requieren un tipo específico.
+        * Coerción Implícita: Sucede automáticamente. Ejemplo: 10 + "5" (el 10 se convierte a String).
+        * Coerción Explícita: Sucede cuando el programador obliga a la conversión. Ejemplo: Number('5') o parseInt()

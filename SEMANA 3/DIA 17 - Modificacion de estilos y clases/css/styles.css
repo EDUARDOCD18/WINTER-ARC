@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Estilos bases */
+#caja__interactiva {
+  padding: 2rem;
+  border: 0.2rem solid #ccc;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* 🔑 Clase que será controlada por JavaScript */
+.caja__interactiva--resaltada {
+  border-color: #ffc107;
+  background-color: #fff3cd;
+  color: #856404;
+  font-weight: bold;
+}
+
+/* Clase para demostrar estilos en línea */
+.oculto{
+    opacity: 0;
+}

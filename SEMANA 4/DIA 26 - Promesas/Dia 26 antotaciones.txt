@@ -1,0 +1,21 @@
+Día 26 - Promesas (Promises)
+
+En JS, una promesa es un objeto que representa al eventural finalización (o fracaso) de una operación asíncrona.
+
+En lugar de anidar callbacks, una Promesa permite adjuntar funciones de manejo de resultados, lo que hace que el código sea mucho más limpio y fácil de leer (fluye de arriba a abajo, no de izquierda a derecha).
+
+1. Estados de una Promesa
+
+    Una Promesa siempre estará en uno de estos tres estados:
+
+        1. Pendiente (Pending): El estado inicial. La operación asíncrona aún no ha finalizado.
+        2. Cumplida (Fulfilled): La operación asíncrona finalizó con éxito. Se llama método .then().
+        3. Rechazada (Rejected): La operación asíncrona falló. Se llama método .catch().
+
+2. El Patrón de Uso (.then() y .catch())
+
+    Una vez que se tiene una Promesa, ya no se usa callbacks. En su lugar, usas métodos para reaccionar a los cambios de estado:
+
+        * .then(funcion): Se ejecuta solo si la Promesa se cumple. Recive el valor resultante (el dato).
+        * .catch(funcion): Se ejecuta solo si la Promesa es rechazada. Recibe la razón del error.
+        * .finally(funcion): (Opcional) Se ejecuta siempre, independientemente de si la Promesa se cumple o falla (útil para limpiar o desactivar spinners de carga).

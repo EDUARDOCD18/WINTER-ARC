@@ -1,0 +1,113 @@
+*{
+    text-align: center;
+}
+
+.layout__nombrado {
+  display: grid;
+  min-height: 100vh;
+  padding: 10px;
+  gap: 10px;
+  grid-template-columns: 200px 1fr;
+  /* 🔑 PASO 2: Dibujar el Layout con NOMBRES DE ÁREA (3 Filas) */
+  grid-template-areas: 
+        /* Fila 1: Cabecera ocupa las 2 columnas */
+    "header header"
+    /* Fila 2: Nav en Columna 1, Main en Columna 2 */
+    "main nav"
+    /* Fila 3: Footer ocupa las 2 columnas */
+    "footer footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: #33ff57;
+  padding: 10px;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #33ff57;
+  padding: 10px;
+}
+
+.main {
+  grid-area: main;
+  background: #3357ff;
+  padding: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  background: #ff33a1;
+  padding: 10px;
+}
+
+.tablero__irregular {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 150px 150px;
+  gap: 5px;
+  margin-top: 20px;
+  grid-template-areas:
+    "aviso aviso ."
+    "noticia1 banner noticia2"
+    "noticia1 banner noticia2";
+}
+
+.caja {
+  grid-area: aviso;
+  background-color: #f44336;
+}
+
+.c1 {
+  grid-area: aviso;
+  background-color: #f44336;
+}
+
+.c2 {
+  grid-area: noticia1;
+  background-color: #2196f3;
+  /* Se expande automáticamente a través de la celda de la segunda y tercera fila */
+}
+
+.c3 {
+  grid-area: noticia2;
+  background-color: #4caf50;
+}
+
+.c4 {
+  grid-area: banner;
+  background-color: #ffc107;
+}
+
+.pie {
+  margin-top: 10px;
+  display: grid;
+  /* 🔑 CLAVE: Define 3 columnas iguales */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px; /* Espacio entre las columnas */
+  background-color: #222;
+  padding: 30px;
+  color: white;
+  grid-template-areas: "col1 . col2";
+}
+
+.col1 {
+  grid-area: col1;
+  background-color: #007bff;
+  padding: 20px;
+}
+
+.col2 {
+  grid-area: col2;
+  background-color: #18640e;
+  padding: 20px;
+}
+.col3 {
+  grid-area: col1;
+  grid-row: 2;
+  grid-column: 1 / span3;
+  background-color: #a6be1d;
+  padding: 20px;
+}

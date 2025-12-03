@@ -1,0 +1,20 @@
+Día 27 - Async Await (La solución final)
+
+Async/await es una característeica es ES2017 que actúa como azúcar sintático (una forma más bonita y simple de escribir código) sobre las Promesas.
+
+Su objetivo es permitir escribir código asíncrono que se lee como si fuera síncrono, eliminando por completo la necesitad de usar .then() y encadenar Promesas.
+
+1. La palabra clave Async
+
+    * Se coloca antes de la palabra function
+    * Una función declarada como async siempre devuelve una Promesa, incluso si el valor de retorno parece ser un valor normal. 
+
+        * Si se devuleve un valor (ej. retunr 5;), JS lo envuelve automáticamente en una Promesa resuelta (Promise.resolve(5)).
+
+        * Si lanzas un error (throw new Error('fallo')), devuelve Promesa rechazada
+
+2. la palabra clave await.
+
+    * Solo puede ser usada dentro de una función async.
+    * Pausa la ejecución de la función async hasta que la Promesa a la que está ligada se resuelve.
+    * Una vez que la Promesa se resuelve, await extrae y devuelve el valor de éxito, permitiendo que el código continúe.

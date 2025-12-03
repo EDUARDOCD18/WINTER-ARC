@@ -1,0 +1,24 @@
+Día 18: manejo de eventos (addEventListener)
+
+El Mecanismo de Eventos es el corazón de la interactividad web. Un evento es algo que sucede en el navegador (un click, el teclado, el ratón pasadon por encima), y el Manejador de Eventos es el código (función JS) que se ejecuta cuando ese evento ocurre.
+
+1. El Método addEventListener
+    Es el método estándar y más recomendado para adjuntar una función a un evento en un elemento del DOM.
+
+    Sintaxis clave: 
+        // Código de JS
+        elemento.addEventListener(tipoDeEvento, funcionAEjecutar);
+
+        * elemento: El nodo del DOM que se seleccionó (ej. un botón).
+        * tipo de evento: Un string que define la acción. Los más comunes son "click", "mouseover", "keydown".
+        * funcionAEjecutar: La función (también llamda callback) que se ejecuta cuando el evento ocurre.
+
+2. La función callback
+    La función que se le pasa a addEventListener se llama callback porque el nevegdor "llama de vuelta" cuando el evento sucede. Lo más común es definir la función justo ahí, usando función anónima (o arrow function).
+
+    Sintaxis clave:
+        // Código JS
+        boton.addEventListener("click", ()=>{
+            // Código a ejecutar al hacer click
+            console.log("Hiciste click");
+        });

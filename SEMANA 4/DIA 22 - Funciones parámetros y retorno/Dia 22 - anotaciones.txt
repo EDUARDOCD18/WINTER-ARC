@@ -1,0 +1,22 @@
+Día 22: Funciones: parámetros y Retorno
+
+Una función es un bloque de código reusable que realiza una tarea específica. Lo fundamental es entender cómo las funciones reciben información para trabajar (los parámetros) y cómo envían un resultado de vuelta al código que las llamó (retorno).
+
+1. Parámetros vs Argumentos.
+    * Parámetros: Los nombres de las variables listadas en la definición de la función. Actúan como placeholders.
+    * Argumentos: Los valores reales que se pasan a la función cuando esta es invocada (llamada).
+
+        // Sintaxis en JS
+            function sumar(num1, num2){
+                return num1 + num2
+            }
+
+            sumar(2+2)
+
+2. La sentencia return (el concepto clave)
+    La sentencia return hace dos cosas esenciales: 
+        1. Devuelve un valor: El valor que sigue a return es el resultado que la función entrega a la parte del código que la llamó. Este valor puede ser capturado en una variable.
+
+        2. Terminar la ejecución: Tan pronto como JS encuentra un return, la función se detiene inmediatamente y el control regresa al código llamante. Cualquier código después de return es inalcanzable.
+
+Si una función no tiene return, JS automáticamente devuelve undefined.

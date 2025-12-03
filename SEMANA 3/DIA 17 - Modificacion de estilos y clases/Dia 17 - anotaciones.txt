@@ -1,0 +1,15 @@
+Día 17 - Modificación de estilos y clases
+
+La forma más eficiente y limpia de cambiar la apariencia de un elemento con JS no es mofificando sus estilos uno por uno (.style.color = "red"), sino agregando o quitando clases completas.
+
+1. .style (Estilos en línea)
+    * Función: Permite modificar propiedades CSS directamente como si se escribieran en el atributos del HTML (estilos en línea).
+    * Sintaxis: Se usa notación CamelCase para las propiedades CSS (ej. background-color se convierte en backgroundColor).
+    * Uso: Útil para cambios muy específicos y puntuales (ej. cambiar solo la opcidad).
+
+2. El objeto .classList (recomendado)
+    * Función: Es la mejor práctica. Permite manejar las clases CSS del elemento de froma programática. 
+    * Métodos clave:
+        * .add("clase") | Añande una clase CSS al elemento.
+        * .remove("clase") | Quitar una clase CSS al elemento.
+        * .toggle("clase") | Si la clase existe, la quita. Si no existe, la crea. Es ideal par botones de activación. 

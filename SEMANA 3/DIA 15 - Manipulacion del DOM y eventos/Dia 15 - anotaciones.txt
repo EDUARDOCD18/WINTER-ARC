@@ -1,0 +1,17 @@
+Día 15 - Modelo de Objeto del Documento (DOM)
+
+El DOM (Document Object Model) es una interfaz de programación que representa la página web (HTML) como un árbol de objetos o nodos.
+
+1. ¿Qué es el DOM? 
+    Piensa en el DOM como el mapa que JS usa para interactuar con la estructura de la página web. Cuando el navegador carga el HTML, lo convierte en este modelo de árbol.
+
+        * Cada etiqueta HTML (ej. <body>, <div>) se convierte en un objeto o nodo que JS puede leer, manipular o eliminar.
+        * El nodo raíz de este árbol es el objeto document. Es el punto de partida para acceder a cualquier elemento.
+
+2. La propiedad textContent
+    Una vez que se ha seleccionado un elemento en el DOM, se puede modificar lo que el usuario ve usando propiedades cono textContent.
+        * elemento.textContent: Permite obtener o establecer el contenido del texto de un nodo y sus descendientes, ignorando cualquier etiqueta HTML interna. Es la forma más segura y básica de mostrar la información.
+
+        * Sintaxis:
+        // Código JS
+        cont miElemento = document.getElementById("el-id-unico");

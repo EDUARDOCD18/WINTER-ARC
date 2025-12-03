@@ -1,0 +1,11 @@
+La estructura switch es una alternativa más limpia y eficiente al uso de múltiples else if anidados, pero tiene una limitación clave: solo funciona para evaluar una única expresión contre una serie de valores fijos y discretos.
+
+1. Estructura y funcinamiento
+    La declaración switch toma una expresión como entrada y compara el valor de esa expresión con los valores definidos en cada case
+        * case: Define un valor específico que se compara con la expresión de entrada.
+        * break: Es crucial. Detiene la ejecución del switch una vez que se encuentra con una coincidencia. Si se omite, el código continuará ejecutándose en los case siguientes (comportamiento conocido como fall-through)
+        * default: (Opcional) El código dentro de default se ejecuta si la expresión no coincide con ninguno de los valores case. Funciona como el bloque else final.
+
+2. Cuándo usar switch y cuándo usar if/else
+        * switch: Comparaciones de igualdad estricta contra múltiples valores fijos. Es más lejible y, a menudo, más rápido que muchos else if seguidos.
+        * if/else: Evaluaciones de rangos, lógica booleana compleja (&& ||).

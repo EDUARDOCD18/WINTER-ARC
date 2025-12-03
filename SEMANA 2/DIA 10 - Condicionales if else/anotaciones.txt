@@ -1,0 +1,27 @@
+DÍA 10 - CONDICIONALES if/else
+
+Las estructuras condicionales (if, else, else if) permiten que el código tome decisiones y ejecute diferentes bloques de instrucciones según si una condición es verdadera (true) o falsa (false).
+
+1. Operador de comparación
+    Son los operadores que generan el valor booleano (true o false) necesario para que el if funcione.
+    > mayor que
+    < menor que
+    >= mayor o igual que
+    <= menor o igual que
+    == igualdad flexible (no compara tipos) 
+    === igualdad estricta (compara tipos)
+    != desigualdad flexible
+    !== desigualdad estricta
+
+2. Truthy y Falsy (el concepto clave)
+    Cualquier valor en JS puede ser evaluado como true o false en un contexto booleano (como la condición if).
+
+        * Valores Falsy (falso lógico):  Son solo seis valores que siempre se evalúan como false: 
+            * false
+            * 0 (el número 0)
+            * "" (string vacío)
+            * null
+            * undefined
+            * NaN (Not a Number)
+        
+        * Valores Truthy (verdader lógico): Cualquier otro valor (ej. Cualquier número diferente de cero, cualquier string con contenido, arreglos, objetos, etc.) se evalúa como true.

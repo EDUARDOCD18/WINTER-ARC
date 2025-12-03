@@ -1,0 +1,24 @@
+Día 20 - Creación y eliminación de elementos
+
+La capacidad de crear y elimiar nodos del DOM de forma dinámica es lo que permite a las aplicaciones web modernas actualizarse sin recargar la página.
+
+1. El Ciclo de la Creación de Nodos.
+    Crear un nuevo elemento de JS requiere tres pasos esenciales:
+    
+        1. Crear el Elemento (document.createElement()):
+            Simplemente crea el objeto nodo en la memoria del navegador, pero aún no está visible en la página.
+        
+        2. Configurar el Elemento: 
+            La asignas atributos (comi id o class), contenido (textContent) y eventos.
+
+        3. Adjuntar al DOM (parentNode.appendChild()):
+            Se selecciona un elemento existente (el padre) y se inserta el nuevo nodo de su último hijo. Solo en este punto se vuelve visible en la página.
+
+2. Eliminación de Elementos
+    Para eliminar un nodo, debes acceder a su nodo padre y usar el método removeChild().
+
+        * Sintaxis:
+            nodoPadre.removeChild(nodoAEliminar);
+
+        * Alternativa moderna:
+            El método remove() puede ser llamado directamento sobre el nodo que se desea eliminar, sin tener que referenciar al padre. (Ej: miElemento.remove();). Esta es la forma más limpia y recomendada. 

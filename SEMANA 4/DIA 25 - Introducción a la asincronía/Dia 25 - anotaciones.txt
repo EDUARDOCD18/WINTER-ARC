@@ -1,0 +1,22 @@
+JS es por naturaleza síncrono y unihilo (single-threaded). Esto significa que ejecuta una tarea a la vez, en orden, y si una tarea tarda mucho (como peder datots a un servidor o esperar un temporizador), bloquea todo el hilo de ejecución, congelando la interfaz del usuario.
+
+La Asincronía es un mecanismo para manejar estas tareas largas sin bloquear la interfaz.
+
+1. Síncrono vs. Asíncrono.
+    
+    * Síncrono (bloquetante). Tarea A debe terminar completamente antes de que Tarea B pueda comenzar. 
+        Hacer una llamada telefónica: esperar la respuesta en ese momento.
+        
+    * Asíncrono (no bloqueante). Tarea A se inicia y, mientras espera su resultado, Tarea B puede ejecutarse. Cuando A termina, el resultado es procesado.
+        Enviar un correo electrónico: Se envía y se puede seguir trabanjando mientras se espera la respuesta.
+
+2. La Web API y la Cola de Tarea.
+
+    JS delega las tareas asíncronas (como los temporizadores o la petición de datos) a entornos fuera del hilo principal (la Web API del navegador). Una vez que la tarea asíncrona está lista, su función callback se coloca en la cola de tareas para ser ejecutada cuando el hilo principal esté libre.
+
+3. El Primer Mecanismo Asíncrono: setTimeOut
+
+    setTimeOut es una función que permite ejecutar código después de un cierto número de milisegundos. Es la forma más sencilla de experimentar la asíncronía.
+
+        * Sintaxis: setTimeOut(funcionACorrer, tiempoEnMiliSegundos);
+        * Importante: setTimeOut NO pausa la ejecución. Simplemente programa la función y continúa ejecutando el resto del código síncrono inmediatamente.

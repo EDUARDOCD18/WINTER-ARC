@@ -1,0 +1,14 @@
+Un arreglo o array es el tipo de dato más común para manejar listas de elementos en JS. Un arreglo es escencialmente una colección ordenada de valores, donde cada valor se llama elemento y tiene un número.
+
+1. Listas ordenadas y el índice cero
+    * Listas ordenadas: La principal característica de un arreglo es que los elementos mantienen el orden en el que fueron insertados.
+    * Índice cero ([0]): La cuenta de la posición de los elementos siempre comienza en cero.
+
+2. Mutabilidad  
+    Los arreglos en JS son mutables. Esto significa que se puede modificar su contenido (añadir, eliminar o modificar elementos) después de haberlos creado, incluso si el arreglo fue declarado como const.
+        * ¿const y mutabilidad? Si declaras un arreglo como const, no puedes reasignar variable a un arreglo completamente nuevo, pero sí puedes modificar su contenido (push, pop, etc).
+
+3. Propiedad length
+    La propiedad length indica cuántos elementos hay en el arreglo. Es importante recordar que el índice más alto será siempre arreglo.length - 1.
+
+    

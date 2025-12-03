@@ -1,0 +1,24 @@
+Día 23 - Funciones flecha (arrow functions)
+
+Las funciones flecha son una sintaxis más corta y limpia para definir funciones que se introdujo en ES6 (la versión más reciente de JS). Su uso es ahora estándar para las funciones callback (como las que se usa en addEventListener).
+
+1. Sintaxis básica
+    La sintaxis cambia la palabra clave function por una "flecha" (=>) colocada después de los parámetros. 
+
+        const nombre = (param) =>{
+            // Código a ejecutar
+        }
+
+2. Sintaxis Concisa (Retorno implícito)
+    Las funciones flecha permiten una sintaxis aún más corta si cumplen dos condiciones:
+
+        1. Solo reciben un parámetro. (Se pueden omitir los paréntesis).
+        2. Solo tienen una línea de código que es la línea de return. (Se pueden omitir las llaves {} y la palabra return)
+
+            Un Parámetro, retorno simple
+                const duplicar = num => * 2
+
+            Cero o Dos+parámetros
+                const suma = (a, b) => a + b;
+
+Nota Avanzada: Las funciones flecha también resuelven problemas scope con la palabra clave this.

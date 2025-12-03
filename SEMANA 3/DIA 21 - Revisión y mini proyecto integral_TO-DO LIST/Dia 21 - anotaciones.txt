@@ -1,0 +1,11 @@
+Día 21: Revisión y Mini-proyecto integral (To-do list)
+
+La tarea para esta lección es la Orquestación de Eventos. Una aplicación real requiere que varios conceptos trabajen juntos:
+
+    1. DOM: Un formulario captura el input.
+    2. Lógica: JS verifica si el input está vacío.
+    3. Creación: JS crea el nueve elemento HTML.
+    4. Estilos: El nuevo elemento se inserta en un contenedor con estilos de Flexbox o Grid
+    5. Interacción: El nueve elemento debe tener un botón para eliminarse a sí mismo.
+
+El desafío es hacer que el botón 'eliminar' funcione para los elementos que son creados dinámicamente por JS.

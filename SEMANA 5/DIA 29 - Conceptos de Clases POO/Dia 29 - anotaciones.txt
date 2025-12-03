@@ -1,0 +1,24 @@
+Día 29 - Conceptos de clases POO
+
+La Programación Orienta a Objetos (POO) es una paradigma de programación que organiza el código alrededor de Objetos, en lugar de funciones y lógica.
+
+En JS moderno, la palabra class se usa para crear plantillas.
+
+1. Clases vs. Objeto. (instancia)
+
+    * Clase: Es la definición lógica. Describe qué propiedades (datos) y métodos (acciones) tendrán todos los objetos de ese tipo. Ejm: el plano de un coche.
+
+    * Objeto (instancia): Es la realización concreta de la clase. Es un objeto único creado a partir de la plantilla. Ejemplo: tu coche rojo específico, creado a partir del plano.
+
+2. El constructor.
+
+    El método constructor es un método especial dentro de la clase que se ejecuta automáticamente cuando se crea el objeto.
+
+        * Su objetivo es inicializar laas propiedades del nuevo objeto.
+        * Recibe los valores iniciales como parámetros.
+
+3. La Palabra Clave this
+
+    Dentro de una clase, this siempre se refiere a la instancia específica que se está creando o utilizando en ese momento.
+
+        * this.nombre = nombre; significa "Asigna el valor del parámetro nombre a la propiedad nombre de este nuevo objeto"

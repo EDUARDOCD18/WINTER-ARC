@@ -1,0 +1,29 @@
+Día 24 - Iteración Avanzada (map y fiter)
+
+El bucle for es una herramienta poderosa, los desarrolladores de JS rara vez lo usan para tareas comunes. En su lugar, prefieren los métodos de iteración de Array como map, filter y forEach.
+
+La gran ventaja de estos métodos es que son declarativos: en lugar de decir "cómo" iterar (código de inicialización, condición, incremento), simplemente se dice "qué" se quiere hacer.
+
+1. .map() (Transformación)
+    * Función: Toma un arreglo existente, aplica una función a cada elemento de ese arregle, y devuelve un nuevo arregle que contiene los resultados de esa transformación.
+    
+    * El Arreglo Original: Permanece sin cambio (inmutabilidad).
+
+    * Uso: Convertir un array de precios a precios con IVA, o convertir un array de nombres a objetos de persona.
+
+
+2. .filter() (selección/filtrado)
+
+    * Función: toma un arreglo existente y aplica una función de prueba a cada elemento. Solo devuelve un nuevo arreglo con los elementos que pasaron la prueba (donde la función devolvió true).
+
+    * El Arreglo Original: Permanece sin cambio (inmutabilidad).
+
+    * Uso: Obtener solo los usuarios administradores de una lista, o eliminar los números negativos de un arreglo.
+
+3. Sintaxis común (usando funciones flecha)
+    Ambos métodos reciben una función callback, que casi siempre se escribe como una función flecha concisa:
+
+    const nuevoArray = arrayOriginal.map((item)=>{
+        // Lógica
+        return nuevoValor
+    })

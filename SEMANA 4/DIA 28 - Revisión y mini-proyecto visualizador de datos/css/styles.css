@@ -1,0 +1,55 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.contenedor__app {
+  padding: 3rem;
+}
+
+.titulo {
+  text-transform: uppercase;
+  text-align: center;
+  border: 0.1rem solid #aaa6a6;
+  border-radius: 0.2rem;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.filtro{
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.tarjetas__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.tarjeta__usuario {
+  border: 0.1rem solid #333;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.seleccionado {
+  border: 3px solid #ff5722;
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+  background-color: #ffe0b2;
+}
+
+.tarjeta__usuario h3 {
+  margin-top: 0;
+  color: #007bff;
+}

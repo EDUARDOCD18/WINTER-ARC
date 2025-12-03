@@ -1,0 +1,19 @@
+Día 27 (2) - Fetch API y peticiones simples.
+
+La Fecth API es la interfaz moderna de JS para manejar peticiones de red (como enviar o recibir datos) fe forma asíncrona. Es el reemplazo actual de los métodos más antiguos XMLHttpRequest.
+
+1. ¿Qué es una API?
+
+    Una API (Application Programming Interface) es un intermediario que permite que dos sistemas de software se comuniquen. En la Web, una API Web es generalmente un servidor que expone datos a través de una URL.
+
+2. fetch() Devuelve una Promesa
+
+    El método fetch() toma la URL de la API como su argumento y hace una petición (por defecto, de tipo GET). Lo crucial es que fetch() devuelve inmediatemente una Promesa, la cual se resuelve como un objeto Response.
+
+3. Proceso en Dos Pasos (.then() Doble)
+
+    Debido a la naturaleza de los datos, usar fetch requiere dos pasos secuenciales de Promesas:
+
+        1. Manejar la respuesta: el primer .then() recibe el objeto Resonse. Debemos convertirlo en un formato usable (generalmente JSON) llamando al método response.json(), el cual devuelve una segunda Promesa.
+
+        2. Manejas los Datos: el segundo .then() recibe los datos ya convertidos (el arreglo o el objeto JS listos para usar)

@@ -1,0 +1,53 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.titulo__pagina {
+  font-size: 3.2rem;
+  color: #333;
+  text-align: center;
+  margin-top: 2rem;
+  border: 0.3rem solid #ccc;
+}
+
+.contenedor__principal {
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectores {
+  font-size: 2.4rem;
+  color: #555;
+  margin: 2rem;
+  border-bottom: #333 solid 0.2rem;
+  max-width: fit-content;
+}
+
+.texto__clase {
+  color: #007bff;
+  border: 0.1rem dashed #007bff;
+}
+
+.tarjeta {
+  width: 30rem;
+  height: 20rem;
+  border: 0.2rem solid #666;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

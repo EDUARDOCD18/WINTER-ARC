@@ -1,0 +1,117 @@
+.contenedor__crecimiento {
+  display: flex;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+.caja {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+
+  /* Todos empiezan con el mismo tamaño base */
+  flex-basis: 100px;
+}
+
+/* Aplicamos las proporciones de crecimiento */
+.item__1 {
+  flex-grow: 1; /* Ocupa 1/4 del espacio sobrante */
+}
+
+.item__2 {
+  flex-grow: 2; /* Ocupa 2/4 del espacio sobrante (el doble) */
+}
+
+.item__3 {
+  flex-grow: 1; /* Ocupa 1/4 del espacio sobrante */
+}
+
+.contenedor__encogimiento {
+  display: flex;
+  width: 300px; /* Hacemos que el espacio sea limitado */
+  margin-top: 20px;
+  border: solid 1px red;
+  overflow: hidden; /* Oculta si se desborda */
+}
+
+.item-fijo,
+.item-encoge {
+  min-width: 150px; /* Todos necesitan 150px para empezar */
+  padding: 10px;
+  text-align: center;
+  background-color: #ffc107;
+  margin: 5px;
+}
+
+.item-fijo {
+  /* 🔑 CLAVE: Impedir que se haga más pequeño */
+  flex-shrink: 0;
+  background-color: #007bff;
+  color: white;
+}
+
+.item-encoge {
+  flex-shrink: 1;
+  background-color: #8b70ec;
+  color: white;
+}
+
+.contenedor__blog {
+  display: flex;
+  background-color: #007bff;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  background-color: #4caf50;
+  flex-basis: 200px;
+  padding: 5px;
+  text-align: start;
+}
+
+.main__content {
+  flex-basis: 0;
+  flex-grow: 1;
+  background-color: #8b70ec;
+  padding: 5px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.contenedor__gastos {
+  background-color: #007bff;
+  padding: 12px;
+  display: flex;
+  gap: 20px;
+}
+
+.gastos {
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  text-align: center;
+}
+
+.comida {
+  flex: 2 1 auto;
+  background-color: #4caf50;
+}
+
+.alquiler {
+  flex: 0 0 500px;
+  background-color: #8b70ec;
+}
+
+.servicios{
+    flex: 1 1 auto;
+    background-color: #ffc107;
+    color: #000;
+}
+
+.ahorros{
+    flex: 1 1 auto;
+    background-color: bisque;
+    color: #000;
+}

@@ -1,0 +1,93 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.3rem;
+  gap: 2rem;
+  border: 0.2rem solid rgb(110, 204, 204);
+}
+
+.listado {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  padding: 1rem;
+  background-color: antiquewhite;
+}
+
+#lista__invitados {
+  padding: 1.2rem;
+  list-style-type: none;
+  text-transform: capitalize;
+  margin-bottom: 1.2rem;
+  background-color: rgb(189, 241, 224);
+  font-size: 2.4rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.nuevo__item {
+  margin: 1.3rem;
+}
+
+.btn {
+  border: none;
+  text-align: center;
+  padding: 1.5rem 4rem;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: bisque;
+}
+
+#btn__agregar:hover {
+  background-color: rgb(76, 223, 76);
+  color: white;
+}
+
+#btn__eliminar:hover {
+  background-color: rgb(221, 35, 29);
+  color: white;
+}
+
+.btn__cerrar {
+  border: none;
+  text-align: center;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  background-color: rgb(17, 119, 160);
+  color: white;
+}
+
+#mensaje {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mensaje__rojo {
+  background-color: rgb(221, 35, 29);
+  color: white;
+}
+
+.mensaje__verde {
+  background-color: rgb(76, 223, 76);
+  color: white;
+}
+.mensaje__azul {
+  background-color: rgb(17, 119, 160);
+  color: white;
+}

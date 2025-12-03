@@ -1,0 +1,64 @@
+/* Estilo Base (Se aplica siempre) */
+body {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+}
+
+/* 🔑 CLAVE: La Media Query. Aplicar estilos solo si el ancho máximo es 600px (o menos) */
+@media (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+}
+
+.contenedor__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.columna {
+  background-color: #38c172;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .contenedor__layout {
+    grid-template-columns: 1fr;
+  }
+  .columna {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  .contenedor__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contenedor__flex {
+  margin-top: 20px;
+  display: flex;
+  background-color: aqua;
+  text-align: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: black;
+}
+
+@media (max-width: 480px) {
+  .contenedor__flex {
+    justify-content: center;
+    flex-direction: column;
+    .boton {
+      &:last-of-type {
+        margin-top: 20px;
+      }
+    }
+  }
+}

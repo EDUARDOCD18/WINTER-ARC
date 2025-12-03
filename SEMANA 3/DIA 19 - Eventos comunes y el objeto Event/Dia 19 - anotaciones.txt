@@ -1,0 +1,20 @@
+Día 19 - eventos comunes y el obejeto Event
+
+El conecepto más importante en esta lección ees el Objeto event. Cada vez que un listener se dispara (por un click, una tecla, un envío de formulario), JS crea un objeto que contiene todos los detalles del suceso y lo pasa automáticamente a la función callback.
+
+1. El objeto event (o e)
+    Cuando se define la función manejadora, siempre se puede acceder a este objeto como el primer argumento.
+
+        // JavaScript
+            elemento.addEventListener("click", (e)=>{
+                // Aquí 'e' es el objeto evento
+                console.log(e.target); // El elemento que originó el evento
+                console.log(e.type);   // El tipo de evento ("click")
+            })
+
+2. event.preventDefault() (Detener el flujo)
+    Este es el método más vital del objeto event. Se utiliza para cancelar la acción por defecto de un elemento.
+
+        * Ejemplo 1 (formularios): Por defecto, cuando se presiona un botón submit en un formulario, el navegador intenta enviar los datos al servidor y recarga la página. Usar e.preventDefault() detiene la recarga.
+
+        * Ejemplo 2 (Enlaces): Popr defecto, un enlace (<a>) lleva a otra URL. Usar e.preventDefault() detiene la navegación.

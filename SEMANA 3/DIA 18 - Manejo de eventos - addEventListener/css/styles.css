@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#contenedor__eventos {
+  padding: 2rem;
+  border: 0.2rem solid #86b7e6;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+#contador__clicks {
+  font-size: 3.2rem;
+}
+
+.btn {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.colocar {
+  background-color: #a13a3a;
+  transition: all 0.3s ease;
+}

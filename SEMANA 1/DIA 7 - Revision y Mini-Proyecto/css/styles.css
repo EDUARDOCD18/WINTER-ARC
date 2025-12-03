@@ -1,0 +1,64 @@
+/* ESTILOS GENERALES (TODOS LAS PANTALLAS) */
+.perfil__card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "avatar"
+    "info"
+    "acciones";
+  gap: 15px;
+  width: 90%;
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.perfil__avatar {
+  grid-area: avatar;
+/*   width: 200px;
+  height: 200px; */
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.perfil__info {
+  grid-area: info;
+}
+
+.perfil__acciones {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn__primary {
+  background-color: #007bff;
+  color: white;
+}
+.btn__secondary {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+/* EXPANSIÓN A ESCRITORIO */
+@media (min-width: 768px) {
+  .perfil__card {
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas: "avatar info acciones";
+    align-items: center;
+    text-align: left;
+    max-width: 700px;
+  }
+
+  .perlil__avatar {
+    margin: 0;
+  }
+
+  .perfil__acciones {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,19 @@
+Día 14 - Revisión y mini proyecto JS integral
+
+El concepto más importante en esta lección es la iteración, es decir, repetir una tarea varias veces sin tener que escribir el código una y otra vez. Para esto está el bucle for.
+
+1. Bucle for. 
+    El bucle for es una herramienta estándar para iterar (recorrer) colecciones de datos como arreglos. Su sintaxis se basa en tres partes dentro del paréntesis, separadas por punto y coma:
+        1. Inicialización. Se ejecuta una sola vez al inicio. Generalmente, es un contador i que comienza en cero (el primer índice). let i = 0
+        2. Condición. Se comprueba antes de cada iteración. Mientas sea true, el bucle continúa. i < array.length
+        3. Incremento. Se ejecuta al final de cada iteración. Mueve el contador a la siguiente posición. i++ (equivale a i = i + 1)
+
+    Sintaxis general:
+        for (let i = 0; i < arreglo.length; i++){
+            // Código que se repite
+            // Accede al elemento con: arreglo [i]
+
+        }
+
+2. Integración
+    En este lección se combinará la potencia de bucle for con la estructura del array de objetos para aplicar la lógica condicional (if/else) a cada elemento de la lista.

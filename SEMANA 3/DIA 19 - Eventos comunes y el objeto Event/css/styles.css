@@ -1,0 +1,17 @@
+#mensaje__form {
+  margin-top: 10px;
+}
+
+#div__loco {
+  margin-top: 20px;
+}
+
+.alerta__roja{
+    background-color: red;
+    color: white;
+}
+
+.alerta__verde{
+    background-color: rgb(10, 141, 91);
+    color: white;
+}
