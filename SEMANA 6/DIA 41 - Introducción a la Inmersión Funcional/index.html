@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Día 41 - Inmersión Funcional</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+      }
+      #lista-productos,
+      #items-carrito,
+      #temporizador-sesion,
+      #actualizacion-carrito {
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .producto-card {
+        border: 1px solid #eee;
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Tienda Modular y Funcional</h1>
+
+      <h2>Productos Disponibles</h2>
+      <div id="lista-productos"></div>
+
+      <h2>🛒 Carrito de Compras</h2>
+      <ul id="items-carrito"></ul>
+
+      <section id="temporizador-sesion">
+        <h2>Temporizador de Sesión</h2>
+        <p id="aviso-sesion">Cargando temporizador...</p>
+        <button id="btn-extender">Extender Sesión</button>
+      </section>
+
+      <section id="actualizacion-carrito">
+        <h2>Actualización Automática</h2>
+        <p id="estado-actualizacion">
+          Actualización automática: Inicializando...
+        </p>
+        <button id="btn-detener-actualizacion">Detener Actualización</button>
+      </section>
+    </main>
+
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>
