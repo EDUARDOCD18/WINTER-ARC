@@ -1,0 +1,47 @@
+/* Estilos básicos para organizar la vista */
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+main {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+section {
+  margin-bottom: 30px;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+.oferta-relampago {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  padding: 10px;
+  display: none;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.producto-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#items-carrito {
+  list-style: none;
+  padding: 0;
+}
+.cupon-section {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 4px;
+}

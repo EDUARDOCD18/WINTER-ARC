@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Día 42 - Reto de Implementación Final</title>
+</head>
+<body>
+
+<main>
+    <h1>🚀 Tienda Inteligente - JS Avanzado</h1>
+
+    <div id="notificacion-oferta" class="oferta-relampago">
+        <strong>🔥 ¡OFERTA RELÁMPAGO!</strong> Usa el código <strong>JS20</strong> para un 20% de descuento.
+    </div>
+
+    <section>
+        <h2>Productos Disponibles</h2>
+        <div id="lista-productos">
+            <p>Cargando productos desde la API...</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🛒 Tu Carrito</h2>
+        <ul id="items-carrito">
+            </ul>
+        <p><strong>Total: <span id="total-precio">$0.00</span></strong></p>
+    </section>
+
+    <section class="cupon-section">
+        <h3>¿Tienes un cupón?</h3>
+        <input type="text" id="input-cupon" placeholder="Escribe tu código aquí">
+        <button id="btn-aplicar-cupon">Aplicar Descuento</button>
+        <p id="mensaje-cupon"></p>
+    </section>
+
+    <section id="temporizador-sesion">
+        <h3>Estado de la Sesión</h3>
+        <p id="aviso-sesion">Verificando sesión...</p>
+        <button id="btn-extender" style="display:none;">Extender Sesión</button>
+    </section>
+</main>
+
+<script src="js/app.js" type="module"></script>
+
+</body>
+</html>
