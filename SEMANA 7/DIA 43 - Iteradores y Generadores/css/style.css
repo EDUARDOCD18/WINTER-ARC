@@ -1,0 +1,86 @@
+/* Estilos base para la interfaz */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f0f2f5;
+  color: #333;
+}
+main {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin-bottom: 25px;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+h2 {
+  color: #2c3e50;
+  border-left: 5px solid #3498db;
+  padding-left: 10px;
+}
+
+/* Estilos de la Tienda y Carrito */
+.producto-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+.producto-card:hover {
+  background-color: #f9f9f9;
+}
+
+/* Sección de Checkout (Generadores) */
+.checkout-container {
+  background-color: #e8f4fd;
+  border: 2px dashed #3498db;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+#mensaje-paso {
+  font-weight: bold;
+  color: #2980b9;
+  min-height: 1.5em;
+  margin-bottom: 15px;
+}
+
+/* Botones */
+button {
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  transition: 0.2s;
+}
+button:hover {
+  background-color: #2980b9;
+}
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.oferta-relampago {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}

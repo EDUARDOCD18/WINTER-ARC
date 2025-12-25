@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../DIA 43 - Iteradores y Generadores/css/style.css">
+    <title>Día 43 - Iteradores y Generadores</title>
+</head>
+<body>
+
+<main>
+    <h1>🚀 Tienda con Flujo de Pago Avanzado</h1>
+
+    <div id="notificacion-oferta" class="oferta-relampago">
+        🔥 ¡OFERTA RELÁMPAGO ACTIVA! Revisa el catálogo ahora.
+    </div>
+
+    <section>
+        <h2>Catálogo de Productos</h2>
+        <div id="lista-productos">
+            <p>Conectando con el servidor...</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🛒 Tu Carrito</h2>
+        <ul id="items-carrito">
+            <li class="text-muted">No hay productos aún.</li>
+        </ul>
+        <p style="font-size: 1.2em;"><strong>Total: <span id="total-precio">$0.00</span></strong></p>
+    </section>
+
+    <section class="checkout-container">
+        <h2>💳 Finalizar Compra</h2>
+        <p>Utiliza el botón para avanzar paso a paso en tu pedido.</p>
+        <div id="mensaje-paso">Esperando inicio de pago...</div>
+        <button id="btn-paso-pago">Iniciar Proceso de Compra</button>
+    </section>
+
+    <section>
+        <h3>Configuración Extra</h3>
+        <div>
+            <input type="text" id="input-cupon" placeholder="Cupón (ej: JS20)">
+            <button id="btn-aplicar-cupon">Validar</button>
+            <span id="mensaje-cupon"></span>
+        </div>
+        <hr>
+        <div id="aviso-sesion">Inactividad: --:--</div>
+        <button id="btn-extender" style="display:none;">Mantener Sesión</button>
+    </section>
+</main>
+
+<script src="js/app.js" type="module"></script>
+
+</body>
+</html>
