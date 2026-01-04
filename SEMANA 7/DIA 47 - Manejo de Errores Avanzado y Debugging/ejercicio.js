@@ -21,7 +21,7 @@ function validarEdad(edad) {
   console.log("✅ Edad validada correctamente. ¡Bienvenido!");
 }
 
-function ejecutarValidacion(valor) {
+function ejecutarValidacigon(valor) {
   try {
     validarEdad(valor);
   } catch (error) {
