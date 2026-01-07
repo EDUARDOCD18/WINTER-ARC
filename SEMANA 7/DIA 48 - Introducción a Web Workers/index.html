@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Web Workes</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web Worker vs Hilo Principal</h1>
+
+      <div class="spinner"></div>
+      <p>Si el círculo rojo se detiene, la UI está bloqueada.</p>
+
+      <input
+        type="text"
+        placeholder="Intenta escribir aquí mientras calculas..."
+      />
+
+      <div class="botones">
+        <button class="btn-bloqueante" id="btn-bloquear">
+          Cálculo en Hilo Principal (Bloqueante)
+        </button>
+        <button class="btn-worker" id="id-worker-btn">
+          Cálculo con Web Worker (Fluido)
+        </button>
+      </div>
+
+      <div id="resultado">Esperando órdenes...</div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
