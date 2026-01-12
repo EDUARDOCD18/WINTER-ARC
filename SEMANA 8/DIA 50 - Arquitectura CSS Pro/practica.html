@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Día 50 - Arquitectura de Diseño</title>
+    <link rel="stylesheet" href="practica.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__logo">DesignPro</div>
+      <ul class="navbar__menu">
+        <li>
+          <a href="#" class="navbar__link navbar__link--active">Inicio</a>
+        </li>
+        <li><a href="#" class="navbar__link">Proyectos</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <header class="hero">
+        <h1 class="hero__title">Arquitectura Visual</h1>
+        <p class="hero__subtitle">Controla tu Design System en tiempo real.</p>
+
+        <div class="controls">
+          <label for="color-picker">Color de Marca:</label>
+          <input type="color" id="color-picker" value="#4a90e2" />
+
+          <label for="spacing-slider">Espaciado:</label>
+          <input type="range" id="spacing-slider" min="8" max="48" value="24" />
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <h3 class="card__title">Mobile First</h3>
+          <p class="card__text">
+            Diseñado primero para pantallas pequeñas, optimizando el
+            rendimiento.
+          </p>
+        </article>
+
+        <article class="card card--featured">
+          <h3 class="card__title">Variables CSS</h3>
+          <p class="card__text">
+            Poder absoluto sobre los estilos globales desde un solo lugar.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">BEM Method</h3>
+          <p class="card__text">
+            Nombres de clases claros que explican la función del componente.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <script src="practica.js"></script>
+  </body>
+</html>

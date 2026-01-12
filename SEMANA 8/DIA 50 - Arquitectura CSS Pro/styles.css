@@ -1,0 +1,74 @@
+:root {
+  /* Colores Primarios */
+  --primary-color: #4a90e2;
+  --secondary-color: #f39c12;
+
+  /* Colores Neutros (Para fondos y textos) */
+  --bg-main: #f8f9fa;
+  --text-dark: #2d3436;
+  --text-light: #636e72;
+
+  /* Espaciado y Bordes */
+  --radius-md: 1.2rem;
+  --spacing-lg: 2rem;
+
+  /* Tipografía */
+  --font-main: "Inter", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--bg-main);
+}
+
+#theme-toggle{
+    text-decoration: none;
+    padding: 2rem;
+    color: var(--bg-main);
+    border-radius: 2rem;
+    background: #891cbb;
+}
+
+.feature-card {
+  /* Estilos base (Móvil) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: auto;
+  padding: var(--radius-md);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  gap: 2rem;
+
+  .feature-card__title {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card__text{
+    color: var(--text-dark);
+  }
+}
+
+/* Ajuste para Desktop (Diseño más complejo) */
+@media (min-width: 768px) {
+  .feature-card {
+    flex-direction: row;
+    text-align: left;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+}
