@@ -1,0 +1,39 @@
+:root {
+    --step-0: clamp(1rem, 0.92rem + 0.39vw, 1.25rem); /* Texto base fluido */
+    --step-5: clamp(2.5rem, 1.5rem + 5vw, 5rem);      /* H1 Fluido */
+    
+    --line-length: 65ch; /* Regla de oro del diseño: entre 45 y 75ch */
+    --main-font: 'Inter', system-ui, sans-serif;
+}
+
+.dark-mode{
+    background: #110303;
+    color: white;
+}
+
+.post {
+    max-width: var(--line-length);
+    margin: 4rem auto;
+    padding: 1rem;
+    font-family: var(--main-font);
+}
+
+.post__title {
+    font-size: var(--step-5);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.post__content p {
+    font-size: var(--step-0);
+    line-height: 1.6; /* Interlineado para evitar fatiga */
+    color: #444;
+}
+
+/* El slider de JS afectará esta variable */
+.post__content {
+    --user-scale: 1;
+    transform: scale(var(--user-scale));
+    transform-origin: top left;
+}

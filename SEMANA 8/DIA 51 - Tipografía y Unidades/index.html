@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Día 51</title>
+  </head>
+  <body>
+    <h1>H1</h1>
+
+    <article class="post">
+      <header class="post__header">
+        <span class="post__tag">Diseño UI</span>
+        <h1 class="post__title">El arte de la tipografía fluida</h1>
+        <p class="post__excerpt">
+          Aprende a crear interfaces que respiran y se adaptan al usuario.
+        </p>
+      </header>
+
+      <section class="post__content">
+        <p>
+          La legibilidad es la clave. Un párrafo no debería tener más de 75
+          caracteres por línea...
+        </p>
+      </section>
+
+      <div class="reading-controls">
+        <button id="toggle-dark" class="btn">Modo Oscuro</button>
+        <input
+          type="range"
+          id="font-slider"
+          min="1"
+          max="2"
+          step="0.1"
+          value="1"
+        />
+      </div>
+    </article>
+  </body>
+  <script src="scripts.js"></script>
+</html>
