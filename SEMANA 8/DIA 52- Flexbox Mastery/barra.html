@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="barra.css" />
+    <title>Barra de día 52</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav__logo">BrandPro</div>
+
+      <button class="nav__toggle" aria-label="Abrir menú">☰</button>
+
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#" class="nav__link">Inicio</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Servicios</a></li>
+        <li class="nav__item">
+          <a href="#" class="nav__link nav__link--cta">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="features">
+      <article class="features__card">
+        <div class="features__icon">🎨</div>
+        <h3 class="features__title">Diseño Visual</h3>
+        <p class="features__text">
+          Creamos interfaces que no solo funcionan, sino que enamoran a primera
+          vista.
+        </p>
+      </article>
+
+      <article class="features__card">
+        <div class="features__icon">⚡</div>
+        <h3 class="features__title">Rendimiento</h3>
+        <p class="features__text">
+          Código optimizado para que la velocidad sea tu mayor ventaja
+          competitiva.
+        </p>
+      </article>
+
+      <article class="features__card">
+        <div class="features__icon">📱</div>
+        <h3 class="features__title">Responsive</h3>
+        <p class="features__text">
+          Tu sitio se verá perfecto en cualquier pantalla, desde móviles hasta
+          4K.
+        </p>
+      </article>
+    </section>
+
+    <div class="admin-panel">
+      <button id="toggle-card" class="toggle-card">Eliminar/Añadir Tarjeta</button>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
