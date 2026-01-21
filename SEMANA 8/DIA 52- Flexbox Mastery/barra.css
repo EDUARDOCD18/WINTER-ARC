@@ -36,6 +36,10 @@ body {
   display: none;
   list-style: none;
   gap: 2rem;
+
+  .nav__link {
+    text-decoration: none;
+  }
 }
 
 .nav__list--active {
