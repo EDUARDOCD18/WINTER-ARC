@@ -1,0 +1,123 @@
+:root {
+  --primary: #ff4757;
+  --accent: #2ed573;
+  --accent-2: #29b161;
+  --badge-text: "NUEVO"; /* Podemos usar variables en el content */
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.catalog {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product-card {
+  position: relative;
+  width: 30rem;
+  background: white;
+  border-radius: 0.15rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card__info {
+  padding: 1rem;
+}
+
+.product-card__price {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #685454;
+}
+
+pproduct-card__img {
+  width: 100px;
+}
+
+/* --- EL BADGE (::before) --- */
+.product-card::before {
+  content: var(--badge-text);
+  position: absolute;
+  top: 0.15rem;
+  right: 0.15rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  z-index: 10;
+}
+
+/* --- EL OVERLAY DE DISEÑO (::after) --- */
+.product-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  transform: scaleX(0); /* Oculto inicialmente */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover::after {
+  transform: scaleX(1); /* Se expande al pasar el mouse */
+}
+
+.product-card__img-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.product-card__img-wrapper::after {
+  content: "Ver más";
+  position: absolute;
+  inset: 0; /* Arriba, abajo, izq, der = 0 */
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.product-card:hover .product-card__img-wrapper::after {
+  opacity: 1;
+}
+
+.boton {
+  display: inline-block;
+  padding: 0.8rem;
+  margin-top: 2rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out 0s;
+  &:hover {
+    cursor: pointer;
+    background: blue;
+  }
+}
