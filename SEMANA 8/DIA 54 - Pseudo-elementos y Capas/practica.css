@@ -1,0 +1,105 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.btn-shine {
+  position: relative;
+  padding: 1.2rem 2.5rem;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+/* El Brillo Fantasma */
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-45deg); /* Inclinamos el brillo */
+  transition: left 0.6s ease-in-out;
+}
+
+/* Al pasar el mouse, el brillo atraviesa el botón */
+.btn-shine:hover::after {
+  left: 150%;
+}
+
+.quote {
+  position: relative;
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+/* La Comilla Gigante */
+.quote::before {
+  content: "“"; /* Carácter de comilla */
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 10rem;
+  color: #6c5ce7;
+  opacity: 0.1; /* Muy sutil para no distraer */
+  font-family: serif;
+  z-index: 1; /* Capa inferior */
+}
+
+.quote__text {
+  position: relative;
+  z-index: 2; /* Capa superior para que sea legible */
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: #2d3436;
+}
+
+/* La Comilla Gigante */
+.quote::before {
+  content: "“"; /* Carácter de comilla */
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 10rem;
+  color: #6c5ce7;
+  opacity: 0.1; /* Muy sutil para no distraer */
+  font-family: serif;
+  z-index: 1; /* Capa inferior */
+}
+
+.quote__text {
+  position: relative;
+  z-index: 2; /* Capa superior para que sea legible */
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: #2d3436;
+}
