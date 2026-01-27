@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+:root {
+  --primary: #6c5ce7;
+  --success: #2ed573;
+}
+
+.product-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: #ccc;
+  padding: 5rem;
+  width: 50%;
+  border-radius: 2rem;
+}
+
+.btn-add {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  /* Transición suave para cualquier cambio */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Transformación física en hover */
+.btn-add:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
+
+.btn-add:active {
+  transform: scale(0.95);
+}
+
+/* --- ANIMACIÓN DE PULSO (@keyframes) --- */
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(108, 92, 231, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(108, 92, 231, 0);
+  }
+}
+
+.btn-add--important {
+  animation: pulse-animation 2s infinite;
+}
+
+/* Clase que aplicaremos con JS */
+.btn-add--success {
+  background-color: var(--success);
+}

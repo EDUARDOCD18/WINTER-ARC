@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering Front-end Design | Semana 8</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ejercicio.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar__logo">Design<span>Lab</span></div>
+        
+        <button class="burger" id="burger-menu" aria-label="Abrir menú">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+
+        <ul class="navbar__menu" id="navbar-menu">
+            <li class="navbar__item"><a href="#" class="navbar__link">Diseño</a></li>
+            <li class="navbar__item"><a href="#" class="navbar__link">Componentes</a></li>
+            <li class="navbar__item"><a href="#" class="navbar__link navbar__link--cta">Empezar</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <header class="hero">
+            <span class="hero__tag">Día 55: Interacción</span>
+            <h1 class="hero__title">Arquitectura Visual Moderna</h1>
+            <p class="hero__subtitle">
+                Explora el poder de CSS Grid, Flexbox y Pseudo-elementos en una sola interfaz fluida.
+            </p>
+            
+            <div class="hero__loader-wrapper">
+                <div class="loader"></div>
+                <p>Cargando assets de diseño...</p>
+            </div>
+        </header>
+
+        <section class="gallery">
+            
+            <article class="reveal-card">
+                <img src="https://picsum.photos/id/20/400/500" alt="Diseño UI" class="reveal-card__img">
+                <div class="reveal-card__overlay">
+                    <h3 class="reveal-card__title">Layouts Flexibles</h3>
+                    <p class="reveal-card__desc">Dominando el eje horizontal con Flexbox.</p>
+                </div>
+            </article>
+
+            <article class="reveal-card">
+                <img src="https://picsum.photos/id/30/400/500" alt="Diseño UX" class="reveal-card__img">
+                <div class="reveal-card__overlay">
+                    <h3 class="reveal-card__title">Grid Avanzado</h3>
+                    <p class="reveal-card__desc">Estructuras bidimensionales complejas.</p>
+                </div>
+            </article>
+
+            <article class="reveal-card">
+                <img src="https://picsum.photos/id/40/400/500" alt="Frontend" class="reveal-card__img">
+                <div class="reveal-card__overlay">
+                    <h3 class="reveal-card__title">Pseudo-clases</h3>
+                    <p class="reveal-card__desc">Añadiendo joyería visual con Before y After.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="feedback">
+            <blockquote class="quote">
+                <p class="quote__text">
+                    "La simplicidad llevada al extremo se convierte en elegancia."
+                </p>
+                <cite class="quote__author">— Mies van der Rohe</cite>
+            </blockquote>
+        </section>
+
+        <section class="admin-panel">
+            <h2 class="admin-panel__title">Configurador de Tema</h2>
+            <div class="admin-panel__controls">
+                <button id="btn-promo" class="btn-shine">Cambiar Acento</button>
+                <input type="color" id="color-picker" value="#6c5ce7">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Práctica de Diseño Front-end 2026 | Semana 8</p>
+    </footer>
+
+    <script src="ejercicio.js"></script>
+</body>
+</html>
