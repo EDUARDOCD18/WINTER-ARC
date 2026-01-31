@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Portfolio | Creative Developer</title>
+  </head>
+  <body class="portfolio-layout">
+    <nav class="nav">
+      <div class="nav__container">
+        <a href="#" class="nav__logo">DEV<span>STUDIO</span></a>
+        <div class="nav__toggle" id="nav-toggle">
+          <span></span><span></span><span></span>
+        </div>
+        <ul class="nav__list" id="nav-list">
+          <li><a href="#home" class="nav__link">Inicio</a></li>
+          <li><a href="#services" class="nav__link">Servicios</a></li>
+          <li><a href="#work" class="nav__link">Proyectos</a></li>
+          <li><button id="theme-btn" class="btn-shine">Modo Oscuro</button></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <header id="home" class="hero">
+        <div class="hero__content">
+          <span class="hero__badge">Disponible para proyectos</span>
+          <h1 class="hero__title">
+            Diseño interfaces que <span>respiran</span>.
+          </h1>
+          <p class="hero__description">
+            Especialista en Frontend y UI Design, transformando ideas en
+            experiencias interactivas y escalables.
+          </p>
+          <a href="#work" class="btn-primary">Ver Portafolio</a>
+        </div>
+      </header>
+
+      <section id="services" class="services">
+        <h2 class="section-title">Lo que hago</h2>
+        <div class="services__grid">
+          <article class="card">
+            <div class="card__icon">🎨</div>
+            <h3>UI Design</h3>
+            <p>Sistemas de diseño consistentes y modernos.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">⚡</div>
+            <h3>Performance</h3>
+            <p>Código optimizado para la máxima velocidad.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">📱</div>
+            <h3>Responsive</h3>
+            <p>Adaptabilidad total en cualquier dispositivo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="work" class="work">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="work__grid">
+          <div class="work__item work__item--large">
+            <img src="https://picsum.photos/id/1/800/600" alt="Proyecto 1" />
+            <div class="work__overlay"><h3>App Fintech</h3></div>
+          </div>
+          <div class="work__item">
+            <img src="https://picsum.photos/id/2/400/300" alt="Proyecto 2" />
+            <div class="work__overlay"><h3>E-commerce</h3></div>
+          </div>
+          <div class="work__item">
+            <img src="https://picsum.photos/id/3/400/300" alt="Proyecto 3" />
+            <div class="work__overlay"><h3>Social Dashboard</h3></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Crafted with ❤️ by You.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
