@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Día 57 - Accesibilidad (A11y)</title>
+  </head>
+  <body>
+    <article class="settings-card" aria-labelledby="card-title">
+      <header class="settings-card__header">
+        <img
+          src="https://i.pravatar.cc/150?u=front"
+          alt="Foto de perfil de Alex Diseñador"
+          class="settings-card__avatar"
+        />
+        <h2 id="card-title" class="settings-card__title">Preferencias</h2>
+      </header>
+
+      <div class="setting-item">
+        <div class="setting-item__info">
+          <span id="label-notif" class="setting-item__label"
+            >Notificaciones</span
+          >
+          <p class="setting-item__desc">
+            Alertas sobre cambios en tus proyectos.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="ui-switch"
+          role="switch"
+          aria-checked="false"
+          aria-labelledby="label-notif"
+          id="main-switch"
+        >
+          <span class="ui-switch__dot"></span>
+        </button>
+      </div>
+    </article>
+    <script src="main.js"></script>
+  </body>
+</html>
