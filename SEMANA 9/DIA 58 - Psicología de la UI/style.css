@@ -1,0 +1,134 @@
+:root {
+  --primary: #4834d4;
+  --text-dark: #130f40; /* Contraste 14.8:1 */
+  --text-soft: #576574;
+  --bg-switch-off: #c8d6e5;
+  --success: #2ecc71;
+  --text-main: #130f40;
+  --text-alt: #576574;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.ui-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30vh;
+}
+
+.settings-card {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1.6rem;
+  max-width: 35rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.setting-card__avatar {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+}
+
+/* --- ACCESIBILIDAD: EL FOCO --- */
+/* :focus-visible solo muestra el anillo si se usa el teclado */
+.ui-switch:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.ui-switch {
+  all: unset;
+  position: relative;
+  width: 5.4rem;
+  height: 2.8rem;
+  background-color: var(--bg-switch-off);
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: background 0.3 ease;
+}
+
+.ui-switch[aria-checked="true"] {
+  background-color: var(--primary);
+}
+
+.ui-switch__dot {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ui-switch[aria-checked="true"] .ui-switch__dot {
+  transform: translateX(26px);
+}
+.u-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--primary);
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.settings-card__title {
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.settings-card__text {
+  color: var(--text-alt);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos del Toast (Mensaje de éxito) */
+.toast {
+  position: absolute;
+  bottom: -60px; /* Oculto */
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--success);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Clase activa para el JS */
+.toast--visible {
+  bottom: 20px;
+  opacity: 1;
+}

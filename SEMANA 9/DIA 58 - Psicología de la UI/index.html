@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Día 58 - Psicología de la UI</title>
+  </head>
+
+    <div class="ui-container">
+  <article class="settings-card">
+    <div class="settings-card__body">
+      <span class="u-badge">Seguridad</span>
+      <h2 class="settings-card__title">Autenticación</h2>
+      
+      <div class="action-group">
+        <p class="action-group__text" id="desc-auth">
+          Activa la protección de doble factor para tu cuenta.
+        </p>
+        
+        <div class="action-group__trigger">
+          <button type="button" class="ui-switch" role="switch" 
+                  aria-checked="false" aria-describedby="desc-auth" id="secure-switch">
+            <span class="ui-switch__dot"></span>
+          </button>
+          <label for="secure-switch" class="ui-switch__label">Activar protección</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast-feedback" class="toast toast--success" aria-live="polite">
+      <span class="toast__icon">✓</span>
+      <p class="toast__message">Cambios guardados</p>
+    </div>
+  </article>
+</div>
+    <script src="main.js"></script>
+  </body>
+</html>
