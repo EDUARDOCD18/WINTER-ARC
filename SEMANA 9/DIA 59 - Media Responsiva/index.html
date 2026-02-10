@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Día 59</title>
+  </head>
+  <body>
+    <section class="gallery">
+      <article class="project-card">
+        <div class="project-card__media">
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="https://picsum.photos/id/10/400/600.webp"
+            />
+            <source
+              srcset="https://picsum.photos/id/10/1200/800.webp"
+              type="image/webp"
+            />
+            <img
+              src="https://picsum.photos/id/10/1200/800.jpg"
+              alt="Diseño de interfaz minimalista"
+              loading="lazy"
+              class="project-card__img"
+            />
+          </picture>
+        </div>
+        <div class="project-card__info">
+          <h3>Proyecto Alpha</h3>
+          <p>Optimizado para carga ultra-rápida.</p>
+        </div>
+      </article>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>

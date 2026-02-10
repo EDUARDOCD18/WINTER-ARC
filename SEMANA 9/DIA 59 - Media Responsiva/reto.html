@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reto.css" />
+    <title>Reto de día 59</title>
+  </head>
+  <body>
+    <section class="portfolio-grid">
+      <article class="project-card">
+        <div class="project-card__media skeleton">
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="https://picsum.photos/id/20/600/600.webp"
+              type="image/webp"
+            />
+
+            <source
+              srcset="https://picsum.photos/id/20/1200/600.webp"
+              type="image/webp"
+            />
+
+            <img
+              src="https://picsum.photos/id/20/1200/600.jpg"
+              alt="Diseño de interfaz de usuario para aplicación móvil"
+              class="project-card__img"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+
+        <div class="project-card__info">
+          <h3 class="project-card__title">Proyecto Alpha</h3>
+          <p class="project-card__desc">
+            Optimización de activos y dirección de arte.
+          </p>
+        </div>
+      </article>
+    </section>
+    <script src="reto.js"></script>
+  </body>
+</html>
