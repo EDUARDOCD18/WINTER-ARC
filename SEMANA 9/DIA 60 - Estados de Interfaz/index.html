@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Día 60 - Estados de Interfaz</title>
+  </head>
+  <body>
+    <div class="app-card">
+      <div id="status-orchestrator" data-state="loading">
+        <div class="state-view loading-view">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line short"></div>
+        </div>
+
+        <div class="state-view ideal-view">
+          <div class="data-content">
+            <h4>¡Todo listo!</h4>
+            <p>Tu resumen semanal está preparado para revisión.</p>
+            <div class="data-chip">8 Proyectos activos</div>
+          </div>
+        </div>
+
+        <div class="state-view error-view">
+          <div class="visual-indicator">🛰️</div>
+          <h4>Hubo un pequeño tropiezo...</h4>
+          <p>No logramos conectar con el servidor. ¿Revisamos esa conexión?</p>
+          <button class="btn-action" onclick="simulateLoad()">
+            Intentar de nuevo
+          </button>
+        </div>
+
+        <div class="state-view empty-view">
+          <div class="visual-indicator">📁</div>
+          <h4>Nada por aquí todavía</h4>
+          <p>
+            Parece que aún no tienes proyectos creados. ¡Empieza el primero!
+          </p>
+          <button class="btn-action">Crear Proyecto</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

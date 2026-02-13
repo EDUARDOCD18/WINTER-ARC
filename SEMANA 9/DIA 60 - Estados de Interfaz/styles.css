@@ -1,0 +1,66 @@
+:root {
+  --primary: #6c5ce7;
+  --text-main: #2d3436;
+  --transition-speed: 0.5s;
+}
+
+/* --- LÓGICA DE ESTADOS --- */
+.state-view {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition-speed) ease, 
+              transform var(--transition-speed) ease;
+  display: none;
+}
+
+/* Mostramos el estado actual con animación suave */
+[data-state="loading"] .loading-view,
+[data-state="ideal"] .ideal-view,
+[data-state="error"] .error-view,
+[data-state="empty"] .empty-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- ESTILOS DE DISEÑO --- */
+.app-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  max-width: 400px;
+  min-height: 300px;
+}
+
+.visual-indicator {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+}
+
+/* Skeleton Shimmer (Reutilizando el concepto del Día 59) */
+.skeleton-title, .skeleton-line {
+  background: #f0f0f5;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 20px;
+}
+
+.skeleton-title { height: 30px; width: 70%; }
+.skeleton-line.short { width: 50%; }
+
+.btn-action {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+}
