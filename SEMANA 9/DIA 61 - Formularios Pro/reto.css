@@ -1,0 +1,109 @@
+:root {
+  /* Paleta de Colores Refinada */
+  --primary: #6c5ce7;
+  --primary-light: #a29bfe;
+  --success: #00b894; /* Un verde más moderno */
+  --warning: #fdcb6e;
+  --error: #ff7675;
+  --text-main: #2d3436;
+  --text-soft: #636e72;
+  --bg-card: #ffffff;
+  --bg-input: #f9f9fb;
+  
+  /* Sombras y Bordes */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+  --radius: 1.2rem;
+}
+
+/* --- Reset & Base --- */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: #f0f2f5;
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centra el card en la pantalla */
+}
+
+/* --- Card del Formulario --- */
+.form-card {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 40rem;
+  padding: 3rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  border: none; /* Eliminamos el borde simple por una sombra */
+}
+
+/* --- Grupos y Labels --- */
+.form-group {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+/* --- Inputs --- */
+.input-container {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1.4rem 4rem 1.4rem 1.4rem; /* Espacio extra a la derecha para el icono */
+  font-family: inherit;
+  font-size: 1.5rem;
+  background-color: var(--bg-input);
+  border: 0.2rem solid #eee;
+  border-radius: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-main);
+}
+
+/* Estado de Foco: Vital para Accesibilidad */
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+}
+
+/* --- Estados de Validación --- */
+.group-warning .form-input { border-color: var(--warning); }
+.group-success .form-input { border-color: var(--success); }
+.group-error .form-input { border-color: var(--error); }
+
+/* Animación sutil cuando aparece el error */
+.group-error .form-input:focus {
+  box-shadow: 0 0 0 4px rgba(255, 118, 117, 0.1);
+}
+
+/* --- Iconos Dinámicos --- */
+.status-icon {
+  position: absolute;
+  right: 1.4rem;
+  font-size: 1.8rem;
+  pointer-events: none; /* Para que no interfiera con el clic del input

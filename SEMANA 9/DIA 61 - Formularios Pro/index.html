@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Día 61 - Formularios Pro</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="pro-form" novalidate>
+        <h2 class="form-title">Crea tu cuenta</h2>
+
+        <div class="form-group" id="group-email">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              class="form-input"
+              placeholder="ejemplo@correo.com"
+              required
+            />
+            <span class="status-icon"></span>
+          </div>
+          <small class="error-msg" id="email-error"
+            >Por favor, introduce un correo válido.</small
+          >
+        </div>
+
+        <div class="form-group" id="group-pass">
+          <label for="password" class="form-label">Contraseña</label>
+          <div class="input-wrapper">
+            <input
+              type="password"
+              id="password"
+              class="form-input"
+              placeholder="Mínimo 8 caracteres"
+              required
+              minlength="8"
+            />
+            <span class="status-icon"></span>
+          </div>
+          <small class="error-msg" id="pass-error"
+            >La contraseña debe tener al menos 8 caracteres.</small
+          >
+        </div>
+
+        <button type="submit" class="btn-submit">Empezar ahora</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

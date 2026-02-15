@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reto.css" />
+    <title>Reto del día 61</title>
+  </head>
+  <body>
+    <div class="form-card">
+      <form id="pro-form" novalidate>
+        <div class="form-group" id="group-email">
+          <label for="email" class="form-label">Email</label>
+          <div class="input-container">
+            <input
+              type="email"
+              id="email"
+              class="form-input"
+              placeholder="tu@correo.com"
+            />
+            <span class="status-icon" aria-hidden="true"></span>
+          </div>
+          <p class="error-text">
+            Introduce un email válido (ej: nombre@dominio.com)
+          </p>
+        </div>
+
+        <div class="form-group" id="group-pass">
+          <label for="password" class="form-label">Contraseña</label>
+          <div class="input-container">
+            <input
+              type="password"
+              id="password"
+              class="form-input"
+              placeholder="Usa 8 o más caracteres"
+            />
+            <span class="status-icon" aria-hidden="true"></span>
+          </div>
+          <p class="error-text">Muy corta. Faltan caracteres.</p>
+        </div>
+
+        <button type="submit" class="btn-primary">Crear Cuenta</button>
+      </form>
+    </div>
+    <script src="reto.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+:root {
+  --success: #2ecc71;
+  --error: #e74c3c;
+  --primary: #6c5ce7;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Estados de Validación */
+.form-group.success .form-input {
+  border-color: var(--success);
+}
+.form-group.error .form-input {
+  border-color: var(--error);
+}
+.form-group.error .form-label {
+  color: var(--error);
+}
+
+.error-msg {
+  color: var(--error);
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.form-group.error .error-msg {
+  opacity: 1;
+}
+
+/* --- ANIMACIÓN DE SACUDIDA (SHAKE) --- */
+.shake {
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30,
+  50,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
