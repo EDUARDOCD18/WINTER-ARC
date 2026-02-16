@@ -1,0 +1,71 @@
+:root {
+  /* Tema Claro (Default) */
+  --bg-app: #f5f6fa;
+  --text-main: #2f3640;
+  --accent: #6c5ce7;
+  --card-bg: #ffffff;
+  --text-color: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --border-color: #ddd;
+}
+
+/* Cuando el body tiene esta clase, los valores cambian mágicamente */
+body.dark-theme {
+  --bg-app: #1e272e;
+  --text-main: #f5f6fa;
+  --accent: #a29bfe;
+  --card-bg: #2f3640;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --border-color: #444;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--bg-app);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.theme-btn {
+  background: var(--accent);
+  border: none;
+  padding: 1.3rem 2rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: bold;
+  display: flex;
+  margin: 0 auto;
+}
+
+.titulo{
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+body * {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
