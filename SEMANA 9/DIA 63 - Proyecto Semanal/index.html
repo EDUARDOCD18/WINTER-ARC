@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Mater Profile Dashboard - Día 63</title>
+  </head>
+  <body>
+    <!-- contenedor del dashboard -->
+    <main class="dashboard-container">
+      <!-- carta de perfil -->
+      <article class="profile-card" id="profile-card" data-state="loading">
+        <!-- cabecera del perfil -->
+        <header class="profile-header">
+          <!-- contenedor de la imagen -->
+          <div class="image-container skeleton">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="https://picsum.photos/id/64/400/400.webp"
+              />
+              <source srcset="https://picsum.photos/id/64/800/400.webp" />
+              <img
+                src="https://picsum.photos/id/64/800/400.jpg"
+                alt="Foto de perfil profesional"
+                class="profile-img"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+
+          <!-- botón para cambiar de tema -->
+          <button id="theme-toggle" class="theme-btn btn" aria-label="Cambiar tema">
+            <span id="theme-text">🌙 Modo Oscuro</span>
+          </button>
+        </header>
+
+        <!-- sección para el contenido del perfil -->
+        <section class="profile-content">
+          <!-- información del usuario -->
+          <div class="user-info">
+            <!-- nombre del usuario -->
+            <h1 class="user-name skeleton-text">Alex Designer</h1>
+
+            <!-- biografía del usuario -->
+            <p class="user-bio skeleton-text">
+              Especialista en Interfaces Humanas | Carrizal, Venezuela
+            </p>
+          </div>
+
+          <!-- formulario de estatus -->
+          <form id="status-form" class="status-form" novalidate>
+            <label for="status-input" class="form-label"
+              >Actualizar estado</label
+            >
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="status-input"
+                class="form-input"
+                placeholder="¿En qué trabajas hoy?"
+                required
+                minlength="5"
+              />
+              <span class="status-icon"></span>
+            </div>
+            <small class="error-msg">Mínimo 5 caracteres para publicar.</small>
+            <button type="submit" class="btn-primary btn">
+              Publicar Actualización
+            </button>
+          </form>
+        </section>
+
+        <!-- mensaje de error -->
+        <div class="state-overlay error-view">
+          <span>⚠️</span>
+          <p>No pudimos conectar con el servidor.</p>
+          <button onclick="location.reload()" class="btn" >Reintentar</button>
+        </div>
+      </article>
+    </main>
+    <script defer src="js/main.js"></script>
+  </body>
+</html>
