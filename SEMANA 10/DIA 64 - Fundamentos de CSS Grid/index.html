@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Día 64 - Fundamentos de CSS Grid</title>
+  </head>
+  <body>
+
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <div class="logo">AdminPro</div>
+        <nav>
+          <button class="btn btn-secondary">🏠 Inicio</button>
+          <button class="btn btn-secondary">📊 Reportes</button>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-bar">
+          <h2>Panel de Control</h2>
+          <button id="theme-toggle" class="btn btn-secondary">
+            <span id="theme-text">🌙</span>
+          </button>
+        </header>
+
+        <section class="stats-grid">
+          <div class="stat-card">Ventas</div>
+          <div class="stat-card">Usuarios</div>
+          <div class="stat-card">Visitas</div>
+        </section>
+      </main>
+    </div>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>
