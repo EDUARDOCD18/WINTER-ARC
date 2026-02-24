@@ -1,0 +1,77 @@
+:root {
+  /* --- PALETA TEMA CLARO --- */
+  --bg-body: #87d348; /* Un gris muy suave para el fondo del main */
+  --bg-card: #d65e5e; /* Blanco puro para el Sidebar y tarjetas */
+  --text-main: #2d3436; /* Gris oscuro casi negro para lectura */
+  --text-muted: #636e72; /* Gris suave para descripciones */
+  --accent: #6c5ce7; /* Tu color de marca (Violeta) */
+  --skeleton: #64818d; /* Color para bordes y estados de carga */
+
+  /* --- VARIABLES DE ESTRUCTURA --- */
+  --sidebar-width: 250px; /* Controlamos la Grid desde aquí */
+  --transition-speed: 0.3s;
+}
+
+/* --- PALETA TEMA OSCURO --- */
+body.dark-theme {
+  --bg-body: #121212; /* Negro profundo */
+  --bg-card: #1e1e1e; /* Gris muy oscuro para elevar elementos */
+  --text-main: #f5f6fa; /* Blanco roto para no cansar la vista */
+  --text-muted: #b2bec3;
+  --accent: #a29bfe; /* Un violeta más claro para mejor contraste */
+  --skeleton: #2d3436; /* Bordes más oscuros */
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.app-container {
+  display: grid;
+  height: 100vh;
+
+  grid-template-columns: 25rem 1fr;
+  grid-template-rows: 6rem 1fr 4rem;
+
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "footer .";
+
+  gap: 1rem;
+}
+
+.header {
+  grid-area: header;
+  background: var(--accent);
+  color: white;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: var(--bg-card);
+}
+
+.main {
+  grid-area: main;
+  background: var(--bg-body);
+}
+
+.footer {
+  grid-area: footer;
+  background: var(--skeleton);
+  font-size: 1.2rem;
+}
