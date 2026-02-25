@@ -1,0 +1,180 @@
+Tienes
+  toda
+  la
+  razón.
+  Me
+  emocioné
+  tanto
+  con
+  la
+  "magia"
+  del
+  responsivo
+  que
+  dejé
+  los
+  botes
+  de
+  pintura
+  cerrados.
+  Para
+  que
+  el
+  efecto
+  de
+  las
+  tarjetas
+  y
+  el
+  modo
+  oscuro
+  funcione
+  como
+  debe
+  en
+  este
+  Día
+  66,
+necesitamos
+  añadir
+  las
+  variables
+  de
+  sombras
+  y
+  los
+  colores
+  de
+  tarjetas
+  que
+  mencionamos
+  en
+  la
+  lección.
+  Aquí
+  tienes
+  el
+  bloque
+  actualizado
+  para
+  tu
+  :root.
+  He
+  añadido
+  sombras
+  modernas
+  para
+  que
+  las
+  tarjetas
+  de
+  estadísticas
+  "floten"
+  sobre
+  el
+  fondo.
+  🎨
+  Variables
+  de
+  Estilo
+  Pro
+  (:root)
+  Copia
+  esto
+  en
+  la
+  parte
+  superior
+  de
+  tu
+  CSS.
+  He
+  incluido
+  --shadow-sm
+  y
+  --shadow-md
+  porque
+  en
+  el
+  diseño
+  de
+  Dashboards,
+las sombras son las que dictan qué elemento está "encima" de otro. CSS :root {
+  /* --- PALETA TEMA CLARO --- */
+  --bg-body: #f8f9fa; /* Gris muy claro para el fondo */
+  --bg-card: #ffffff; /* Blanco para las tarjetas */
+  --text-main: #2d3436; /* Texto principal */
+  --text-muted: #636e72; /* Texto secundario/desactivado */
+  --accent: #6c5ce7; /* Color violeta de marca */
+  --skeleton: #dfe6e9; /* Bordes y estados de carga */
+
+  /* --- SOMBRAS (Elevación) --- */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- PALETA TEMA OSCURO --- */
+body.dark-theme {
+  --bg-body: #121212; /* Fondo negro */
+  --bg-card: #1e1e1e; /* Tarjetas gris oscuro */
+  --text-main: #f5f6fa; /* Texto claro */
+  --text-muted: #b2bec3; /* Texto gris suave */
+  --accent: #a29bfe; /* Violeta más brillante */
+  --skeleton: #2d3436; /* Bordes oscuros */
+
+  /* Sombras más intensas para modo oscuro */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.stats-container {
+  display: grid;
+  /* REPEAT: Repite el proceso */
+  /* AUTO-FIT: Crea tantas como quepan y estíralas */
+  /* MINMAX: Mínimo 200px, máximo lo que sobre (1fr) */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3 ease;
+
+  &:hover{
+    transform: translateY(-5px);
+  }
+}
+
+.contenedor{
+
+    div{
+        background: rgb(111, 233, 212);
+        border: 5px solid white; 
+    }
+
+    display: grid;
+    grid-template-columns: minmax(15rem, 500rem) 1fr;
+    grid-template-rows: 15rem 40rem;
+}
