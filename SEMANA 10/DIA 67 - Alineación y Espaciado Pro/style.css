@@ -1,0 +1,107 @@
+:root {
+  /* --- PALETA TEMA CLARO --- */
+  --bg-body: #f8f9fa; /* Gris muy claro para el fondo */
+  --bg-card: #ffffff; /* Blanco para las tarjetas */
+  --text-main: #2d3436; /* Texto principal */
+  --text-muted: #636e72; /* Texto secundario/desactivado */
+  --accent: #6c5ce7; /* Color violeta de marca */
+  --skeleton: #dfe6e9; /* Bordes y estados de carga */
+
+  /* --- SOMBRAS (Elevación) --- */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- PALETA TEMA OSCURO --- */
+body.dark-theme {
+  --bg-body: #121212; /* Fondo negro */
+  --bg-card: #1e1e1e; /* Tarjetas gris oscuro */
+  --text-main: #f5f6fa; /* Texto claro */
+  --text-muted: #b2bec3; /* Texto gris suave */
+  --accent: #a29bfe; /* Violeta más brillante */
+  --accent2: #594ef0; /* Violeta más brillante */
+  --skeleton: #2d3436; /* Bordes oscuros */
+  --error: #611818;
+
+  /* Sombras más intensas para modo oscuro */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  /* gap: 2.5rem; */
+
+  /* -- Reto 1 -- */
+
+  /* Espaciado Dinámico: Cambia el gap de tu metrics-grid de un valor fijo (2.5rem) a uno dinámico usando clamp (investiga esto un poco: gap: clamp(1rem, 5vw, 3rem)). Observa cómo la separación "respira" al encoger la pantalla. */
+  gap: clamp(1rem, 5vw, 3rem);
+  padding: 2rem;
+  justify-content: center;
+}
+
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--skeleton);
+  border-radius: 1.5rem;
+
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1/1;
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  /* -- Reto 2 -- */
+
+  /* Alineación Asimétrica: Haz que una de las tarjetas tenga align-self: stretch y quítale el aspect-ratio. Mira cómo rompe la armonía y por qué es importante mantener la consistencia. */
+
+  &:nth-child(2) {
+    aspect-ratio: auto;
+    align-self: stretch;
+
+    border: 2px dashed var(--error);
+    background-color: rgba(255, 118, 117, 0.1);
+  }
+}
+
+.metric-card .value {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.metric-card .label {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  align-self: start;
+}
+
+.universo {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: var(--bg-body);
+
+  &.metric-card {
+    max-width: 350px;
+    width: 90%;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.5rem;
+    background: var(--accent);
+    color: var(--bg-card);
+    border: none;
+    border-radius: 0.5rem;
+
+    &:hover {
+        background: var(--accent2);
+    }
+  }
+}
