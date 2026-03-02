@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Día 68 - Subgrid y Grids Anidados</title>
+  </head>
+  <body>
+    <section class="parent-grid">
+      <article class="card">
+        <h2>Título Corto</h2>
+        <p>Texto breve de ejemplo.</p>
+        <button class="btn">Comprar</button>
+      </article>
+
+      <article class="card">
+        <h2>Un Título Mucho Más Largo que los Demás</h2>
+        <p>
+          Este párrafo es mucho más extenso para poner a prueba la alineación de
+          nuestra subgrid. Queremos que el botón de abajo no se mueva de su
+          sitio.
+        </p>
+        <button class="btn">Comprar</button>
+      </article>
+
+      <article class="card">
+        <h2>Título</h2>
+        <p>Más texto por aquí.</p>
+        <button class="btn">Comprar</button>
+      </article>
+    </section>
+
+    <section class="grand-parent-grid">
+      <div class="card-simple">1</div>
+
+      <article class="featured-card">
+        <div class="card-image">🖼️ Foto</div>
+        <div class="card-info">
+          <h3>Proyecto Pro</h3>
+          <p>Alineado al grid global.</p>
+        </div>
+      </article>
+
+      <div class="card-simple">4</div>
+    </section>
+  </body>
+</html>

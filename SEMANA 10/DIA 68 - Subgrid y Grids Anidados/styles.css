@@ -1,0 +1,109 @@
+:root {
+  /* --- PALETA TEMA CLARO --- */
+  --bg-body: #f8f9fa; /* Gris muy claro para el fondo */
+  --bg-card: #ffffff; /* Blanco para las tarjetas */
+  --text-main: #2d3436; /* Texto principal */
+  --text-muted: #636e72; /* Texto secundario/desactivado */
+  --accent: #6c5ce7; /* Color violeta de marca */
+  --skeleton: #dfe6e9; /* Bordes y estados de carga */
+
+  /* --- SOMBRAS (Elevación) --- */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- PALETA TEMA OSCURO --- */
+body.dark-theme {
+  --bg-body: #121212; /* Fondo negro */
+  --bg-card: #1e1e1e; /* Tarjetas gris oscuro */
+  --text-main: #f5f6fa; /* Texto claro */
+  --text-muted: #b2bec3; /* Texto gris suave */
+  --accent: #a29bfe; /* Violeta más brillante */
+  --accent2: #594ef0; /* Violeta más brillante */
+  --skeleton: #2d3436; /* Bordes oscuros */
+  --error: #611818;
+
+  /* Sombras más intensas para modo oscuro */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+} */
+
+.parent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto 1fr auto);
+  gap: 4rem;
+  padding: 2rem;
+}
+
+.card {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  border: 1px sold var(--skeleton);
+}
+
+.card h2 {
+  background: rgba(108, 92, 231, 0.1);
+  padding: 1rem;
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+.card .btn {
+  align-self: flex-end;
+}
+
+/* -- Reto 1 -- */
+/* Herencia de Columnas: Intenta usar grid-template-columns: subgrid; en lugar de filas. Crea una tarjeta que ocupe dos columnas del padre y que sus elementos internos se alineen con esas columnas. */
+
+.grand-parent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background: var(--bg-body);
+}
+
+.featured-card {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: subgrid;
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--accent);
+}
+
+.card-image {
+  grid-column: 1;
+  background: var(--skeleton);
+  display: grid;
+  place-items: center;
+}
+
+.card-info {
+  grid-column: 2;
+  padding: 1.5rem;
+}
