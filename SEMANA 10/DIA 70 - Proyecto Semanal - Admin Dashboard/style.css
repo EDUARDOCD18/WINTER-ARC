@@ -1,0 +1,158 @@
+/* 1. VARIABLES & RESET (Usando tu base) */
+:root {
+  --bg-body: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  --accent: #6c5ce7;
+  --skeleton: #dfe6e9;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+  --sidebar-width: 250px; /* Variable para controlar el colapso luego */
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+}
+
+/* 2. LAYOUT GLOBAL (GRID AREAS) */
+.dashboard-layout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: 70px 1fr 40px;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+}
+
+/* 3. ASIGNACIÓN DE ÁREAS */
+.sidebar {
+  grid-area: sidebar;
+  background: #2d3436;
+  color: white;
+  padding: 2rem;
+}
+.top-bar {
+  grid-area: header;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  border-bottom: 1px solid var(--skeleton);
+}
+.main-content {
+  grid-area: main;
+  padding: 3rem;
+  overflow-y: auto;
+}
+.footer {
+  grid-area: footer;
+  background: var(--bg-card);
+  border-top: 1px solid var(--skeleton);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  font-size: 1.2rem;
+}
+
+/* 4. SECCIONES INTERNAS (GRIDS ANIDADOS) */
+
+/* Métricas Rápidas */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 5. EL SELECTOR DE VISTA (MODO GRID vs LISTA) */
+#project-container {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  transition: all 0.4s ease;
+}
+
+/* Estado: Cuadrícula */
+.grid-mode {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Estado: Lista */
+.list-mode {
+  grid-template-columns: 1fr;
+}
+
+/* La Tarjeta (Usando Subgrid para alineación Pro) */
+.item-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--skeleton);
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Título, Cuerpo, Botón */
+  gap: 1.5rem;
+}
+
+.list-mode .item-card {
+  grid-template-columns: 100px 1fr 150px;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+/* 6. ANIMACIONES (STAGGER) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.item-card.animate {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+
+  cursor: pointer;
+}

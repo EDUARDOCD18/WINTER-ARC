@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Omni-Admin Dashboard</title>
+  </head>
+
+  <!-- cuerpo del HTML   -->
+  <body class="light-theme">
+    <!-- dashboard -->
+    <div class="dashboard-layout">
+      <!-- sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">🚀 <span>OmniAdmin</span></div>
+          <button id="btn-toggle" class="btn-icon" title="Colapsar menú">
+            ☰
+          </button>
+        </div>
+
+        <!-- navegación -->
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="#" class="active"></a>📊 Dashboard</li>
+            <li><a href="#"></a>📁 Proyectos</li>
+            <li><a href="#"></a>📈 Estadísticas/li></li>
+            <li><a href="#"></a>⚙️ Configuración</li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- header -->
+      <header class="top-bar">
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Buscar proyectos..."
+          />
+        </div>
+
+        <div class="header-info">
+          <p id="counter-text">Calculando proyectos...</p>
+          <div class="user-profile">
+            <span>Front-end Dev</span>
+            <div class="avatar">👤</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- main -->
+      <main class="main-content">
+        <section class="stats-grid">
+          <div class="stat-card">
+            <span class="icon">💰</span>
+            <div class="stat-info">
+              <h3>Ingresos</h3>
+              <p>$12,400</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="icon">👥</span>
+            <div class="stat-info">
+              <h3>Usuarios</h3>
+              <p>1,205</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="icon">🚀</span>
+            <div class="stat-info">
+              <h3>Conversión</h3>
+              <p>3.2%</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="view-controls">
+          <h2>Mis Proyectos</h2>
+          <div class="btn-group">
+            <button id="view-grid" class="btn active">Grid</button>
+            <button id="view-list" class="btn">Lista</button>
+          </div>
+        </div>
+
+        <section id="project-container" class="grid-mode">
+          <article class="item-card animate">
+            <div class="card-header">
+              <h3>Proyecto Alpha</h3>
+              <span class="badge">Nuevo</span>
+            </div>
+            <p class="card-body">
+              Diseño de interfaz avanzada usando CSS Grid y Subgrid.
+            </p>
+            <div class="card-footer">
+              <button class="btn-primary btn">Ver detalle</button>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <!-- footer -->
+      <footer class="footer">
+        <p>&copy; 2026 OmniAdmin - Sistema Operativo</p>
+        <div class="status">● Sistema en línea</div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
