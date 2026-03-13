@@ -1,0 +1,124 @@
+:root {
+  --color-inactive: #dfe6e9;
+  --color-active: #55efc4;
+  --color-btn: #6c5ce7;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  margin: 0;
+}
+
+.status-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  /* Transición Pro: especificamos qué cambia y cómo */
+  transition:
+    transform 0.6s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+    box-shadow 0.3s ease;
+}
+
+.status-content h3 {
+  /* 1. Definimos el color inicial (Inactivo) */
+  color: var(--color-btn);
+
+  /* 2. Preparamos la transición: 
+     La ponemos aquí para que funcione tanto al "entrar" como al "salir" del estado */
+  transition: color 0.4s ease;
+
+  margin-bottom: 0.5rem;
+}
+
+/* 3. Selector de Estado: 
+   Cuando el padre (.status-card) tiene el atributo data-state="active" */
+.status-card[data-state="active"] h3 {
+  color: var(--accent); /* O un color que contraste bien con el verde activo */
+}
+
+/* Estado al pasar el mouse */
+.status-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.status-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  background: var(--color-inactive);
+
+  /* Transición de color suave */
+  transition:
+    background-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* Cambios cuando el atributo data-state cambia mediante JS */
+.status-card[data-state="active"] .status-indicator {
+  background-color: var(--color-active);
+  box-shadow: 0 0 15px var(--color-active);
+}
+
+.state-btn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  background: var(--color-btn);
+  color: white;
+  cursor: pointer;
+  /* Efecto de presión */
+  transition:
+    transform 0.1s active,
+    filter 0.2s;
+
+  letter-spacing: 0px;
+  /* 2. Añadimos la propiedad a la lista de transiciones. 
+     Usamos 'ease-out' para que el estiramiento se sienta fluido al inicio. */
+  transition:
+    transform 0.1s ease,
+    filter 0.2s ease,
+    letter-spacing 0.3s ease-out;
+
+  /* 3. TRUCO DE ESTABILIDAD: 
+     Le damos un min-width para que el botón no cambie de tamaño 
+     cuando las letras se separen. */
+  min-width: 160px;
+}
+
+.state-btn:hover {
+  /* 4. Un cambio mínimo es suficiente. 
+     Más de 1px o 2px suele romper la estética profesional. */
+  letter-spacing: 0.8px;
+  filter: brightness(1.1);
+}
+
+.state-btn:active {
+  transform: scale(0.95); /* El botón se "hunde" al hacer clic */
+}
