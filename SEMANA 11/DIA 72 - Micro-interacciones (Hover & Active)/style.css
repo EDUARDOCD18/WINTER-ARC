@@ -1,0 +1,124 @@
+.interaction-canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.action-bar {
+  display: flex;
+  gap: 2rem;
+  background: white;
+  padding: 1.5rem 2.5rem;
+  border-radius: 5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.action-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50%;
+  position: relative;
+  /* Transición refinada para el icono y el fondo */
+  transition:
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background: #6c5ce7;
+    border: 50%;
+    opacity: 0;
+    /* 3. Transición elástica para que "explote" al aparecer */
+    transition:
+      transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      opacity 0.2s ease;
+  }
+}
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: #b2bec3;
+  transition:
+    fill 0.3s ease,
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- MICRO-INTERACCIÓN: HOVER --- */
+.action-btn:hover {
+  background-color: #f1f2f6;
+  transform: scale(1.15); /* Efecto de "agrandado" */
+}
+
+.action-btn:hover .icon {
+  fill: #6c5ce7;
+  transform: rotate(-10deg) scale(1.1); /* Ligera rotación orgánica */
+}
+
+/* Color específico para borrar */
+.action-btn.delete:hover .icon {
+  fill: #ff7675;
+}
+
+/* --- MICRO-INTERACCIÓN: ACTIVE (El Clic) --- */
+.action-btn:active {
+  transform: scale(0.9); /* Efecto de presión física */
+}
+
+.action-btn:active .icon {
+  transform: scale(0.8);
+}
+
+/* 4. Disparador: Al pasar el mouse, el fantasma aparece */
+.action-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1); /* Crece a su tamaño real */
+}
+
+/* 5. Bonus: Si el botón es 'delete', el punto debe ser rojo */
+.action-btn.delete::after {
+  background-color: #ff7675;
+}
+
+/* 1. Definimos la coreografía de la onda */
+@keyframes ripple-echo {
+  0% {
+    box-shadow: 0 0 0 0px rgba(108, 92, 231, 0.4);
+  }
+  100% {
+    /* La sombra se expande hacia afuera y se desvanece */
+    box-shadow: 0 0 0 15px rgba(108, 92, 231, 0);
+  }
+}
+
+.action-btn:active {
+  /* 2. Disparamos la animación solo mientras el botón está presionado */
+  animation: ripple-echo 0.4s ease-out;
+
+  /* Mantener el efecto de presión física que ya teníamos */
+  transform: scale(0.9);
+}
+
+/* 3. Ajuste para el botón de borrar (Eco rojo) */
+.action-btn.delete:active {
+  animation: ripple-echo-delete 0.4s ease-out;
+}
+
+@keyframes ripple-echo-delete {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 118, 117, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(255, 118, 117, 0);
+  }
+}
