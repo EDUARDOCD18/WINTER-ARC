@@ -1,0 +1,165 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.modern-form {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-group {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+/* Estilo del Input */
+input,
+textarea {
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  border: none;
+  border-bottom: 2px solid #dfe6e9;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.btn-submit {
+  display: inline-block;
+  border: none;
+  padding: 1.2rem;
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+  background: #6c5ce7;
+  color: white;
+}
+
+/* Lógica de la Etiqueta Flotante */
+label {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  font-size: 1.6rem;
+  color: #b2bec3;
+  pointer-events: none; /* No interfiere con el clic en el input */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cuando el input tiene foco O cuando NO está mostrando el placeholder (tiene texto) */
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label,
+textarea:focus ~ label,
+textarea:not(:placeholder-shown) ~ label {
+  top: -1.5rem;
+  font-size: 1.2rem;
+  color: #6c5ce7;
+  font-weight: bold;
+}
+
+/* El borde animado de foco */
+.focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #6c5ce7;
+  transition: 0.4s ease;
+}
+
+.error-message {
+  color: #ff7675; /* El rojo suave que estamos usando */
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: block;
+
+  /* Estado inicial: Invisible y un poco más arriba */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none; /* Para que no interfiera con clics */
+}
+
+/* Clase que activaremos con JavaScript */
+.error-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Opcional: Poner el borde del input en rojo si hay error */
+input.input-error {
+  border-bottom-color: #ff7675 !important;
+}
+
+input:focus ~ .focus-border,
+textarea:focus ~ .focus-border {
+  width: 100%;
+  left: 0;
+}
+
+/* 1. Actualizamos el estado de foco del input y textarea */
+input:focus,
+textarea:focus {
+  /* Cambiamos el color del borde base (el que ya tenías) */
+  border-bottom-color: #6c5ce7;
+
+  /* 2. Añadimos el "Resplandor" sutil */
+  /* Sintaxis: x | y | blur | spread | color */
+  box-shadow: 0 5px 15px -8px rgba(108, 92, 231, 0.4);
+
+  /* Aseguramos que la transición sea suave */
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* 3. Tip Pro: Si usas el span .focus-border de la lección anterior, 
+   puedes hacerlo brillar también */
+input:focus ~ .focus-border {
+  box-shadow: 0 0 8px rgba(108, 92, 231, 0.6);
+}
+
+/* 1. Actualizamos el estado del botón al pasar el mouse */
+.btn-submit:hover {
+  background-color: #5b4cc4; /* Un tono un poco más oscuro */
+
+  /* Puedes añadir una elevación sutil para prepararlo */
+  transform: translateY(-2px);
+
+  /* Aseguramos que la transición esté en el botón base (el que ya tenías) */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Disparamos la micro-interacción de presión (:active) */
+.btn-submit:active {
+  /* El botón se "hunde" a un 95% de su tamaño original */
+  /* transform: scale(0.95); */
+
+  /* Combínalo con translateY para que no salte si ya está en hover */
+  transform: translateY(-2px) scale(0.95);
+
+  /* 3. Tip Pro: También puedes suavizar la sombra */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  /* ¡No olvides reajustar la transición para que el hundimiento sea instantáneo! */
+  transition: transform 0.05s ease-out; /* Muy rápido al presionar */
+}

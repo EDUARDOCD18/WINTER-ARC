@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Día 73 - Formularios Dinámicos I</title>
+  </head>
+  <body>
+    <!-- Contenedor del formulario -->
+    <section class="form-container">
+      <!-- formulario -->
+      <form id="dynamic-form" class="modern-form">
+        <h2>Registro de Proyecto</h2>
+
+        <!-- grupo -->
+        <div class="input-group">
+          <input
+            type="text"
+            id="proj-name"
+            name="name"
+            placeholder=" "
+            required
+          />
+          <label for="proj-name">Nombre del Proyecto</label>
+          <span class="focus-border"></span>
+
+          <small id="name-error" class="error-message"
+            >Este campo es obligatorio</small
+          >
+        </div>
+
+        <!-- grupo -->
+        <div class="input-group">
+          <textarea
+            id="proj-desc"
+            name="desc"
+            rows="3"
+            maxlength="150"
+            placeholder=" "
+            required
+          ></textarea>
+          <label for="proj-desc">Breve descripción</label>
+          <div class="counter-container">
+            <span id="char-count">0</span>/150
+          </div>
+        </div>
+
+        <!-- enviar -->
+        <button type="submit" class="btn-submit">
+          <span>Enviar Propuesta</span>
+        </button>
+      </form>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
