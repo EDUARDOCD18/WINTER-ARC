@@ -1,0 +1,140 @@
+/* --- Reset y Estilos Base --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 62.5%; /* 1rem = 10px */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.modern-form {
+  background: white;
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+
+  h2{
+    margin-bottom: 2rem;
+  }
+}
+
+/* --- RETO 3: Arquitectura con Floats --- */
+.form-row {
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+/* Clearfix: El ancla para que los floats no rompan el diseño */
+.form-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.field-group {
+  position: relative;
+  float: left;
+}
+
+/* 2 Columnas (Nombre y Email) */
+.form-row .field-group:nth-child(1),
+.form-row .field-group:nth-child(2) {
+  width: 48%;
+}
+
+.form-row .field-group:nth-child(1) {
+  margin-right: 4%;
+}
+
+/* 3 Columnas (Código de Seguridad) */
+.field-group.triple {
+  width: 30%;
+  margin-right: 5%;
+}
+
+.field-group.triple:last-child {
+  margin-right: 0;
+}
+
+/* --- Floating Labels & Inputs --- */
+.v-input {
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  border: none;
+  border-bottom: 2px solid #dfe6e9;
+  background: transparent;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.floating-label {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  font-size: 1.2rem;
+  color: #b2bec3;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+/* Estado de la etiqueta cuando hay texto o foco */
+.v-input:focus + .floating-label,
+.v-input:not(:placeholder-shown) + .floating-label {
+  top: -1.5rem;
+  font-size: 1.2rem;
+  color: #6c5ce7;
+  font-weight: bold;
+}
+
+/* --- Estados de Validación --- */
+.v-input.valid {
+  border-bottom-color: #00b894;
+}
+
+.v-input.invalid {
+  border-bottom-color: #ff7675;
+}
+
+.error-text {
+  color: #ff7675;
+  font-size: 1.1rem;
+  display: block;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.error-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botón de Enviar */
+.btn-submit {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-submit:active {
+  transform: scale(0.95);
+}

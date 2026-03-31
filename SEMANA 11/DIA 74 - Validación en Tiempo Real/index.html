@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Día 74 - Validación en Tiempo Real</title>
+  </head>
+  <body>
+    <section class="form-container">
+      <form id="validation-form" class="modern-form">
+        <h2>Registro de Evento</h2>
+
+        <div class="form-row">
+          <div class="field-group">
+            <input
+              type="text"
+              id="v-name"
+              class="v-input"
+              placeholder=" "
+              required
+            />
+            <label for="v-name" class="floating-label">Nombre Completo</label>
+            <small class="error-text">Solo letras y espacios (mín. 3)</small>
+          </div>
+
+          <div class="field-group">
+            <input
+              type="email"
+              id="v-email"
+              class="v-input"
+              placeholder=" "
+              required
+            />
+            <label for="v-email" class="floating-label"
+              >Correo Electrónico</label
+            >
+            <small class="error-text">Introduce un email válido</small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field-group full-width">
+            <input
+              type="date"
+              id="v-date"
+              class="v-input"
+              placeholder=" "
+              required
+            />
+            <label for="v-date" class="floating-label">Fecha del Evento</label>
+            <small id="date-error" class="error-text"
+              >No puedes viajar al pasado</small
+            >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field-group triple">
+            <input
+              type="text"
+              id="code-1"
+              class="v-input"
+              maxlength="3"
+              placeholder=" "
+            />
+            <label class="floating-label">Área</label>
+          </div>
+          <div class="field-group triple">
+            <input
+              type="text"
+              id="code-2"
+              class="v-input"
+              maxlength="3"
+              placeholder=" "
+            />
+            <label class="floating-label">Región</label>
+          </div>
+          <div class="field-group triple">
+            <input
+              type="text"
+              id="code-3"
+              class="v-input"
+              maxlength="3"
+              placeholder=" "
+            />
+            <label class="floating-label">ID</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Confirmar Registro</button>
+      </form>
+    </section>
+  </body>
+</html>
