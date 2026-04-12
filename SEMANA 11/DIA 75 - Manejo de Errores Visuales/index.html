@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Día 75 - Manejo de Errores Visuales</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="newsletter-card">
+      <h3 class="titulo">Únete al Club de Lectura</h3>
+      <form id="newsletter-form">
+        <div class="input-wrapper">
+          <input
+            type="email"
+            id="email-field"
+            placeholder="tu@email.com"
+            required
+            aria-describedby="email-error"
+            aria-invalid="false"
+          />
+
+          <div
+            class="error-tooltip"
+            id="email-error"
+            role="alert"
+            aria-live="polite"
+          >
+            Parece que falta el "@" o el dominio
+          </div>
+        </div>
+
+        <button type="submit" class="subscribe-btn">Suscribirse</button>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
