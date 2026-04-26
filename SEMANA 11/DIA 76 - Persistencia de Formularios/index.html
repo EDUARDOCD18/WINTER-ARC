@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Día 76 - Persistencia de Formularios</title>
+  </head>
+  <body>
+    <section class="storage-container">
+      <form id="project-form" class="modern-form">
+        <header>
+          <h2 class="titulo-formulario">Configuración del Proyecto</h2>
+          <p class="status-msg" id="save-status">
+            Borrador guardado localmente
+          </p>
+        </header>
+
+        <div class="input-group">
+          <label for="title" class="label">Título del Proyecto</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Ej. Mi Gran Proyecto"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="category" class="label">Categoría</label>
+          <select name="category" id="category" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="web">Desarrollo Web</option>
+            <option value="design">Diseño UI/UX</option>
+            <option value="marketing">Marketing Digital</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="description" class="label">Descripción breve</label>
+          <textarea
+            name="description"
+            id="description"
+            rows="4"
+            placeholder="Describe los objetivos del proyecto..."
+          ></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn-primary">Publicar Proyecto</button>
+          <button type="button" id="btn-clear" class="btn-secondary">
+            Borrar Todo
+          </button>
+        </div>
+      </form>
+
+      <p id="timestamp-msg" class="timestamp-text">Esperando cambios...</p>
+    </section>
+    <script src="app.js" defer></script>
+  </body>
+</html>

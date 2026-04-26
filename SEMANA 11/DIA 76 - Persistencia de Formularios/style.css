@@ -1,0 +1,169 @@
+/* 1. Reset y Variables */
+:root {
+  --primary-color: #10b981;
+  --primary-hover: #059669;
+  --danger-color: #ef4444;
+  --danger-hover: #dc2626;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --bg-body: #e5e7eb;
+  --bg-card: #ffffff;
+  --border-color: #d1d5db;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  --time-text: #636e72
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* 2. Contenedor y Formulario */
+.storage-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.modern-form {
+  background-color: var(--bg-card);
+  padding: 3.5rem;
+  border-radius: 1.6rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* 3. Encabezado */
+.modern-form header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.titulo-formulario {
+  font-size: 2.2rem;
+  color: var(--text-main);
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.status-msg {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* 4. Grupos de Entrada (Input Groups) */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-left: 0.2rem;
+}
+
+/* Estilos para Inputs, Select y Textarea */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+/* Estado Focus: Vital para la UX */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+textarea {
+  resize: vertical; /* Evita que el usuario rompa el diseño horizontalmente */
+  min-height: 100px;
+}
+
+/* 5. Acciones (Botones) */
+.actions {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.actions button {
+  flex: 1;
+  padding: 1.3rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #fee2e2; /* Un rojo muy suave de fondo */
+  color: var(--danger-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--danger-color);
+  color: #ffffff;
+}
+
+/* Efecto al presionar */
+.actions button:active {
+  transform: translateY(0);
+  filter: brightness(0.9);
+}
+
+.timestamp-text{
+  font-size: 1.2rem;
+  color: var(--time-text);
+  margin-top: 1rem;
+  font-style: italic;
+  text-align: center;
+}
