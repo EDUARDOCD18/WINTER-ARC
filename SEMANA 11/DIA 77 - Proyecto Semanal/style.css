@@ -1,0 +1,229 @@
+/* -- Reset y Base -- */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* -- Bloque: Header -- */
+.header-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn-primary {
+  background-color: rgb(40, 86, 170);
+  border: none;
+  color: white;
+  padding: 1.5rem 3.2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5rem;
+  transition:
+    transform 0.2s,
+    background 0.3s;
+  box-shadow: 0 4px 15px rgba(40, 86, 170, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: rgb(30, 70, 140);
+  transform: translateY(-2px);
+}
+
+/* -- Bloque: Modal -- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* Clase que activa tu JS */
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  position: relative; /* Clave para el botón cerrar */
+  background: #ffffff;
+  border-radius: 2rem;
+  padding: 5rem;
+  width: 90%;
+  max-width: 50rem;
+  transform: scale(0.7) translateY(-30px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay.open .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* -- Elementos del Modal -- */
+.close-btn {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem; /* Posición original de tu diseño */
+  width: 4rem;
+  height: 4rem;
+  background: #ffffff;
+  border: 2px solid rgb(40, 86, 170);
+  color: rgb(40, 86, 170);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  z-index: 30;
+}
+
+.close-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.titulo {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* -- Formulario (Modern Form) -- */
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.modern-form__title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.2rem;
+  color: #333;
+}
+
+.timestamp-text {
+  text-align: center;
+  color: #888;
+  font-size: 1.4rem;
+  margin-top: -1.5rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.error-tooltip {
+  position: absolute;
+  top: 100%; /* Aparece justo debajo del input */
+  left: 0;
+  z-index: 1100; /* Mayor que el modal para que no se oculte */
+
+  /* Evitamos que el tooltip empuje otros elementos */
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Cuando activamos el error mediante JS */
+.error-tooltip.visible {
+  opacity: 1;
+  transform: translateY(5px);
+  animation: shake 0.4s ease-in-out; /* El toque del Día 75 */
+}
+
+.floating-label {
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.field-group input,
+.field-group textarea {
+  padding: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  color: #555;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  border-color: rgb(40, 86, 170);
+}
+
+.subscribe-btn {
+  background: #28a745;
+  color: white;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.subscribe-btn:hover {
+  background: #218838;
+}
+
+/* -- Estado de Éxito -- */
+.success-overlay {
+  display: none; /* Controlado por tu JS */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 2rem;
+  z-index: 20;
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-overlay.animate-in {
+  display: flex;
+  animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

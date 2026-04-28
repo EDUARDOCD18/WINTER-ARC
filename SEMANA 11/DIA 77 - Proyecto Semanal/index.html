@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Día 77 - Proyecto semanal</title>
+  </head>
+  <body>
+    <div class="header-actions">
+      <button id="btn-new-project" class="btn-primary">
+        <span>+</span> Nuevo Proyecto
+      </button>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal-content">
+        <button class="close-btn" id="close-modal" aria-label="Cerrar modal">
+          &times;
+        </button>
+
+        <form id="project-modal-form" class="modern-form">
+          <h2 class="titulo">🚀 Nuevo Proyecto</h2>
+          <p id="save-indicator" class="timestamp-text">Borrador activo</p>
+
+          <div class="form-row">
+            <div class="field-group">
+              <input
+                type="text"
+                name="p-name"
+                id="p-name"
+                placeholder=" "
+                required
+              />
+              <label class="floating-label">Nombre del Proyecto</label>
+              <div class="error-tooltip" id="name-error">
+                Solo letras y espacios (mín. 3)
+              </div>
+            </div>
+
+            <div class="field-group">
+              <input type="date" name="p-deadline" id="p-deadline" required />
+              <div class="error-tooltip" id="date-error">
+                No puedes viajar al pasado
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <textarea
+                name="p-desc"
+                id="p-desc"
+                rows="4"
+                placeholder="Descripción del objetivo..."
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="subscribe-btn">Crear Proyecto</button>
+        </form>
+
+        <div id="success-state" class="success-overlay">
+          <div class="success-icon">✅</div>
+          <h3>¡Proyecto Creado!</h3>
+          <p>Los datos han sido enviados correctamente.</p>
+          <button class="btn-primary" onclick="location.reload()">
+            Finalizar
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
