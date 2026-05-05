@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Día 78 - Menús Desplegables (BEM)</title>
+  </head>
+  <body>
+    <!-- navar -->
+    <nav class="nav">
+
+        <!-- lista de navegación -->
+      <ul class="nav__list">
+
+        <!-- intem del menú -->
+        <li class="nav__item">
+          <a href="#" class="nav__link">Inicio</a>
+        </li>
+
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="#" class="nav__link" id="projects-trigger">
+            Proyectos <span class="nav__icon">▾</span>
+          </a>
+
+          <ul class="nav__submenu" id="projects-menu">
+            <li class="nav__submenu-item">
+              <a href="#" class="nav__submenu-link">Desarrollo Web</a>
+            </li>
+            <li class="nav__submenu-item">
+              <a href="#" class="nav__submenu-link">Diseño UI/UX</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" class="nav__link">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+:root {
+  --color-fondo: #2d3436;
+  --color-fondo2: #636e72;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+/* Bloque Principal */
+.nav {
+  background: var(--color-fondo);
+  padding: 0 2rem;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Elementos */
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  display: block;
+  padding: 1.5rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s;
+  font-size: 2.4rem;
+
+  &:hover{
+    color: #ada6a6;
+  }
+}
+
+/* Submenú (Oculto por defecto) */
+.nav__submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background: var(--color-fondo2);
+  list-style: none;
+  padding: 1rem;
+
+  /* Estado Inicial */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.nav__submenu-item{
+    margin-top: 10px;
+}
+
+/* enlace del submenu */
+.nav__submenu-link {
+  color: wheat;
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: flex;
+  margin-bottom: 1rem;
+  text-align: center;
+  justify-content: center;
+
+  &:hover {
+    color: rgb(204, 182, 140);
+  }
+}
+
+/* MODIFICADOR: El estado activo */
+.nav__submenu--is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Elemento Icono */
+.nav__icon {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Curva suave */
+  will-change: transform; /* Optimización de renderizado */
+}
+
+/* Modificador de Rotación */
+.nav__icon--rotated {
+  transform: rotate(180deg);
+  color: #00d2d3; /* Opcional: cambio de color al activar */
+}
