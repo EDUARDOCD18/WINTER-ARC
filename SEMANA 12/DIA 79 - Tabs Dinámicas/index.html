@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Día 79 - Tabs Dinámicas</title>
+  </head>
+  <body>
+    <!-- bloque con BEM -->
+    <section class="tabs">
+      <!-- lista de controles -->
+      <nav class="tabs__nav" role="tablist">
+        <button
+          class="tabs__btn tabs__btn--active"
+          data-target="panel-servidor"
+        >
+          Servidor
+        </button>
+        <button class="tabs__btn" data-target="panel-red">Red Local</button>
+        <button class="tabs__btn" data-target="panel-seguridad">
+          Seguridad
+        </button>
+      </nav>
+
+      <!-- área de visualización -->
+      <div class="tabs__content">
+        <div class="tabs__panel tabs__panel--active" id="panel-servidor">
+          <h3 class="tabs__title">Estado del Servidor</h3>
+          <p class="tabs__text">
+            Uptime: 99.9%. Servidor operativo en el nodo central.
+          </p>
+        </div>
+
+        <div class="tabs__panel" id="panel-red">
+          <h3 class="tabs__title">Configuración de Red</h3>
+          <p class="tabs__text">
+            Segmento 192.168.1.0/24 configurado correctamente.
+          </p>
+        </div>
+
+        <div class="tabs__panel" id="panel-seguridad">
+          <h3 class="tabs__title">Log de Seguridad</h3>
+          <p class="tabs__text">
+            Sin intentos de intrusión detectados en las últimas 24h.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

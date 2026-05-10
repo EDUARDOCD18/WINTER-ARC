@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+root {
+  --fondo: #ffffff;
+  --fondo-2: #f8f9fa;
+  --fuente-1: #6c757d;
+  --fuente-2: #0984e3;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "poppins";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+/* -- Contenedor principal -- */
+.tabs {
+  background: var(--fondo);
+  border-radius: 0.8rem;
+
+}
+
+/* Navegación */
+.tabs__nav {
+  display: flex;
+  background: var(--fondo-2);
+  border-bottom: 2px solid #e9ecef;
+}
+
+/* botón de tabs */
+.tabs__btn {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--fuente-1);
+  transition: all 0.3s ease;
+}
+
+/* -- Área de visualización -- */
+.tabs__content {
+  padding: 2rem;
+  display: flex;
+  height: 80vh;
+  width: 60vw;
+  border-radius: .5rem;
+  margin: 1rem auto 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #4284db; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #29eac4,
+    #4284db
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #29eac4,
+    #4284db
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* panel */
+.tabs__panel {
+  display: none;
+}
+
+/* titulo */
+.tabs__title {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* texto del panel */
+.tabs__text {
+  margin-bottom: 1.2rem;
+}
+
+/* -- Modificador de estados --  */
+.tabs__btn--active {
+  color: var(--fuente-2);
+  border-bottom: 3px solid #0984e3;
+  background: var(--fondo);
+}
+
+.tabs__panel--active {
+  display: block;
+  animation: slideFade 0.4s ease-out;
+}
+
+
+/* Keyframes */
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
