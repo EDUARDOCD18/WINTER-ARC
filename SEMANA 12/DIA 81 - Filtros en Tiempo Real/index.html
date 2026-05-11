@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Día 81 - Filtros en Tiempo Real</title>
+  </head>
+  <body>
+    <div class="filter-list">
+      <div class="filter-list__controls">
+        <input
+          type="text"
+          id="node-search"
+          class="filter-list__search"
+          placeholder="Buscar nodo por nombre o zona..."
+        />
+      </div>
+
+      <ul class="filter-list__results" id="node-list">
+        <li class="filter-list__item">
+          <strong class="filter-list__node-name">Nodo Carrizal Central</strong>
+          <span class="filter-list__zone">Zona: Miranda</span>
+        </li>
+        <li class="filter-list__item">
+          <strong class="filter-list__node-name">Nodo San Antonio</strong>
+          <span class="filter-list__zone">Zona: Altos Mirandinos</span>
+        </li>
+        <li class="filter-list__item">
+          <strong class="filter-list__node-name">Nodo Caracas Este</strong>
+          <span class="filter-list__zone">Zona: Distrito Capital</span>
+        </li>
+      </ul>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

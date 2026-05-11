@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --color-1: #dfe6e9;
+  --color-2: #eee;
+  --white-1: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Poppins";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.filter-list {
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+
+.filter-list__controls {
+}
+
+.filter-list__search {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--color-1);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.filter-list__results {
+  list-style: none;
+  padding: 0;
+}
+
+.filter-list__item {
+  background: var(--white-1);
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-2);
+  transition: opacity 0.3s ease;
+}
+
+.filter-list__node-name {
+}
+
+.filter-list__zone {
+}
+
+/* MODIFICADOR: El estado oculto para el filtrado */
+.filter-list__item--hidden {
+  display: none;
+}
