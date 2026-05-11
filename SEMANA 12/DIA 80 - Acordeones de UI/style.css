@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --color-1: #dfe6e9;
+  --color-2: #eee;
+  --color-fondo: #fff;
+  --color-fondo-2: #f9f9f9;
+  --color-fondo-3: #fafafa;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Poppins";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+/* -- CONTENEDOR PRINCIPAL -- */
+
+.accordion {
+  border: 1px solid var(--color-1);
+  border-radius: 8px;
+  max-width: 50rem;
+  background: var(--color-fondo);
+  max-height: 90vh;
+  margin: 5rem auto auto;
+}
+
+/* -- Item del acordeon -- */
+.accordion__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-2);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+
+  &:hover {
+    background: var(--color-fondo-2);
+  }
+}
+
+/* -- icono del acordeón -- */
+.accordion__icon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion__body {
+  padding: 1.5rem;
+  transform: translateY(-10px);
+  transition: transform 0.5s ease;
+}
+
+/* El núcleo de la animación */
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  line-height: 3rem;
+  transition:
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
+  background: var(--color-fondo-3);
+}
+
+/* MODIFICADORES BEM */
+.accordion__item--is-open .accordion__content {
+  max-height: 20rem;
+  padding: 2rem;
+  opacity: 1;
+}
+
+.accordion__item--is-open .accordion__body {
+  transform: translateY(0); /* El texto baja suavemente */
+}
+/* Rotación del Icono */
+.accordion__icon {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.accordion__item--is-open .accordion__icon {
+  transform: rotate(180deg);
+}
