@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Día 82 - Carga Progresiva (Skeletons)</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="card">
+        <div class="skeleton" id="skeleton-loader">
+          <div class="skeleton__avatar"></div>
+          <div class="skeleton__body">
+            <div class="skeleton__title"></div>
+            <div class="skeleton__line"></div>
+            <div class="skeleton__line skeleton__line--short"></div>
+          </div>
+        </div>
+
+        <div class="card__content card__content--hidden" id="real-content">
+          <img
+            src="https://via.placeholder.com/60"
+            alt="Avatar"
+            class="card__avatar"
+          />
+          <div class="card__body">
+            <h3 class="card__title">Javier Chacón</h3>
+            <p class="card__text">Ingeniero de Soporte - ISP Central</p>
+          </div>
+        </div>
+      </div>
+
+      <button id="btn-simulate" class="btn-primary">
+        Simular Carga de Datos
+      </button>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
