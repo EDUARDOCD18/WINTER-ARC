@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="css/normalize.css" as="style" />
+    <link rel="preload" href="css/styles.css" as="style" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Día 84 - Dashboard de Integración</title>
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside class="dashboard__sidebar">
+        <div class="dashboard__brand">ISP Admin Pro</div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button
+                class="nav__link nav__link--active"
+                data-tab="tab-monitoreo"
+              >
+                📊 Monitoreo
+              </button>
+            </li>
+            <li class="nav__item nav__item--has-dropdown">
+              <button class="nav__link" id="network-trigger">
+                🌐 Infraestructura <span class="nav__icon">▾</span>
+              </button>
+              <ul class="nav__submenu">
+                <li class="nav__submenu-item">
+                  <button class="nav__submenu-link" data-tab="tab-nodos">
+                    📍 Gestión de Nodos
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="dashboard__main">
+        <div class="tabs__panel tabs__panel--active" id="tab-monitoreo">
+          <h2>Panel de Monitoreo General</h2>
+
+          <div class="accordion">
+            <div class="accordion__item">
+              <button class="accordion__header">
+                <span class="accordion__title"
+                  >⚠️ Alerta: Tráfico Elevado en Troncal</span
+                >
+                <span class="accordion__icon">▾</span>
+              </button>
+              <div class="accordion__content">
+                <div class="accordion__body">
+                  <p>
+                    El consumo de ancho de banda en el enlace principal excede
+                    el 85%. Se sugiere verificar enrutamiento alterno.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabs__panel" id="tab-nodos">
+          <h2>Gestión de Nodos Activos</h2>
+
+          <div class="filter-list">
+            <input
+              type="text"
+              class="filter-list__search"
+              id="node-search"
+              placeholder="Filtrar nodos por zona..."
+            />
+
+            <div class="skeleton" id="node-skeleton">
+              <div class="skeleton__line"></div>
+              <div class="skeleton__line skeleton__line--short"></div>
+            </div>
+
+            <ul
+              class="filter-list__results filter-list__results--hidden"
+              id="node-results"
+            >
+              <li class="filter-list__item">
+                <div>
+                  <strong>Nodo Carrizal Central</strong> -
+                  <span class="zone">Miranda</span>
+                </div>
+                <button class="btn btn--danger btn-trigger-action">
+                  Reiniciar
+                </button>
+              </li>
+              <li class="filter-list__item">
+                <div>
+                  <strong>Nodo San Antonio</strong> -
+                  <span class="zone">Altos Mirandinos</span>
+                </div>
+                <button class="btn btn--danger btn-trigger-action">
+                  Reiniciar
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div
+      class="modal-confirm"
+      id="confirm-modal"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-confirm__box">
+        <h3 class="modal-confirm__title">
+          ⚠️ ¿Confirmar Operación Destructiva?
+        </h3>
+        <p class="modal-confirm__text">
+          Esta acción dejará sin servicio el nodo seleccionado temporalmente.
+        </p>
+        <div class="modal-confirm__actions">
+          <button class="btn btn--secondary" id="btn-cancel">
+            Cancelar Operación
+          </button>
+          <button class="btn btn--danger" id="btn-proceed">
+            Proceder con el Reinicio
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
