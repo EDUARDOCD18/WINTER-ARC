@@ -1,0 +1,63 @@
+/* Variables de Diseño */
+:root {
+  --color-primary: #6c5ce7;
+  --color-dark: #2d3436;
+  --color-bg: #f5f6fa;
+  --color-bg-2: #2d3436;
+  --sidebar-width: 25rem;
+  --blanco: #ffffff;
+  --color-raya: #dfe6e9;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--color-bg);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Layout Grid - Estructura robusta */
+.ecom-app {
+  display: grid;
+  grid-template-rows: 8rem 1fr;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+.ecom-header{
+    background: var(--color-bg-2);
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.ecom-main {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+}
+
+.ecom-sidebar{
+    background: var(--blanco);
+    padding: 2rem;
+    border-right: 1px solid var(--color-raya);
+}
+
+.ecom-catalog {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  gap: 1.5rem;
+}
