@@ -36,28 +36,96 @@ body {
   min-height: 100vh;
 }
 
-.ecom-header{
-    background: var(--color-bg-2);
-    color: var(--blanco);
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
+/* -- HEADER */
+.ecom-header {
+  background: var(--color-bg-2);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
 }
 
+/* -- MAIN -- */
 .ecom-main {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
 }
 
-.ecom-sidebar{
-    background: var(--blanco);
-    padding: 2rem;
-    border-right: 1px solid var(--color-raya);
+/* 
+==================
+MENÚ Y BARRA LATERAL 
+==================
+*/
+
+/* -- BARRA LATERAL -- */
+.ecom-sidebar {
+  background: var(--blanco);
+  padding: 2rem;
+  border-right: 1px solid var(--color-raya);
 }
 
+/* -- SUBMENÚ -- */
+.ecom-submenu {
+  max-width: 0;
+  overflow: hidden;
+  transition: max-height 0.3 ease;
+  padding-left: 1rem;
+}
+
+/* -- ITEM DE NAVEGACIÓN ABIERTO */
+.ecom-nav__item--is-open .ecom-submenu {
+    max-height: 200px;
+    overflow: visible; /* Quitar posiblemente */
+}
+
+/* 
+==================
+CATÁLOGO Y PRODUCTOS 
+==================
+*/
 .ecom-catalog {
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
   gap: 1.5rem;
+}
+
+/* -- PRODUCTO -- */
+.product-card {
+  background: var(--blanco);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* -- IMAGEN DEL PRODUCTO -- */
+.product-card__img {
+  width: 80%;
+  height: 20rem;
+  object-fit: cover;
+  margin: 0 auto;
+  display: flex;
+}
+
+.product-card__body {
+  padding: 1rem;
+}
+
+/* -- BOTÓN DEL PRODUCTO -- */
+.product-card__btn {
+  width: 100%;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
 }

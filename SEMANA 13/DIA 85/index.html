@@ -4,33 +4,155 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Semana 13</title>
-  </head>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISP E-Commerce | Plataforma de Ventas</title>
-</head>
-<body>
-
+  </head>
+  <body>
+    <!-- BLOOQUE RAÍZ -->
     <div class="ecom-app">
-        <header class="ecom-header">
-            <div class="ecom-header__logo">ISP STORE</div>
-        </header>
+      <!-- HEADER -->
+      <header class="ecom-header">
+        <!-- header logo -->
+        <div class="ecom-header__logo">ISP STORE</div>
+      </header>
 
-        <main class="ecom-main">
-            <aside class="ecom-sidebar">
-                <h3 class="ecom-sidebar__title">Categorías</h3>
-            </aside>
+      <!-- MAIN -->
+      <main class="ecom-main">
+        <!-- barra lateral -->
+        <aside class="ecom-sidebar">
+          <h3 class="ecom-sidebar__title">Categorías</h3>
 
-            <section class="ecom-catalog" id="catalog-view">
-                </section>
-        </main>
+          <!-- menú de navegación -->
+          <nav class="ecom-nav">
+            <!-- lista del menú -->
+            <ul class="ecom-nav__list">
+              <!-- categorías -->
+              <li class="ecom-nav__item ecom-nav__item--has-submenu">
+                <button class="ecom-nav__link">
+                  Electrónica <span>▾</span>
+                </button>
+
+                <!-- subcategorías -->
+                <ul class="ecom-submenu">
+                  <!-- item -->
+                  <li class="ecom-submenu__item">
+                    <a href="#">Smartphones</a>
+                  </li>
+
+                  <!-- item -->
+                  <li class="ecom-submenu__item"><a href="#">Laptops</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Sección para el catálogo -->
+        <section class="ecom-catalog" id="catalog-view">
+          <!-- Tarjeta del producto -->
+          <article class="product-card">
+            <!-- imagen del producto -->
+            <div class="product-card__img-container">
+              <img
+                src="./img/XC220.jpg"
+                alt="Producto"
+                class="product-card__img"
+              />
+            </div>
+            <!-- detalles del producto -->
+            <div class="product-card__body">
+              <h3 class="product-card__title">TP-LINK XC220-G3 (ONT/ROUTER)</h3>
+              <span class="product-card__price">$99.00</span>
+              <button class="product-card__btn">Agregar al carrito</button>
+            </div>
+          </article>
+          <!-- Tarjeta del producto -->
+          <article class="product-card">
+            <!-- imagen del producto -->
+            <div class="product-card__img-container">
+              <img
+                src="./img/XC220.jpg"
+                alt="Producto"
+                class="product-card__img"
+              />
+            </div>
+            <!-- detalles del producto -->
+            <div class="product-card__body">
+              <h3 class="product-card__title">TP-LINK XC220-G3 (ONT/ROUTER)</h3>
+              <span class="product-card__price">$99.00</span>
+              <button class="product-card__btn">Agregar al carrito</button>
+            </div>
+          </article>
+          <!-- Tarjeta del producto -->
+          <article class="product-card">
+            <!-- imagen del producto -->
+            <div class="product-card__img-container">
+              <img
+                src="./img/XC220.jpg"
+                alt="Producto"
+                class="product-card__img"
+              />
+            </div>
+            <!-- detalles del producto -->
+            <div class="product-card__body">
+              <h3 class="product-card__title">TP-LINK XC220-G3 (ONT/ROUTER)</h3>
+              <span class="product-card__price">$99.00</span>
+              <button class="product-card__btn">Agregar al carrito</button>
+            </div>
+          </article>
+          <!-- Tarjeta del producto -->
+          <article class="product-card">
+            <!-- imagen del producto -->
+            <div class="product-card__img-container">
+              <img
+                src="./img/XC220.jpg"
+                alt="Producto"
+                class="product-card__img"
+              />
+            </div>
+            <!-- detalles del producto -->
+            <div class="product-card__body">
+              <h3 class="product-card__title">TP-LINK XC220-G3 (ONT/ROUTER)</h3>
+              <span class="product-card__price">$99.00</span>
+              <button class="product-card__btn">Agregar al carrito</button>
+            </div>
+          </article>
+          <!-- Tarjeta del producto -->
+          <article class="product-card">
+            <!-- imagen del producto -->
+            <div class="product-card__img-container">
+              <img
+                src="./img/XC220.jpg"
+                alt="Producto"
+                class="product-card__img"
+              />
+            </div>
+            <!-- detalles del producto -->
+            <div class="product-card__body">
+              <h3 class="product-card__title">TP-LINK XC220-G3 (ONT/ROUTER)</h3>
+              <span class="product-card__price">$99.00</span>
+              <button class="product-card__btn">Agregar al carrito</button>
+            </div>
+          </article>
+          <!-- Tarjeta del producto -->
+          <article class="product-card">
+            <!-- imagen del producto -->
+            <div class="product-card__img-container">
+              <img
+                src="./img/XC220.jpg"
+                alt="Producto"
+                class="product-card__img"
+              />
+            </div>
+            <!-- detalles del producto -->
+            <div class="product-card__body">
+              <h3 class="product-card__title">TP-LINK XC220-G3 (ONT/ROUTER)</h3>
+              <span class="product-card__price">$99.00</span>
+              <button class="product-card__btn">Agregar al carrito</button>
+            </div>
+          </article>
+        </section>
+      </main>
     </div>
-
-</body>
-</html>
+    <script src="./js/app.js" defer></script>
   </body>
 </html>
