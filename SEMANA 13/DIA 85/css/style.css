@@ -74,8 +74,36 @@ MENÚ Y BARRA LATERAL
 
 /* -- ITEM DE NAVEGACIÓN ABIERTO */
 .ecom-nav__item--is-open .ecom-submenu {
-    max-height: 200px;
-    overflow: visible; /* Quitar posiblemente */
+  max-height: 200px;
+  overflow: visible; /* Quitar posiblemente */
+}
+
+/* 
+==================
+FILTROS DE BÚSQUEDA 
+==================
+*/
+
+/* -- CONTENEDOR PRINCIPAL DE FILTROS */
+.ecom-filters {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* -- GRUPO DE FILTROS */
+.ecom-filter-group {
+  margin-bottom: 1rem;
+}
+
+/* -- ENTRADA DE DATOS -- */
+.ecom-filter__input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 1rem;
 }
 
 /* 
@@ -128,4 +156,47 @@ CATÁLOGO Y PRODUCTOS
   cursor: pointer;
   margin-top: 1rem;
   border-radius: 5px;
+}
+
+/* -- DETALLES DEL PRODUCTO -- */
+.product-details {
+  max-width: 60rem;
+  margin-top: 2rem;
+}
+
+/* -- ENCABEZADO DE LOS DETALLES --*/
+.product-details__header {
+  width: 100%;
+  padding: 1rem;
+  background: var(--blanco);
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/*-- CONTENIDO DEL PRODUCTO -- */
+.product-details__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 4s ease;
+  background: #fafafa;
+  font-size: 1.5rem;
+}
+
+.product-details__item--is-open .product-details__content {
+  max-height: 30rem; /* Ajustable según el contenido */
+}
+
+/* -- TABLE DE DETALLES -- */
+.product-details__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.product-details__table th,
+.product-details__table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
 }
