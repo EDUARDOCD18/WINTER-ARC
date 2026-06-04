@@ -71,6 +71,15 @@
 
         <!-- Sección para el catálogo -->
         <section class="ecom-catalog" id="catalog-view">
+          <!-- Carga skeleton -->
+          <div class="skeleton-card" id="skeleton-container">
+            <div class="skeleton-card__img"></div>
+            <div class="skeleton-card__body">
+              <div class="skeleton-card__line"></div>
+              <div class="skeleton-card__line skeleton-card__line--short"></div>
+            </div>
+          </div>
+
           <!-- Tarjeta del producto -->
           <article class="product-card">
             <!-- imagen del producto -->
@@ -83,7 +92,13 @@
             </div>
             <!-- detalles del producto -->
             <div class="product-card__body">
-              <h3 class="product-card__title" data-price="99" data-in-stock="true">TP-LINK XC220-G3 (ONT/ROUTER)</h3>
+              <h3
+                class="product-card__title"
+                data-price="99"
+                data-in-stock="true"
+              >
+                TP-LINK XC220-G3 (ONT/ROUTER)
+              </h3>
               <span class="product-card__price">$99.00</span>
               <button class="product-card__btn">Agregar al carrito</button>
             </div>

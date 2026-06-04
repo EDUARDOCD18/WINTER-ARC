@@ -3,6 +3,8 @@ const details = document.querySelector(".product-details");
 const searchInput = document.getElementById("search-input");
 const stockFilter = document.getElementById("stock-filter");
 const products = document.querySelectorAll(".product-card");
+const catalog = document.getElementById("catalog-view");
+const skeleton = document.getElementById("skeleton-container");
 
 /* Evento para desplegar el submenú de las categorías */
 nav.addEventListener("click", (e) => {
@@ -53,3 +55,20 @@ function filterProducts() {
 }
 searchInput.addEventListener("input", filterProducts);
 stockFilter.addEventListener("change", filterProducts);
+
+/* Función para simular la carga de la API */
+function loadCatalog() {
+  // 1. Mostrar skeleton, ocultar catálogo
+  skeleton.style.display = "block";
+  catalog.style.opacity = "0";
+
+  setTimeout(() => {
+    // 2. Ocultar skeleton, mostrar catálogo con fade-in
+    skeleton.style.display = "none";
+    catalog.style.opacity = "1";
+    catalog.style.transition = "opacity 0.5s ease";
+  }, 2500);
+}
+
+/* Ejecutar al inicio */
+loadCatalog();
