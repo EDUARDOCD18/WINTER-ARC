@@ -40,14 +40,18 @@ body {
   line-height: 1.6;
 }
 
-/* 3. ESTILOS BASE MOBILE-FIRST */
+/* =========================================
+   HEADER Y NAVEGACIÓN (MOBILE FIRST)
+   ========================================= */
 .pizz-header {
+  position: relative; /* Clave: Mantiene la navegación hija anclada al header */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background: var(--color-primary-2);
+  background: var(--color-primary);
   color: white;
+  z-index: 1000;
 }
 
 .pizz-header__logo {
@@ -63,4 +67,55 @@ body {
   color: white;
   font-size: 3rem;
   cursor: pointer;
+}
+
+/* El Contenedor del Menú (Oculto por defecto) */
+.pizz-nav {
+  position: absolute;
+  top: 100%; /* Se coloca justo debajo del header */
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  /* Técnica de ocultamiento animable */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Clase dinámica que agregaremos con JavaScript */
+.pizz-nav.is-open {
+  max-height: 40rem; /* Un valor lo suficientemente alto para mostrar los enlaces */
+}
+
+/* Estilos de la lista y los enlaces */
+.pizz-nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.pizz-nav__link {
+  display: block;
+  padding: 1.5rem 2rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separador sutil */
+  transition: background-color 0.3s ease;
+}
+
+.pizz-nav__link:hover,
+.pizz-nav__link:focus {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+}
+
+/* Contenedor de redes sociales dentro del menú */
+.pizz-nav__item--social {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
 }
