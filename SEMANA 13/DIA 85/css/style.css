@@ -339,5 +339,58 @@ body {
   padding: 1.2rem 2.5rem;
   border-radius: 50px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para despegarlo del fondo */
-font-size: 2rem;
+  font-size: 2rem;
+}
+
+/* =================
+ Gestión de Sesión/Vistas
+   =================
+*/
+
+.ecom-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--color-raya);
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+/* -- BOTONES DE PESTAÑAS -- */
+.ecom-tabs__btn {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 1rem 1.5rem;
+  color: #636e72;
+  cursor: pointer;
+  transition: all 0.3 ease;
+  font-weight: 600;
+  margin-bottom: -2px;
+}
+
+.ecom-tabs__btn-active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* -- PANELES DE CONTENIDO -- */
+.ecom-panel {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Estado Activo del Panel */
+.ecom-panel--active {
+  display: block;
+}
+
+/* Animación suave al cambiar de pestaña */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

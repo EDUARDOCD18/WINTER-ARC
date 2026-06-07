@@ -10,6 +10,9 @@ const btnOpen = document.getElementById("open-checkout-btn");
 const btnClose = document.getElementById("close-modal-btn");
 const overlay = document.getElementById("modal-overlay");
 const form = document.getElementById("checkout-form");
+const tabList = document.querySelector(".ecom-tabs");
+const tabs = document.querySelectorAll(".ecom-tabs__btn");
+const panels = document.querySelectorAll(".ecom-panel");
 
 /* Evento para desplegar el submenú de las categorías */
 nav.addEventListener("click", (e) => {
@@ -173,7 +176,7 @@ form.addEventListener("submit", (e) => {
     // Si pasa la validación, simulamos el envío exitoso
     const btnSubmit = form.querySelector(".ecom-form__submit");
     btnSubmit.textContent = "Procesando...";
-    btnSubmit.style.background= "#636e72";
+    btnSubmit.style.background = "#636e72";
 
     setTimeout(() => {
       alert(`¡Pago exitoso para ${sanitizedName}!`);
@@ -184,4 +187,37 @@ form.addEventListener("submit", (e) => {
     }, 2000);
   }
 });
+
+if (tabList) {
+  tabList.addEventListener("click", (e) => {
+    // Verificamos que el clic fue en un botón de pestaña
+    const clickedTab = e.target.closest(".ecom-tabs__btn");
+    if (!clickedTab) return; // Si hizo clic en un espacio vacío, ignoramos
+
+    // 1. Desactivar todos los botones y paneles
+    tabs.forEach((tab) => {
+      tab.classList.remove("ecom-tabs__btn--active");
+      tab.setAttribute("aria-selected", "false");
+    });
+
+    panels.forEach((panel) => {
+      panel.classList.remove("ecom-panel--active");
+      panel.setAttribute("hidden", true);
+    });
+
+    // 2. Activar el botón clickeado
+    clickedTab.classList.add("ecom-tabs__btn--active");
+    clickedTab.setAttribute("aria-selected", "true");
+
+    // 3. Activar el panel correspondiente leyendo el aria-controls
+    const targetPanelId = clickedTab.getAtrribute("aria-controls");
+    const targetPanel = document.getElementById(targetPanelId);
+
+    if (targetPanel) {
+      targetPanel.classList.add("ecom-panel--active");
+      targetPanel.removeAttribute("hidden");
+    }
+  });
+}
+
 loadCatalog();

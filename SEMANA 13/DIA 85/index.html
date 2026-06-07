@@ -82,7 +82,7 @@
             </article>
           </section>
 
-          <section class="product-details">
+          <section class="product-details" id="details-view" hidden>
             <h2 class="product-details__main-title">Detalles del XC220-G3</h2>
             <div class="product-details__item">
               <button class="product-details__header" aria-expanded="false">
@@ -96,15 +96,94 @@
               </div>
             </div>
           </section>
+
+          <section class="ecom-user-dashboard">
+            <h2 class="ecom-user-dashboard__title">Mi Cuenta</h2>
+
+            <div
+              class="ecom-tabs"
+              role="tablist"
+              aria-label="Navegación del perfil de usuario"
+            >
+              <button
+                class="ecom-tabs__btn ecom-tabs__btn--active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-pedidos"
+                id="tab-pedidos"
+              >
+                Mis Pedidos
+              </button>
+              <button
+                class="ecom-tabs__btn"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-perfil"
+                id="tab-perfil"
+              >
+                Perfil
+              </button>
+              <button
+                class="ecom-tabs__btn"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-historial"
+                id="tab-historial"
+              >
+                Historial de Transacciones
+              </button>
+            </div>
+
+            <div class="ecom-tabs__content">
+              <div
+                class="ecom-panel ecom-panel--active"
+                role="tabpanel"
+                id="panel-pedidos"
+                aria-labelledby="tab-pedidos"
+                tabindex="0"
+              >
+                <h3>Pedidos Activos</h3>
+                <p>
+                  El router TP-LINK XC220-G3 está en camino. Entrega estimada:
+                  Mañana.
+                </p>
+              </div>
+
+              <div
+                class="ecom-panel"
+                role="tabpanel"
+                id="panel-perfil"
+                aria-labelledby="tab-perfil"
+                tabindex="0"
+                hidden
+              >
+                <h3>Datos Personales</h3>
+                <p>Nombre: Javier</p>
+                <p>Correo: javier.soporte@isp.com</p>
+              </div>
+
+              <div
+                class="ecom-panel"
+                role="tabpanel"
+                id="panel-historial"
+                aria-labelledby="tab-historial"
+                tabindex="0"
+                hidden
+              >
+                <h3>Transacciones Pasadas</h3>
+                <ul>
+                  <li>Pago de mensualidad - $25.00 - Aprobado</li>
+                  <li>Compra Cable UTP 10m - $15.00 - Aprobado</li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </div>
 
     <!-- MODAL -->
-    <button
-      id="open-checkout-btn"
-      class="product-card__btn"
-    >
+    <button id="open-checkout-btn" class="product-card__btn">
       Abrir Checkout
     </button>
 
