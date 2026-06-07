@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* 1. VARIABLES (SISTEMA DE DISEÑO) */
+:root {
+  /* -- Colores -- */
+  --color-primary: #e74c3c; /* Rojo tomate */
+  --color-primary-2: #b33535; /* Rojo tomate */
+
+  --color-secondary: #f1c40f; /* Amarillo queso */
+  --color-dark: #2d3436; /* Texto/Sombra */
+  --color-bg: #fffcf9; /* Crema masa */
+
+  /* -- Fuentes -- */
+  --font-main: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-title: "Dancing Script", serif;
+  --font-sans: "Lato", serif;
+
+  /* -- Sombras -- */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+/* 3. ESTILOS BASE MOBILE-FIRST */
+.pizz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background: var(--color-primary-2);
+  color: white;
+}
+
+.pizz-header__logo {
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-family: var(--font-title);
+}
+
+.pizz-header__menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
