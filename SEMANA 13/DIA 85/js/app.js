@@ -171,9 +171,9 @@ form.addEventListener("submit", (e) => {
 
   if (isValid) {
     // Si pasa la validación, simulamos el envío exitoso
-    const btnSubmit = form.querySelector("ecom-form__submit");
-    btnSubmit.textContent("Procesando...");
-    btnSubmit.style.background("#636e72");
+    const btnSubmit = form.querySelector(".ecom-form__submit");
+    btnSubmit.textContent = "Procesando...";
+    btnSubmit.style.background= "#636e72";
 
     setTimeout(() => {
       alert(`¡Pago exitoso para ${sanitizedName}!`);
