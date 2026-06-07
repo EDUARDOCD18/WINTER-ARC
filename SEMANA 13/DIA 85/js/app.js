@@ -1,132 +1,152 @@
-const nav = document.querySelector(".ecom-nav");
-const details = document.querySelector(".product-details");
-const searchInput = document.getElementById("search-input");
-const stockFilter = document.getElementById("stock-filter");
-const products = document.querySelectorAll(".product-card");
-const catalog = document.getElementById("catalog-view");
-const skeleton = document.getElementById("skeleton-container");
-const modal = document.getElementById("checkout-modal");
-const btnOpen = document.getElementById("open-checkout-btn");
-const btnClose = document.getElementById("close-modal-btn");
-const overlay = document.getElementById("modal-overlay");
-const form = document.getElementById("checkout-form");
-const tabList = document.querySelector(".ecom-tabs");
-const tabs = document.querySelectorAll(".ecom-tabs__btn");
-const panels = document.querySelectorAll(".ecom-panel");
+/**
+ * ISP E-COMMERCE PLATFORM
+ * Core Application Logic
+ */
 
-/* Evento para desplegar el submenú de las categorías */
-nav.addEventListener("click", (e) => {
-  const trigger = e.target.closest(".ecom-nav__item--has-submenu");
-  if (!trigger) return;
-  trigger.classList.toggle("ecom-nav__item--is-open");
-});
+// ==========================================
+// 1. SELECTORES DEL DOM
+// ==========================================
+const DOM = {
+  nav: document.querySelector(".ecom-nav"),
+  details: document.querySelector(".product-details"),
+  searchInput: document.getElementById("search-input"),
+  stockFilter: document.getElementById("stock-filter"),
+  products: document.querySelectorAll(".product-card"),
+  catalog: document.getElementById("catalog-view"),
+  skeleton: document.getElementById("skeleton-container"),
+  modal: document.getElementById("checkout-modal"),
+  btnOpenModal: document.getElementById("open-checkout-btn"),
+  btnCloseModal: document.getElementById("close-modal-btn"),
+  overlay: document.getElementById("modal-overlay"),
+  form: document.getElementById("checkout-form"),
+  tabList: document.querySelector(".ecom-tabs"),
+  tabs: document.querySelectorAll(".ecom-tabs__btn"),
+  panels: document.querySelectorAll(".ecom-panel"),
+};
 
-/* Evento para desplegar los detalles del artículo */
-details.addEventListener("click", (e) => {
-  const header = e.target.closest(".product-details__header");
-  if (!header) return;
+// ==========================================
+// 2. NAVEGACIÓN Y ACORDEONES
+// ==========================================
 
-  const item = header.parentElement;
+// Menú Lateral
+if (DOM.nav) {
+  DOM.nav.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".ecom-nav__item--has-submenu");
+    if (!trigger) return;
 
-  // Cerrar otros ítems (comportamiento exclusivo)
-  details.querySelectorAll(".product-details__item").forEach((i) => {
-    if (i !== item) i.classList.remove("product-details__item--is-open");
+    trigger.classList.toggle("ecom-nav__item--is-open");
+    const link = trigger.querySelector(".ecom-nav__link");
+    const isOpen = trigger.classList.contains("ecom-nav__item--is-open");
+    link.setAttribute("aria-expanded", isOpen);
   });
+}
 
-  item.classList.toggle("product-details__item--is-open");
+// Detalles del Producto
+if (DOM.details) {
+  DOM.details.addEventListener("click", (e) => {
+    const header = e.target.closest(".product-details__header");
+    if (!header) return;
 
-  // Accesibilidad: actualizar aria-expanded
-  const isOpen = item.classList.contains("product-details__item--is-open");
-  header.setAttribute("aria-expanded", isOpen);
-});
+    const item = header.parentElement;
 
-/* Función para los filtros */
+    // Comportamiento exclusivo
+    DOM.details.querySelectorAll(".product-details__item").forEach((i) => {
+      if (i !== item) {
+        i.classList.remove("product-details__item--is-open");
+        i.querySelector(".product-details__header").setAttribute(
+          "aria-expanded",
+          "false",
+        );
+      }
+    });
+
+    item.classList.toggle("product-details__item--is-open");
+    const isOpen = item.classList.contains("product-details__item--is-open");
+    header.setAttribute("aria-expanded", isOpen);
+  });
+}
+
+// ==========================================
+// 3. MOTOR DE BÚSQUEDA Y FILTRADO
+// ==========================================
 function filterProducts() {
-  // CORRECCIÓN: .value en lugar de .ariaValueMax
-  const searchTerm = searchInput.value.toLowerCase();
-  const onlyStock = stockFilter.checked;
+  const searchTerm = DOM.searchInput.value.toLowerCase().trim();
+  const onlyStock = DOM.stockFilter.checked;
 
-  products.forEach((product) => {
+  DOM.products.forEach((product) => {
     const title = product
       .querySelector(".product-card__title")
       .textContent.toLowerCase();
-
     const inStock = product.dataset.inStock === "true";
 
-    // Lógica de filtrado
     const matchesSearch = title.includes(searchTerm);
     const matchesStock = !onlyStock || inStock;
 
-    // CORRECCIÓN: Usar .style.display en lugar de .computedStyleMap
-    if (matchesSearch && matchesStock) {
-      product.style.display = "block";
-    } else {
-      product.style.display = "none";
-    }
+    product.style.display = matchesSearch && matchesStock ? "flex" : "none";
   });
 }
 
-searchInput.addEventListener("input", filterProducts);
-stockFilter.addEventListener("change", filterProducts);
-
-/* Función para simular la carga de la API */
-function loadCatalog() {
-  skeleton.style.display = "block";
-  catalog.style.opacity = "0";
-
-  setTimeout(() => {
-    skeleton.style.display = "none";
-    catalog.style.opacity = "1";
-    catalog.style.transition = "opacity 0.5s ease";
-  }, 2500);
+if (DOM.searchInput && DOM.stockFilter) {
+  DOM.searchInput.addEventListener("input", filterProducts);
+  DOM.stockFilter.addEventListener("change", filterProducts);
 }
 
-/* VENTANA MODAL */
-// Elementos enfocables para el Trap Focus
+// ==========================================
+// 4. SIMULACIÓN DE CARGA (API)
+// ==========================================
+function loadCatalog() {
+  if (!DOM.skeleton || !DOM.catalog) return;
+
+  DOM.skeleton.style.display = "block";
+  DOM.catalog.style.opacity = "0";
+
+  setTimeout(() => {
+    DOM.skeleton.style.display = "none";
+    DOM.catalog.style.opacity = "1";
+    DOM.catalog.style.transition = "opacity 0.5s ease";
+  }, 2000);
+}
+
+// ==========================================
+// 5. SISTEMA DE CHECKOUT MODAL (CON TRAP FOCUS)
+// ==========================================
 const focusableElementsString =
   'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 let focusableElements = [];
-let firstTabStop;
-let lastTabStop;
+let firstTabStop, lastTabStop;
 
-// -- 1. CONTROL DEL MODAL --
 function openModal() {
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
+  DOM.modal.classList.add("is-open");
+  DOM.modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden"; // Evita el scroll del fondo
 
-  // Configurar Trap Focus
   focusableElements = Array.from(
-    modal.querySelectorAll(focusableElementsString),
+    DOM.modal.querySelectorAll(focusableElementsString),
   );
-  firstTabStop = focusableElements[0];
-  lastTabStop = focusableElements[focusableElements.length - 1];
+  if (focusableElements.length > 0) {
+    firstTabStop = focusableElements[0];
+    lastTabStop = focusableElements[focusableElements.length - 1];
+    document.getElementById("user-name").focus();
+  }
 
-  // Enfocar el primer input al abrir
-  document.getElementById("user-name").focus();
-
-  // Escuchar teclado
   document.addEventListener("keydown", trapTabKey);
 }
 
 function closeModal() {
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
+  DOM.modal.classList.remove("is-open");
+  DOM.modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "auto";
+
   document.removeEventListener("keydown", trapTabKey);
-  btnOpen.focus();
+  DOM.btnOpenModal.focus();
 }
 
-btnOpen.addEventListener("click", openModal);
-btnClose.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
-
-// -- 2. LÓGICA DE TRAP FOCUS --
 function trapTabKey(e) {
-  // Cerrar con ESC
   if (e.key === "Escape") closeModal();
 
-  // Interceptar Tab
-  if (e.key === "tab") {
-    if (e.shifKey) {
+  // BUG CORREGIDO: "Tab" y "shiftKey"
+  if (e.key === "Tab") {
+    if (e.shiftKey) {
       if (document.activeElement === firstTabStop) {
         e.preventDefault();
         lastTabStop.focus();
@@ -140,77 +160,82 @@ function trapTabKey(e) {
   }
 }
 
-// -- 3. VALIDACIÓN DE SEGURIDAD BÁSICA --
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+if (DOM.btnOpenModal) DOM.btnOpenModal.addEventListener("click", openModal);
+if (DOM.btnCloseModal) DOM.btnCloseModal.addEventListener("click", closeModal);
+if (DOM.overlay) DOM.overlay.addEventListener("click", closeModal);
 
-  const nameInput = document.getElementById("user-name");
-  const cardInput = document.getElementById("credit-card");
-  const nameError = document.getElementById("name-error");
-  const cardError = document.getElementById("card-error");
+// Validación de Seguridad del Formulario
+if (DOM.form) {
+  DOM.form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  // Resetear errores
-  nameError.textContent = "";
-  cardError.textContent = "";
+    const nameInput = document.getElementById("user-name");
+    const cardInput = document.getElementById("credit-card");
+    const nameError = document.getElementById("name-error");
+    const cardError = document.getElementById("card-error");
 
-  let isValid = true;
+    nameError.textContent = "";
+    cardError.textContent = "";
+    let isValid = true;
 
-  // Sanitización y Validación Básica (XSS prevention conceptual)
-  // Limpiamos etiquetas HTML usando una expresión regular
-  const sanitizedName = nameInput.value.replace(/<[^>]*>?/gm, "").trim();
+    const sanitizedName = nameInput.value.replace(/<[^>]*>?/gm, "").trim();
 
-  if (sanitizedName.length < 3) {
-    nameError.textContent =
-      "El nombre debe tener al menos 3 caracteres válidos.";
-    isValid = false;
-  }
+    if (sanitizedName.length < 3) {
+      nameError.textContent =
+        "El nombre debe tener al menos 3 caracteres válidos.";
+      isValid = false;
+    }
 
-  // Validación de Tarjeta (Solo 16 números)
-  const cardRegex = /^\d{16}$/;
-  if (!cardRegex.test(cardInput.value)) {
-    cardError.textContent = "La tarjeta debe contener exactamente 16 números.";
-    isValid = false;
-  }
+    const cardRegex = /^\d{16}$/;
+    if (!cardRegex.test(cardInput.value)) {
+      cardError.textContent =
+        "La tarjeta debe contener exactamente 16 números.";
+      isValid = false;
+    }
 
-  if (isValid) {
-    // Si pasa la validación, simulamos el envío exitoso
-    const btnSubmit = form.querySelector(".ecom-form__submit");
-    btnSubmit.textContent = "Procesando...";
-    btnSubmit.style.background = "#636e72";
+    if (isValid) {
+      const btnSubmit = DOM.form.querySelector(".ecom-form__submit");
+      const originalText = btnSubmit.textContent;
 
-    setTimeout(() => {
-      alert(`¡Pago exitoso para ${sanitizedName}!`);
-      closeModal();
-      form.reset();
-      btnSubmit.textContent = "Procesar Pago Seguro";
-      btnSubmit.style.background = "#00b894";
-    }, 2000);
-  }
-});
+      btnSubmit.textContent = "Procesando de forma segura...";
+      btnSubmit.style.background = "#636e72";
+      btnSubmit.disabled = true;
 
-if (tabList) {
-  tabList.addEventListener("click", (e) => {
-    // Verificamos que el clic fue en un botón de pestaña
+      setTimeout(() => {
+        alert(`¡Transacción exitosa para ${sanitizedName}!`);
+        closeModal();
+        DOM.form.reset();
+        btnSubmit.textContent = originalText;
+        btnSubmit.style.background = ""; // Revierte al CSS original
+        btnSubmit.disabled = false;
+      }, 2000);
+    }
+  });
+}
+
+// ==========================================
+// 6. GESTIÓN DE VISTAS (TABS DASHBOARD)
+// ==========================================
+if (DOM.tabList) {
+  DOM.tabList.addEventListener("click", (e) => {
     const clickedTab = e.target.closest(".ecom-tabs__btn");
-    if (!clickedTab) return; // Si hizo clic en un espacio vacío, ignoramos
+    if (!clickedTab) return;
 
-    // 1. Desactivar todos los botones y paneles
-    tabs.forEach((tab) => {
+    DOM.tabs.forEach((tab) => {
       tab.classList.remove("ecom-tabs__btn--active");
       tab.setAttribute("aria-selected", "false");
     });
 
-    panels.forEach((panel) => {
+    DOM.panels.forEach((panel) => {
       panel.classList.remove("ecom-panel--active");
-      panel.setAttribute("hidden", true);
+      panel.setAttribute("hidden", "true");
     });
 
-    // 2. Activar el botón clickeado
     clickedTab.classList.add("ecom-tabs__btn--active");
     clickedTab.setAttribute("aria-selected", "true");
 
-    // 3. Activar el panel correspondiente leyendo el aria-controls
-    const targetPanelId = clickedTab.getAtrribute("aria-controls");
+    // BUG CORREGIDO: getAttribute
+    const targetPanelId = clickedTab.getAttribute("aria-controls");
     const targetPanel = document.getElementById(targetPanelId);
 
     if (targetPanel) {
@@ -220,4 +245,5 @@ if (tabList) {
   });
 }
 
-loadCatalog();
+// Inicialización
+document.addEventListener("DOMContentLoaded", loadCatalog);

@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ISP Store: Plataforma oficial de ventas de equipos de telecomunicaciones, routers y servicios de red."
+    />
+    <meta
+      name="keywords"
+      content="ISP, telecomunicaciones, router, ONT, fibra óptica, redes"
+    />
+    <meta name="author" content="Javier - Frontend Developer" />
+    <meta name="robots" content="index, follow" />
+    <title>ISP Store | Equipos y Soluciones de Red</title>
     <link rel="stylesheet" href="css/style.css" />
-    <title>ISP E-Commerce | Plataforma de Ventas</title>
   </head>
   <body>
-    <!-- CONTENEDOR -->
     <div class="ecom-app">
       <header class="ecom-header">
         <div class="ecom-header__logo">ISP STORE</div>
@@ -19,10 +28,14 @@
           <nav class="ecom-nav">
             <ul class="ecom-nav__list">
               <li class="ecom-nav__item ecom-nav__item--has-submenu">
-                <button class="ecom-nav__link">
-                  Electrónica <span>▾</span>
+                <button
+                  class="ecom-nav__link"
+                  aria-expanded="false"
+                  aria-controls="submenu-electronica"
+                >
+                  Electrónica <span aria-hidden="true">▾</span>
                 </button>
-                <ul class="ecom-submenu">
+                <ul class="ecom-submenu" id="submenu-electronica">
                   <li class="ecom-submenu__item">
                     <a href="#">Smartphones</a>
                   </li>
@@ -37,6 +50,9 @@
           <div class="ecom-filters">
             <h3 class="ecom-sidebar__title ecom-filter__title">Filtros</h3>
             <div class="ecom-filter-group">
+              <label for="search-input" class="visually-hidden"
+                >Buscar producto</label
+              >
               <input
                 type="text"
                 id="search-input"
@@ -54,7 +70,11 @@
 
         <div class="ecom-view">
           <section class="ecom-catalog" id="catalog-view">
-            <div class="skeleton-card" id="skeleton-container">
+            <div
+              class="skeleton-card"
+              id="skeleton-container"
+              aria-hidden="true"
+            >
               <div class="skeleton-card__img"></div>
               <div class="skeleton-card__body">
                 <div class="skeleton-card__line"></div>
@@ -68,8 +88,9 @@
               <div class="product-card__img-container">
                 <img
                   src="./img/XC220.jpg"
-                  alt="Producto"
+                  alt="Router TP-LINK XC220-G3 ONT"
                   class="product-card__img"
+                  loading="lazy"
                 />
               </div>
               <div class="product-card__body">
@@ -86,7 +107,7 @@
             <h2 class="product-details__main-title">Detalles del XC220-G3</h2>
             <div class="product-details__item">
               <button class="product-details__header" aria-expanded="false">
-                Descripción <span>▾</span>
+                Descripción <span aria-hidden="true">▾</span>
               </button>
               <div class="product-details__content">
                 <p>
@@ -97,9 +118,8 @@
             </div>
           </section>
 
-          <section class="ecom-user-dashboard">
+          <section class="ecom-user-dashboard" id="profile-view" hidden>
             <h2 class="ecom-user-dashboard__title">Mi Cuenta</h2>
-
             <div
               class="ecom-tabs"
               role="tablist"
@@ -130,7 +150,7 @@
                 aria-controls="panel-historial"
                 id="tab-historial"
               >
-                Historial de Transacciones
+                Historial
               </button>
             </div>
 
@@ -148,7 +168,6 @@
                   Mañana.
                 </p>
               </div>
-
               <div
                 class="ecom-panel"
                 role="tabpanel"
@@ -161,7 +180,6 @@
                 <p>Nombre: Javier</p>
                 <p>Correo: javier.soporte@isp.com</p>
               </div>
-
               <div
                 class="ecom-panel"
                 role="tabpanel"
@@ -173,7 +191,6 @@
                 <h3>Transacciones Pasadas</h3>
                 <ul>
                   <li>Pago de mensualidad - $25.00 - Aprobado</li>
-                  <li>Compra Cable UTP 10m - $15.00 - Aprobado</li>
                 </ul>
               </div>
             </div>
@@ -182,9 +199,12 @@
       </main>
     </div>
 
-    <!-- MODAL -->
-    <button id="open-checkout-btn" class="product-card__btn">
-      Abrir Checkout
+    <button
+      id="open-checkout-btn"
+      class="product-card__btn ecom-btn--floating"
+      aria-haspopup="dialog"
+    >
+      Pagar Ahora
     </button>
 
     <div
@@ -192,10 +212,10 @@
       id="checkout-modal"
       aria-hidden="true"
       role="dialog"
+      aria-labelledby="modal-title"
       aria-modal="true"
     >
       <div class="ecom-modal__overlay" id="modal-overlay" tabindex="-1"></div>
-
       <div class="ecom-modal__content">
         <button
           class="ecom-modal__close"
@@ -204,9 +224,7 @@
         >
           ✖
         </button>
-
-        <h2 class="ecom-modal__title">Confirmar Compra</h2>
-
+        <h2 class="ecom-modal__title" id="modal-title">Confirmar Compra</h2>
         <form class="ecom-form" id="checkout-form" novalidate>
           <div class="ecom-form__group">
             <label for="user-name" class="ecom-form__label"
@@ -219,13 +237,17 @@
               required
               pattern="[a-zA-Z\s]+"
               placeholder="Ej. Juan Pérez"
+              autocomplete="name"
             />
-            <span class="ecom-form__error" id="name-error"></span>
+            <span
+              class="ecom-form__error"
+              id="name-error"
+              aria-live="polite"
+            ></span>
           </div>
-
           <div class="ecom-form__group">
             <label for="credit-card" class="ecom-form__label"
-              >Número de Tarjeta (Ficticio)</label
+              >Número de Tarjeta</label
             >
             <input
               type="text"
@@ -235,10 +257,14 @@
               maxlength="16"
               pattern="\d{16}"
               placeholder="1234567812345678"
+              autocomplete="cc-number"
             />
-            <span class="ecom-form__error" id="card-error"></span>
+            <span
+              class="ecom-form__error"
+              id="card-error"
+              aria-live="polite"
+            ></span>
           </div>
-
           <button type="submit" class="ecom-form__submit">
             Procesar Pago Seguro
           </button>

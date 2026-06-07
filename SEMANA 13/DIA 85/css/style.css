@@ -1,17 +1,21 @@
-/* Variables de Diseño */
+/* Variables de Diseño Mejoradas */
 :root {
-  --color-primary: #6c5ce7;
+  --color-primary: #0984e3; /* Azul más tecnológico y confiable para un ISP */
+  --color-primary-hover: #074b83;
   --color-dark: #2d3436;
-  --color-bg: #f5f6fa;
-  --color-bg-2: #2d3436;
-  --sidebar-width: 25rem;
+  --color-bg: #f4f6f8;
+  --color-bg-2: #1e272e;
+  --sidebar-width: 28rem;
   --blanco: #ffffff;
   --color-raya: #dfe6e9;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -21,16 +25,28 @@ html {
   padding: 0;
 }
 
+/* Tipografía de Sistema Profesional */
 body {
   font-size: 1.6rem;
   background: var(--color-bg);
-  font-family: "Segoe UI", sans-serif;
+  color: var(--color-dark);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  line-height: 1.5;
 }
 
 /* Layout Grid */
 .ecom-app {
   display: grid;
-  grid-template-rows: 8rem 1fr;
+  grid-template-rows: 7rem 1fr;
   min-height: 100vh;
 }
 .ecom-header {
@@ -38,82 +54,190 @@ body {
   color: var(--blanco);
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 3rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
 }
 .ecom-main {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
 }
 
+/* Accesibilidad */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Menú y Sidebar */
 .ecom-sidebar {
   background: var(--blanco);
-  padding: 2rem;
+  padding: 3rem 2rem;
   border-right: 1px solid var(--color-raya);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
 }
-
-/* CORRECCIÓN: max-height y unidad de tiempo correcta */
+.ecom-nav__link {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--color-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: inherit;
+}
 .ecom-submenu {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
   padding-left: 1rem;
+  list-style: none;
 }
-
+.ecom-submenu__item a {
+  color: #636e72;
+  text-decoration: none;
+  display: block;
+  padding: 0.8rem 0;
+  transition: color 0.2s;
+}
+.ecom-submenu__item a:hover {
+  color: var(--color-primary);
+}
 .ecom-nav__item--is-open .ecom-submenu {
-  max-height: 200px;
+  max-height: 20rem;
+  margin-top: 1rem;
 }
 
 /* Filtros */
+.ecom-sidebar__divider {
+  border: none;
+  height: 1px;
+  background: var(--color-raya);
+  margin: 2.5rem 0;
+}
 .ecom-filters {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-}
-.ecom-filter-group {
-  margin-bottom: 1rem;
+  gap: 1.5rem;
 }
 .ecom-filter__input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 1rem;
+  border-radius: 6px;
+  margin-top: 0.8rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+.ecom-filter__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
 }
 
 /* Catálogo y Productos */
+.ecom-view {
+  padding: 3rem;
+}
 .ecom-catalog {
-  padding: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
-/* Skeleton (Sin cambios) */
-.skeleton-card {
+/* Producto */
+.product-card {
   background: var(--blanco);
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid var(--color-raya);
   display: flex;
   flex-direction: column;
 }
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.product-card__img-container {
+  padding: 2rem;
+  background: #fff;
+  border-bottom: 1px solid var(--color-raya);
+}
+.product-card__img {
+  width: 100%;
+  height: 18rem;
+  object-fit: contain;
+}
+.product-card__body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.product-card__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.product-card__price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+.product-card__btn {
+  margin-top: auto;
+  width: 100%;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.product-card__btn:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Skeleton - Optimizado */
+.skeleton-card {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-raya);
+}
 .skeleton-card__img {
-  height: 20rem;
+  height: 18rem;
   background: #eee;
-  margin: 0 auto 1rem auto;
-  width: 80%;
+  margin-bottom: 2rem;
+  border-radius: 8px;
 }
 .skeleton-card__line {
   height: 1.5rem;
   background: #eee;
-  margin-bottom: 1rem;
-  width: 100%;
-  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
 }
 .skeleton-card__line--short {
   width: 60%;
+}
+.skeleton-card__img,
+.skeleton-card__line {
+  position: relative;
+  overflow: hidden;
 }
 .skeleton-card__img::after,
 .skeleton-card__line::after {
@@ -140,92 +264,47 @@ body {
   }
 }
 
-/* Producto */
-.product-card {
-  background: var(--blanco);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s;
-  border: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-}
-.product-card:hover {
-  transform: translateY(-5px);
-}
-.product-card__img {
-  width: 80%;
-  height: 20rem;
-  object-fit: cover;
-  margin: 1rem auto;
-  display: flex;
-}
-.product-card__body {
-  padding: 1rem;
-}
-.product-card__btn {
-  width: 100%;
-  background: var(--color-primary);
-  color: white;
-  border: none;
-  padding: 0.8rem;
-  cursor: pointer;
-  margin-top: 1rem;
-  border-radius: 5px;
-}
-
 /* Detalles del Producto */
 .product-details {
-  max-width: 60rem;
-  margin-top: 2rem;
+  max-width: 70rem;
+  background: var(--blanco);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+.product-details__main-title {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
 }
 .product-details__header {
   width: 100%;
-  padding: 1rem;
-  background: var(--blanco);
-  border: 1px solid #eee;
+  padding: 1.5rem;
+  background: var(--color-bg);
+  border: none;
+  border-radius: 6px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1.6rem;
 }
-
-/* CORRECCIÓN: Tiempo de transición bajado de 4s a 0.4s */
 .product-details__content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
-  background: #fafafa;
-  font-size: 1.5rem;
+  padding: 0 1.5rem;
+  color: #636e72;
 }
-
 .product-details__item--is-open .product-details__content {
   max-height: 30rem;
+  padding: 1.5rem;
 }
 
-/* Tablas */
-.product-details__table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-}
-.product-details__table th,
-.product-details__table td {
-  border: 1px solid #ddd;
-  padding: 0.5rem;
-}
-
-/* =================
-    VENTANA MODAL
-   =================
-*/
-
-/* -- MODAL BASE -- */
+/* Ventana Modal */
 .ecom-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,160 +313,172 @@ body {
   visibility: hidden;
   transition:
     opacity 0.3s ease,
-    visibility 0.3s;
+    visibility 0.3s ease;
 }
-
-/* -- Estado activo del modal -- */
 .ecom-modal.is-open {
   opacity: 1;
   visibility: visible;
 }
-
 .ecom-modal__overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
 }
-
 .ecom-modal__content {
   position: relative;
   background: var(--blanco);
-  padding: 2.5rem;
+  padding: 3rem;
   width: 90%;
-  max-width: 50rem;
-  border-radius: 8px;
-  transform: translateY(-2rem);
-  transition: transform 0.3 ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 45rem;
+  border-radius: 12px;
+  transform: translateY(-3rem);
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-md);
 }
-
 .ecom-modal.is-open .ecom-modal__content {
   transform: translateY(0);
 }
-
 .ecom-modal__close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.5rem;
+  right: 1.5rem;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
+  color: #b2bec3;
+  transition: color 0.2s;
+}
+.ecom-modal__close:hover {
   color: var(--color-dark);
 }
+.ecom-modal__title {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  text-align: center;
+}
 
-/* -- FORMULARIO BEM -- */
+/* Formulario */
 .ecom-form__group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
 }
-
 .ecom-form__label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: var(--color-dark);
 }
-
 .ecom-form__input {
-  padding: 1rem;
+  padding: 1.2rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1.6rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
 }
-
 .ecom-form__input:focus {
-  outline: 2px solid var(--color-primary);
-  border-color: transparent;
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.1);
 }
-
 .ecom-form__error {
   color: #d63031;
-  font-size: 1.2rem;
-  margin-top: 0.4rem;
-  min-height: 1.5rem;
-  display: block;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  min-height: 1.8rem;
+  font-weight: 500;
 }
-
 .ecom-form__submit {
   width: 100%;
   background: #00b894;
   color: white;
   border: none;
-  padding: 1.2rem;
+  padding: 1.4rem;
   font-size: 1.6rem;
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 1rem;
+  transition: background 0.2s;
+  font-family: inherit;
 }
-
 .ecom-form__submit:hover {
   background: #00a884;
 }
 
-#open-checkout-btn {
+/* Botón Flotante (FAB) */
+.ecom-btn--floating {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 10;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 100;
   width: auto;
-  padding: 1.2rem 2.5rem;
+  padding: 1.5rem 3rem;
   border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para despegarlo del fondo */
-  font-size: 2rem;
+  box-shadow: var(--shadow-md);
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
 }
 
-/* =================
- Gestión de Sesión/Vistas
-   =================
-*/
-
+/* Tabs / Dashboard de Usuario */
+.ecom-user-dashboard {
+  max-width: 80rem;
+  background: var(--blanco);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.ecom-user-dashboard__title {
+  margin-bottom: 2.5rem;
+  font-size: 2.4rem;
+}
 .ecom-tabs {
   display: flex;
   border-bottom: 2px solid var(--color-raya);
-  margin-bottom: 2rem;
-  gap: 1rem;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
 }
-
-/* -- BOTONES DE PESTAÑAS -- */
 .ecom-tabs__btn {
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
-  padding: 1rem 1.5rem;
+  padding: 1rem 0.5rem;
   color: #636e72;
   cursor: pointer;
-  transition: all 0.3 ease;
+  transition: all 0.3s ease;
   font-weight: 600;
+  font-size: 1.6rem;
+  font-family: inherit;
   margin-bottom: -2px;
 }
+.ecom-tabs__btn:hover {
+  color: var(--color-primary);
+}
 
-.ecom-tabs__btn-active {
+/* BUG CORREGIDO: Clase BEM válida */
+.ecom-tabs__btn--active {
   color: var(--color-primary);
   border-bottom-color: var(--color-primary);
 }
 
-/* -- PANELES DE CONTENIDO -- */
 .ecom-panel {
   display: none;
   animation: fadeIn 0.4s ease;
+  color: #2d3436;
 }
-
-/* Estado Activo del Panel */
 .ecom-panel--active {
   display: block;
 }
+.ecom-panel h3 {
+  margin-bottom: 1.5rem;
+  color: var(--color-dark);
+}
 
-/* Animación suave al cambiar de pestaña */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
