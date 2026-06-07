@@ -7,38 +7,25 @@
     <title>ISP E-Commerce | Plataforma de Ventas</title>
   </head>
   <body>
-    <!-- BLOOQUE RAÍZ -->
+    <!-- CONTENEDOR -->
     <div class="ecom-app">
-      <!-- HEADER -->
       <header class="ecom-header">
-        <!-- header logo -->
         <div class="ecom-header__logo">ISP STORE</div>
       </header>
 
-      <!-- MAIN -->
       <main class="ecom-main">
-        <!-- barra lateral -->
         <aside class="ecom-sidebar">
           <h3 class="ecom-sidebar__title">Categorías</h3>
-
-          <!-- menú de navegación -->
           <nav class="ecom-nav">
-            <!-- lista del menú -->
             <ul class="ecom-nav__list">
-              <!-- categorías -->
               <li class="ecom-nav__item ecom-nav__item--has-submenu">
                 <button class="ecom-nav__link">
                   Electrónica <span>▾</span>
                 </button>
-
-                <!-- subcategorías -->
                 <ul class="ecom-submenu">
-                  <!-- item -->
                   <li class="ecom-submenu__item">
                     <a href="#">Smartphones</a>
                   </li>
-
-                  <!-- item -->
                   <li class="ecom-submenu__item"><a href="#">Laptops</a></li>
                 </ul>
               </li>
@@ -47,11 +34,8 @@
 
           <hr class="ecom-sidebar__divider" />
 
-          <!-- Filtros de búsqueda -->
           <div class="ecom-filters">
             <h3 class="ecom-sidebar__title ecom-filter__title">Filtros</h3>
-
-            <!-- Grupo de filtros -->
             <div class="ecom-filter-group">
               <input
                 type="text"
@@ -60,7 +44,6 @@
                 placeholder="Buscar producto..."
               />
             </div>
-
             <div class="ecom-filter-group">
               <label class="ecom-filter__label">
                 <input type="checkbox" id="stock-filter" /> Solo en stock
@@ -69,89 +52,119 @@
           </div>
         </aside>
 
-        <!-- Sección para el catálogo -->
-        <section class="ecom-catalog" id="catalog-view">
-          <!-- Carga skeleton -->
-          <div class="skeleton-card" id="skeleton-container">
-            <div class="skeleton-card__img"></div>
-            <div class="skeleton-card__body">
-              <div class="skeleton-card__line"></div>
-              <div class="skeleton-card__line skeleton-card__line--short"></div>
+        <div class="ecom-view">
+          <section class="ecom-catalog" id="catalog-view">
+            <div class="skeleton-card" id="skeleton-container">
+              <div class="skeleton-card__img"></div>
+              <div class="skeleton-card__body">
+                <div class="skeleton-card__line"></div>
+                <div
+                  class="skeleton-card__line skeleton-card__line--short"
+                ></div>
+              </div>
             </div>
+
+            <article class="product-card" data-price="99" data-in-stock="true">
+              <div class="product-card__img-container">
+                <img
+                  src="./img/XC220.jpg"
+                  alt="Producto"
+                  class="product-card__img"
+                />
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">
+                  TP-LINK XC220-G3 (ONT/ROUTER)
+                </h3>
+                <span class="product-card__price">$99.00</span>
+                <button class="product-card__btn">Agregar al carrito</button>
+              </div>
+            </article>
+          </section>
+
+          <section class="product-details">
+            <h2 class="product-details__main-title">Detalles del XC220-G3</h2>
+            <div class="product-details__item">
+              <button class="product-details__header" aria-expanded="false">
+                Descripción <span>▾</span>
+              </button>
+              <div class="product-details__content">
+                <p>
+                  ONU/Router de alta gama diseñado para tráfico masivo en redes
+                  locales...
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- MODAL -->
+    <button
+      id="open-checkout-btn"
+      class="product-card__btn"
+    >
+      Abrir Checkout
+    </button>
+
+    <div
+      class="ecom-modal"
+      id="checkout-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="ecom-modal__overlay" id="modal-overlay" tabindex="-1"></div>
+
+      <div class="ecom-modal__content">
+        <button
+          class="ecom-modal__close"
+          id="close-modal-btn"
+          aria-label="Cerrar modal"
+        >
+          ✖
+        </button>
+
+        <h2 class="ecom-modal__title">Confirmar Compra</h2>
+
+        <form class="ecom-form" id="checkout-form" novalidate>
+          <div class="ecom-form__group">
+            <label for="user-name" class="ecom-form__label"
+              >Nombre completo</label
+            >
+            <input
+              type="text"
+              id="user-name"
+              class="ecom-form__input"
+              required
+              pattern="[a-zA-Z\s]+"
+              placeholder="Ej. Juan Pérez"
+            />
+            <span class="ecom-form__error" id="name-error"></span>
           </div>
 
-          <!-- Tarjeta del producto -->
-          <article class="product-card">
-            <!-- imagen del producto -->
-            <div class="product-card__img-container">
-              <img
-                src="./img/XC220.jpg"
-                alt="Producto"
-                class="product-card__img"
-              />
-            </div>
-            <!-- detalles del producto -->
-            <div class="product-card__body">
-              <h3
-                class="product-card__title"
-                data-price="99"
-                data-in-stock="true"
-              >
-                TP-LINK XC220-G3 (ONT/ROUTER)
-              </h3>
-              <span class="product-card__price">$99.00</span>
-              <button class="product-card__btn">Agregar al carrito</button>
-            </div>
+          <div class="ecom-form__group">
+            <label for="credit-card" class="ecom-form__label"
+              >Número de Tarjeta (Ficticio)</label
+            >
+            <input
+              type="text"
+              id="credit-card"
+              class="ecom-form__input"
+              required
+              maxlength="16"
+              pattern="\d{16}"
+              placeholder="1234567812345678"
+            />
+            <span class="ecom-form__error" id="card-error"></span>
+          </div>
 
-            <!-- Detalles del producto -->
-            <section class="product-details">
-              <h2 class="product-details__main-title">Detalles del XC220-G3</h2>
-
-              <div class="product-details__item">
-                <button class="product-details__header">
-                  Descripción <span>▾</span>
-                </button>
-                <div class="product-details__content">
-                  <p>
-                    ONU/Router de alta gama diseñado para tráfico masivo en
-                    redes locales...
-                  </p>
-                </div>
-              </div>
-
-              <div class="product-details__item">
-                <button class="product-details__header">
-                  Especificaciones <span>▾</span>
-                </button>
-                <div class="product-details__content">
-                  <ul>
-                    <li>Velocidad: 1000 Mbps</li>
-                    <li>Puertos: 2x LAN, 1x SP/APC</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="product-details__item">
-                <button class="product-details__header">
-                  Dimensiones <span>▾</span>
-                </button>
-                <div class="product-details__content">
-                  <table class="product-details__table">
-                    <tr>
-                      <th>Alto</th>
-                      <td>15cm</td>
-                    </tr>
-                    <tr>
-                      <th>Ancho</th>
-                      <td>20cm</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </section>
-          </article>
-        </section>
-      </main>
+          <button type="submit" class="ecom-form__submit">
+            Procesar Pago Seguro
+          </button>
+        </form>
+      </div>
     </div>
     <script src="./js/app.js" defer></script>
   </body>

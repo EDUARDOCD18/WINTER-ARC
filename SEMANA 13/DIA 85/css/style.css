@@ -13,7 +13,6 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-
 *,
 *:before,
 *:after {
@@ -28,15 +27,12 @@ body {
   font-family: "Segoe UI", sans-serif;
 }
 
-/* Layout Grid - Estructura robusta */
+/* Layout Grid */
 .ecom-app {
   display: grid;
   grid-template-rows: 8rem 1fr;
-  grid-template-columns: 1fr;
   min-height: 100vh;
 }
-
-/* -- HEADER */
 .ecom-header {
   background: var(--color-bg-2);
   color: var(--blanco);
@@ -44,60 +40,40 @@ body {
   align-items: center;
   padding: 0 2rem;
 }
-
-/* -- MAIN -- */
 .ecom-main {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
 }
 
-/* 
-==================
-MENÚ Y BARRA LATERAL 
-==================
-*/
-
-/* -- BARRA LATERAL -- */
+/* Menú y Sidebar */
 .ecom-sidebar {
   background: var(--blanco);
   padding: 2rem;
   border-right: 1px solid var(--color-raya);
 }
 
-/* -- SUBMENÚ -- */
+/* CORRECCIÓN: max-height y unidad de tiempo correcta */
 .ecom-submenu {
-  max-width: 0;
+  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3 ease;
+  transition: max-height 0.3s ease;
   padding-left: 1rem;
 }
 
-/* -- ITEM DE NAVEGACIÓN ABIERTO */
 .ecom-nav__item--is-open .ecom-submenu {
   max-height: 200px;
-  overflow: visible; /* Quitar posiblemente */
 }
 
-/* 
-==================
-FILTROS DE BÚSQUEDA 
-==================
-*/
-
-/* -- CONTENEDOR PRINCIPAL DE FILTROS */
+/* Filtros */
 .ecom-filters {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
-
-/* -- GRUPO DE FILTROS */
 .ecom-filter-group {
   margin-bottom: 1rem;
 }
-
-/* -- ENTRADA DE DATOS -- */
 .ecom-filter__input {
   width: 100%;
   padding: 0.5rem;
@@ -106,13 +82,7 @@ FILTROS DE BÚSQUEDA
   margin-top: 1rem;
 }
 
-/* 
-==================
-CATÁLOGO Y PRODUCTOS 
-==================
-*/
-
-/* -- CONTENEDOR DEL CATÁLOGO -- */
+/* Catálogo y Productos */
 .ecom-catalog {
   padding: 2rem;
   display: grid;
@@ -120,7 +90,7 @@ CATÁLOGO Y PRODUCTOS
   gap: 1.5rem;
 }
 
-/* -- CARGA SKELETON -- */
+/* Skeleton (Sin cambios) */
 .skeleton-card {
   background: var(--blanco);
   padding: 1rem;
@@ -129,17 +99,12 @@ CATÁLOGO Y PRODUCTOS
   display: flex;
   flex-direction: column;
 }
-
 .skeleton-card__img {
   height: 20rem;
   background: #eee;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
   width: 80%;
-  object-fit: cover;
-  margin: 0 auto;
-  display: flex;
 }
-
 .skeleton-card__line {
   height: 1.5rem;
   background: #eee;
@@ -147,22 +112,9 @@ CATÁLOGO Y PRODUCTOS
   width: 100%;
   margin-top: 2.5rem;
 }
-
-.skeleton-card__line:last-of-type {
-  margin-top: 1rem;
-}
-
 .skeleton-card__line--short {
   width: 60%;
 }
-
-/* Animación Shimmer */
-.skeleton-card__img,
-.skeleton-card__line {
-  position: relative;
-  overflow: hidden;
-}
-
 .skeleton-card__img::after,
 .skeleton-card__line::after {
   content: "";
@@ -179,7 +131,6 @@ CATÁLOGO Y PRODUCTOS
   );
   animation: shimmer 1.5s infinite;
 }
-
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -189,7 +140,7 @@ CATÁLOGO Y PRODUCTOS
   }
 }
 
-/* -- PRODUCTO -- */
+/* Producto */
 .product-card {
   background: var(--blanco);
   border-radius: 8px;
@@ -199,12 +150,9 @@ CATÁLOGO Y PRODUCTOS
   display: flex;
   flex-direction: column;
 }
-
 .product-card:hover {
   transform: translateY(-5px);
 }
-
-/* -- IMAGEN DEL PRODUCTO -- */
 .product-card__img {
   width: 80%;
   height: 20rem;
@@ -212,12 +160,9 @@ CATÁLOGO Y PRODUCTOS
   margin: 1rem auto;
   display: flex;
 }
-
 .product-card__body {
   padding: 1rem;
 }
-
-/* -- BOTÓN DEL PRODUCTO -- */
 .product-card__btn {
   width: 100%;
   background: var(--color-primary);
@@ -229,13 +174,11 @@ CATÁLOGO Y PRODUCTOS
   border-radius: 5px;
 }
 
-/* -- DETALLES DEL PRODUCTO -- */
+/* Detalles del Producto */
 .product-details {
   max-width: 60rem;
   margin-top: 2rem;
 }
-
-/* -- ENCABEZADO DE LOS DETALLES --*/
 .product-details__header {
   width: 100%;
   padding: 1rem;
@@ -246,28 +189,155 @@ CATÁLOGO Y PRODUCTOS
   cursor: pointer;
 }
 
-/*-- CONTENIDO DEL PRODUCTO -- */
+/* CORRECCIÓN: Tiempo de transición bajado de 4s a 0.4s */
 .product-details__content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 4s ease;
+  transition: max-height 0.4s ease;
   background: #fafafa;
   font-size: 1.5rem;
 }
 
 .product-details__item--is-open .product-details__content {
-  max-height: 30rem; /* Ajustable según el contenido */
+  max-height: 30rem;
 }
 
-/* -- TABLE DE DETALLES -- */
+/* Tablas */
 .product-details__table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
 }
-
 .product-details__table th,
 .product-details__table td {
   border: 1px solid #ddd;
   padding: 0.5rem;
+}
+
+/* =================
+    VENTANA MODAL
+   =================
+*/
+
+/* -- MODAL BASE -- */
+.ecom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s;
+}
+
+/* -- Estado activo del modal -- */
+.ecom-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ecom-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.ecom-modal__content {
+  position: relative;
+  background: var(--blanco);
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 50rem;
+  border-radius: 8px;
+  transform: translateY(-2rem);
+  transition: transform 0.3 ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ecom-modal.is-open .ecom-modal__content {
+  transform: translateY(0);
+}
+
+.ecom-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-dark);
+}
+
+/* -- FORMULARIO BEM -- */
+.ecom-form__group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ecom-form__label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.ecom-form__input {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.6rem;
+}
+
+.ecom-form__input:focus {
+  outline: 2px solid var(--color-primary);
+  border-color: transparent;
+}
+
+.ecom-form__error {
+  color: #d63031;
+  font-size: 1.2rem;
+  margin-top: 0.4rem;
+  min-height: 1.5rem;
+  display: block;
+}
+
+.ecom-form__submit {
+  width: 100%;
+  background: #00b894;
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.ecom-form__submit:hover {
+  background: #00a884;
+}
+
+#open-checkout-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  width: auto;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para despegarlo del fondo */
+font-size: 2rem;
 }
