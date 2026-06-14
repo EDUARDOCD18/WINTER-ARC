@@ -3,7 +3,7 @@
 /* 1. VARIABLES (SISTEMA DE DISEÑO) */
 :root {
   /* -- Colores -- */
-  --color-primary: #e74c3c; /* Rojo tomate */
+  --color-primary: #a24441; /* Rojo tomate */
   --color-primary-2: #b33535; /* Rojo tomate */
 
   --color-secondary: #f1c40f; /* Amarillo queso */
@@ -118,4 +118,122 @@ body {
   gap: 2rem;
   padding: 1.5rem 2rem;
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   BOTONES GLOBALES
+   ========================================= */
+.pizz-btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.pizz-btn--primary {
+  background: var(--color-secondary);
+  color: var(--color-dark);
+}
+
+.pizz-btn--primary:hover {
+  transform: translateY(-3px);
+  background: #f39c12;
+}
+
+/* =========================================
+   HERO SECTION
+  ========================================= */
+.pizz-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  overflow: hidden;
+}
+
+.pizz-hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Oscurecemos la imagen para que el texto blanco sea legible (Contraste de Accesibilidad) */
+.pizz-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.pizz-hero__content {
+  max-width: 60rem;
+  z-index: 1;
+}
+
+.pizz-hero__title {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pizz-hero__subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+/* =========================================
+   UBICACIÓN (MOBILE FIRST)
+   ========================================= */
+.pizz-location {
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background: white;
+}
+
+.pizz-location__title {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.pizz-location__address {
+  margin-top: 2rem;
+  font-style: normal;
+  background: var(--color-bg);
+  padding: 1.5rem;
+  border-left: 4px solid var(--color-primary);
+}
+
+/* Ajuste del Iframe para que sea responsivo */
+.pizz-location__map-container {
+  width: 100%;
+  height: 30rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.pizz-location__map {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

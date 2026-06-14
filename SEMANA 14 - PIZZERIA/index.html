@@ -52,7 +52,56 @@
       </nav>
     </header>
     <!-- Main -->
-    <main class="pizz-main"></main>
+    <main class="pizz-main">
+      <section class="pizz-hero" aria-labelledby="hero-title">
+        <img
+          src="img/hero-pizza.webp"
+          alt="Pizza margarita recién salida del horno de leña"
+          class="pizz-hero__img"
+          fetchpriority="high"
+        />
+
+        <div class="pizz-hero__overlay"></div>
+
+        <div class="pizz-hero__content">
+          <h1 id="hero-title" class="pizz-hero__title">
+            El Auténtico Sabor de Nápoles
+          </h1>
+          <p class="pizz-hero__subtitle">
+            Masa madre, ingredientes locales y nuestro tradicional horno de
+            leña.
+          </p>
+          <a href="#menu" class="pizz-btn pizz-btn--primary">Pedir Ahora</a>
+        </div>
+      </section>
+
+      <section id="ubicacion" class="pizz-location">
+        <div class="pizz-location__text">
+          <h2 class="pizz-location__title">Visita Nuestro Local</h2>
+          <p>
+            Ven y disfruta del ambiente italiano en el corazón de la ciudad.
+            Contamos con estacionamiento y zona al aire libre.
+          </p>
+          <address class="pizz-location__address">
+            <strong>Dirección:</strong> Av. Principal, Local 4, Tu Ciudad<br />
+            <strong>Horario:</strong> Mar - Dom, 12:00 PM - 11:00 PM
+          </address>
+        </div>
+
+        <div class="pizz-location__map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15694.0754898144!2d-66.9972304!3d10.3805824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a8b9487c95a5f%3A0x6b4fb8a8a4f4f4!2sCarrizal%2C%20Miranda%2C%20Venezuela!5e0!3m2!1ses!2s!4v1680000000000!5m2!1ses!2s"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="pizz-location__map"
+          ></iframe>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="pizz-footer">
