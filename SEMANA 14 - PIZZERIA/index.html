@@ -53,6 +53,7 @@
     </header>
     <!-- Main -->
     <main class="pizz-main">
+      <!-- Hero -->
       <section class="pizz-hero" aria-labelledby="hero-title">
         <img
           src="img/hero-pizza.webp"
@@ -75,6 +76,7 @@
         </div>
       </section>
 
+      <!-- Sección de la ubicación -->
       <section id="ubicacion" class="pizz-location">
         <div class="pizz-location__text">
           <h2 class="pizz-location__title">Visita Nuestro Local</h2>
@@ -99,6 +101,79 @@
             referrerpolicy="no-referrer-when-downgrade"
             class="pizz-location__map"
           ></iframe>
+        </div>
+      </section>
+
+      <!-- Sección de 'Destacados' -->
+      <section id="menu" class="pizz-menu">
+        <h2 class="pizz-menu__title">Especialidades de la Semana</h2>
+
+        <div class="pizz-grid">
+          <article class="pizz-card">
+            <div class="pizz-card__img-container">
+              <img
+                src="img/pizza-1.webp"
+                alt="Pizza Margarita Clásica con albahaca"
+                loading="lazy"
+                class="pizz-card__img"
+              />
+            </div>
+            <div class="pizz-card__content">
+              <h3 class="pizz-card__title">Margarita Clásica</h3>
+              <p class="pizz-card__desc">
+                Salsa de tomate San Marzano, mozzarella fresca, albahaca y un
+                toque de aceite de oliva.
+              </p>
+              <div class="pizz-card__footer">
+                <span class="pizz-card__price">$12.00</span>
+                <button class="pizz-btn pizz-btn--primary">Pedir</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pizz-card">
+            <div class="pizz-card__img-container">
+              <img
+                src="img/pizza-2.webp"
+                alt="Pizza Pepperoni crujiente"
+                loading="lazy"
+                class="pizz-card__img"
+              />
+            </div>
+            <div class="pizz-card__content">
+              <h3 class="pizz-card__title">Pepperoni Especial</h3>
+              <p class="pizz-card__desc">
+                Doble porción de pepperoni crujiente sobre nuestra cama de queso
+                fundido.
+              </p>
+              <div class="pizz-card__footer">
+                <span class="pizz-card__price">$14.00</span>
+                <button class="pizz-btn pizz-btn--primary">Pedir</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pizz-card">
+            <div class="pizz-card__img-container">
+              <img
+                src="img/pizza-3.webp"
+                alt="Pizza Cuatro Quesos blanca"
+                loading="lazy"
+                class="pizz-card__img"
+              />
+            </div>
+            <div class="pizz-card__content">
+              <h3 class="pizz-card__title">Cuatro Quesos</h3>
+              <p class="pizz-card__desc">
+                Mezcla perfecta de Mozzarella, Gorgonzola, Parmesano y Provolone
+                (Sin salsa de tomate).
+              </p>
+              <div class="pizz-card__footer">
+                <span class="pizz-card__price">$16.00</span>
+                <button class="pizz-btn pizz-btn--primary">Pedir</button>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </main>

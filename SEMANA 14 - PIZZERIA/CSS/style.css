@@ -237,3 +237,100 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* =========================================
+   MENÚ Y GRID RESPONSIVO
+   ========================================= */
+
+.pizz-menu {
+  padding: 5rem 2rem;
+  background: var(--color-bg);
+}
+
+.pizz-menu__title {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 4rem;
+}
+
+/* ⚡ LA MAGIA DEL GRID RESPONSIVO ⚡ */
+.pizz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* =========================================
+   COMPONENTE: CARD
+   ========================================= */
+
+.pizz-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pizz-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.pizz-card__img-container {
+  height: 22rem;
+  overflow: hidden;
+}
+
+.pizz-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Efecto de zoom sutil en la imagen al pasar el mouse por la tarjeta */
+.pizz-card:hover .pizz-card__img{
+  transform: scale(1.08);
+}
+
+.pizz-card__content{
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pizz-card__title{
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+}
+
+.pizz-card__desc{
+  font-size: 1.5rem;
+  color: #636e72;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.pizz-card__footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+}
+
+.pizz-card__price{
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
