@@ -297,31 +297,31 @@ body {
 }
 
 /* Efecto de zoom sutil en la imagen al pasar el mouse por la tarjeta */
-.pizz-card:hover .pizz-card__img{
+.pizz-card:hover .pizz-card__img {
   transform: scale(1.08);
 }
 
-.pizz-card__content{
+.pizz-card__content {
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.pizz-card__title{
+.pizz-card__title {
   font-size: 2.2rem;
   margin-bottom: 1rem;
   color: var(--color-dark);
 }
 
-.pizz-card__desc{
+.pizz-card__desc {
   font-size: 1.5rem;
   color: #636e72;
   margin-bottom: 2rem;
   flex-grow: 1;
 }
 
-.pizz-card__footer{
+.pizz-card__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -329,8 +329,122 @@ body {
   padding-top: 1.5rem;
 }
 
-.pizz-card__price{
+.pizz-card__price {
   font-size: 2.4rem;
   font-weight: 800;
   color: var(--color-primary);
+}
+
+/* =========================================
+   CONTACTO Y FORMULARIO
+   ========================================= */
+
+.pizz-contac {
+  
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.pizz-contact__title {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+}
+
+.pizz-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pizz-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pizz-form__label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.pizz-form__input {
+  width: 100%;
+  padding: 1.4rem;
+  font-size: 1.6rem;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  background: var(--color-bg);
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.pizz-form__input--textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.pizz-form__submit {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.pizz-form__error {
+  font-size: 1.3rem;
+  color: var(--color-primary-2);
+  font-weight: 500;
+  min-height: 1.8rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.pizz-footer {
+  background: var(--color-dark);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pizz-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.pizz-footer__brand {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--color-secondary);
+}
+
+.pizz-footer__social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.pizz-footer__link {
+  color: #b2bec3;
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.pizz-footer__link:hover {
+  color: white;
+}
+
+.pizz-footer__copy {
+  font-size: 1.3rem;
+  color: #636e72;
 }
