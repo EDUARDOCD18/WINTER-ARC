@@ -340,7 +340,6 @@ body {
    ========================================= */
 
 .pizz-contac {
-  
   padding: 5rem 2rem;
   background: white;
 }
@@ -447,4 +446,77 @@ body {
 .pizz-footer__copy {
   font-size: 1.3rem;
   color: #636e72;
+}
+
+/* ==========================================================================
+   BREAKPOINT 1: TABLETS Y ESCRITORIOS PEQUEÑOS (768px en adelante)
+   ========================================================================== */
+
+@media (min-width: 48rem) {
+  /* --- HEADER Y NAVEGACIÓN --- */
+  /* En pantallas grandes, el botón de hamburguesa ya no es necesario */
+  .pizz-header__menu-btn {
+    display: none;
+  }
+
+  /* Reseteamos el contenedor absoluto para que se integre al flujo normal */
+  .pizz-nav {
+    position: static;
+    width: auto;
+    max-height: none;
+    background: transparent;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  /* Cambiamos la lista de vertical a horizontal */
+  .pizz-nav__list {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Quitamos los bordes de separación móviles y ajustamos paddings */
+  .pizz-nav__link {
+    padding: 1rem 1.5rem;
+    border-top: none;
+    border-radius: 4px;
+  }
+
+  /* El contenedor social se alinea con los otros enlaces */
+  .pizz-nav__item--social {
+    padding: 0 0 0 1.5rem;
+    background: transparent;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT 2: LAPTOPS Y PANTALLAS GRANDES (992px en adelante)
+   ========================================================================== */
+
+@media (min-width: 62rem) {
+  .pizz-hero {
+    height: 70vh;
+  }
+
+  .pizz-hero__title {
+    font-size: 5.5rem;
+  }
+
+  .pizz-location {
+    flex-direction: row;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+  }
+
+  .pizz-location__text,
+  .pizz-location__map-container {
+    flex: 1;
+  }
+
+  .pizz-location__map-container {
+    height: 40rem;
+  }
 }
