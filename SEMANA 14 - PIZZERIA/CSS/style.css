@@ -120,6 +120,38 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Contenedor de redes sociales dentro del menú */
+.pizz-nav__item--social {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* El enlace contenedor del icono */
+.pizz-nav__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Color inicial del icono */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* El icono SVG como tal */
+.pizz-nav__icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+/* --- EFECTOS INTERACTIVOS --- */
+.pizz-nav__social-link:hover,
+.pizz-nav__social-link:focus {
+  color: var(--color-secondary); /* Cambia a amarillo queso sutilmente */
+  transform: translateY(-2px);   /* Efecto de flotado */
+  outline: none;
+}
+
 /* =========================================
    BOTONES GLOBALES
    ========================================= */
@@ -483,7 +515,7 @@ body {
     border-radius: 4px;
   }
 
-  /* El contenedor social se alinea con los otros enlaces */
+  /* El contenedor social se alinea con los otros enlaces en escritorio */
   .pizz-nav__item--social {
     padding: 0 0 0 1.5rem;
     background: transparent;
