@@ -127,6 +127,17 @@ ul {
   justify-content: center;
   padding: var(--space-xl) var(--space-md);
   text-align: center;
+
+  /* Capa oscura (80% opacidad) + Ruta de la imagen */
+  background-image:
+    linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)),
+    url("../img/Epicteto.webp"); /* Ajusta la ruta según tu estructura */
+
+  /* Propiedades de adaptación del fondo */
+  background-size: cover; /* Escala la imagen para cubrir todo el contenedor sin deformarse */
+  background-position: top; /* Centra el punto focal de la imagen en cualquier resolución */
+  background-repeat: no-repeat; /* Evita que la imagen se duplique si la pantalla es muy grande */
+  background-attachment: fixed; /* Cambiar a 'fixed' si buscas un efecto parallax sutil */
 }
 
 .hero__container {
