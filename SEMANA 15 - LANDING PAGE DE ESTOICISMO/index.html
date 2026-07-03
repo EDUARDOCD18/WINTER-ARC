@@ -8,7 +8,13 @@
       href="img/pergamino-icon.ico"
       type="image/x-icon"
     />
-    <link rel="preload" href="img/Epicteto.webp" as="image" fetchpriority="high">
+    <link
+      rel="preload"
+      href="img/Epicteto.webp"
+      as="image"
+      fetchpriority="high"
+    />
+    <script src="js/app.js" defer></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Disciplina y Estoicismo | Domina tu Mente</title>
 
@@ -49,7 +55,7 @@
           </button>
           <ul class="header__menu" id="navigation-menu">
             <li><a href="#filosofos" class="header__link">Filósofos</a></li>
-            <li><a href="#diario" class="header__link">Práctica Diaria</a></li>
+            <li><a href="#meditacion" class="header__link">Interactivo</a></li>
           </ul>
         </nav>
       </div>
@@ -62,12 +68,15 @@
           <p class="hero__subtitle">
             La antigua práctica del estoicismo para la disciplina moderna.
           </p>
-          <a
-            href="#filosofos"
-            class="hero__cta"
-            aria-label="Comenzar el camino hacia la filosofía estoica"
-            >Comenzar el camino</a
-          >
+          <div class="hero__actions">
+            <a
+              href="#filosofos"
+              class="hero__cta"
+              aria-label="Comenzar el camino hacia la filosofía estoica"
+              >Comenzar el camino</a
+            >
+            <button id="focus-toggle" class="hero__cta">Modo Enfoque</button>
+          </div>
         </div>
       </section>
 
@@ -113,12 +122,43 @@
                 <blockquote class="quote-card__text">
                   <p>
                     No es lo que te ocurre, sino cómo reaccionas a ello lo que
-                    importa.
+                    importar.
                   </p>
                 </blockquote>
                 <cite class="quote-card__author">— Epicteto</cite>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="meditacion"
+        class="quotes-section quotes-section--interactiva"
+        aria-labelledby="dynamic-heading"
+      >
+        <div class="quotes-section__container quotes-section__container--condensed">
+          <h2 id="dynamic-heading" class="quotes-section__title">
+            Reflexión del Momento
+          </h2>
+
+          <div class="quote-card quote-card--featured">
+            <div class="quote-card__body">
+              <span class="quote-card__decoration" aria-hidden="true">“</span>
+              <blockquote class="quote-card__text">
+                <p id="quote-text">
+                  La felicidad de tu vida depende de la calidad de tus
+                  pensamientos.
+                </p>
+              </blockquote>
+              <cite class="quote-card__author" id="quote-author"
+                >Marco Aurelio</cite
+              >
+
+              <button id="next-quote" class="hero__cta quote-card__button">
+                Meditar otra frase
+              </button>
+            </div>
           </div>
         </div>
       </section>

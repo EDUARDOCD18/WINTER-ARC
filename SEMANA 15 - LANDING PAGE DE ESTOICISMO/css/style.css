@@ -11,6 +11,10 @@
   --color-text-secondary: #757575;
   --color-accent: #8c7355;
 
+  --color-header-bg: rgba(18, 18, 18, 0.9);
+  --color-card-hover: #161616;
+  --hero-overlay: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8));
+
   --font-primary: "Roboto", sans-serif;
   --font-heading: "Playfair Display", serif;
 
@@ -18,7 +22,7 @@
   --text-xs: 0.85rem;
   --text-sm: 0.95rem;
   --text-md: 1.1rem;
-  --text-xl: 2rem; 
+  --text-xl: 2rem;
   --text-xxl: clamp(2.5rem, 7vw, 4.5rem);
 
   /* Sistema de Espaciado Adaptativo Base (Móvil) */
@@ -26,7 +30,7 @@
   --space-sm: 0.75rem;
   --space-md: 1.5rem;
   --space-lg: 2.5rem;
-  --space-xl: 4rem; 
+  --space-xl: 4rem;
 }
 
 /* Media Query Global para Escritorio (Desktop Breakpoint) */
@@ -63,6 +67,31 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* Estado del Modo Enfoque */
+body.focus-mode {
+  --color-bg-primary: #f5f5f5;
+  --color-bg-secondary: #e5e5e5;
+  --color-text-primary: #121212;
+  --color-text-secondary: #555555;
+  --color-accent: #5c4a3c;
+
+  --color-header-bg: rgba(245, 245, 245, 0.95);
+  --color-card-hover: #e9e9e9;
+  --hero-overlay: linear-gradient(
+    rgba(245, 245, 245, 0.85),
+    rgba(245, 245, 245, 0.85)
+  );
+}
+
+body.focus-mode .hero__subtitle,
+body.focus-mode .footer {
+  opacity: 0.1;
+  transition: opacity 0.4s ease;
 }
 
 a {
@@ -78,17 +107,16 @@ ul {
    3. Componentes Globales
    ========================================================================== */
 .header {
-  /* CORRECCIÓN: Usamos space-md a los lados en móvil para evitar sobre-espaciado */
   padding: var(--space-md);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 100;
-  background: rgba(18, 18, 18, 0.9);
+  background: var(--color-header-bg);
   backdrop-filter: blur(8px);
+  transition: background-color 0.4s ease;
 }
 
-/* CORRECCIÓN: En escritorio devolvemos el espaciado amplio al header */
 @media (min-width: 48rem) {
   .header {
     padding: var(--space-md) var(--space-lg);
@@ -110,17 +138,16 @@ ul {
   letter-spacing: 2px;
 }
 
-/* CORRECCIÓN: Reestructuración total para funcionamiento Mobile-First */
 .header__menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--space-lg);
-  
+
   position: fixed;
   top: 0;
-  right: -100%; /* Oculto por defecto en móvil */
+  right: -100%;
   width: 75vw;
   height: 100vh;
   background-color: var(--color-bg-secondary);
@@ -130,13 +157,12 @@ ul {
   z-index: 105;
 }
 
-/* Clase de activación que controlará JavaScript en el Día 5 */
 .header__menu.is-open {
   right: 0;
 }
 
 .header__link {
-  font-size: var(--text-md); /* Más grande en móvil para interacción táctil */
+  font-size: var(--text-md);
   color: var(--color-text-secondary);
   transition: color 0.3s ease;
 
@@ -154,6 +180,18 @@ ul {
   height: 2rem;
   position: relative;
   z-index: 110;
+}
+
+.header__menu-toggle.is-active .header__menu-icon {
+  background: transparent;
+}
+
+.header__menu-toggle.is-active .header__menu-icon::before {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.header__menu-toggle.is-active .header__menu-icon::after {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .header__menu-icon {
@@ -177,22 +215,25 @@ ul {
   transition: transform 0.3s ease;
 }
 
-.header__menu-icon::before { top: -8px; }
-.header__menu-icon::after { top: 8px; }
+.header__menu-icon::before {
+  top: -8px;
+}
+.header__menu-icon::after {
+  top: 8px;
+}
 
-/* CORRECCIÓN: Media Query para limpiar el menú en pantallas grandes */
 @media (min-width: 48rem) {
   .header__menu-toggle {
-    display: none; /* Oculta la hamburguesa en desktop */
+    display: none;
   }
 
   .header__menu {
-    position: static; /* Regresa al flujo normal */
+    position: static;
     width: auto;
     height: auto;
     background: none;
     border-left: none;
-    flex-direction: row; /* Alineación horizontal */
+    flex-direction: row;
     gap: var(--space-md);
     padding: 0;
   }
@@ -214,20 +255,17 @@ ul {
   justify-content: center;
   padding: var(--space-xl) var(--space-md);
   text-align: center;
-
-  background-image:
-    linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)),
-    url("../img/Epicteto.webp"); 
-
-  background-size: cover; 
-  background-position: top; 
-  background-repeat: no-repeat; 
-  background-attachment: scroll; /* CORRECCIÓN: 'scroll' por defecto para evitar lag en móviles */
+  background-image: var(--hero-overlay), url("../img/Epicteto.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  transition: background-image 0.4s ease;
 }
 
 @media (min-width: 48rem) {
   .hero {
-    background-attachment: fixed; /* Activación segura de paralaje solo en Desktop */
+    background-attachment: fixed;
   }
 }
 
@@ -248,6 +286,14 @@ ul {
   margin-bottom: var(--space-lg);
 }
 
+/* EXTRAÍDO: Flexbox contenedor de las CTAs del Hero */
+.hero__actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .hero__cta {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
@@ -256,6 +302,9 @@ ul {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+  background: transparent;
+  color: var(--color-text-primary);
+  cursor: pointer;
 
   &:hover {
     background: var(--color-accent);
@@ -263,15 +312,35 @@ ul {
   }
 }
 
-/* --- Quotes Section (CSS Grid) --- */
+/* --- Quotes Section --- */
 .quotes-section {
   padding: var(--space-xl) var(--space-md);
   background: var(--color-bg-secondary);
+  transition: background-color 0.4s ease;
+}
+
+/* EXTRAÍDO: Separador superior estilizado para la sección interactiva */
+.quotes-section--interactiva {
+  border-top: 1px solid rgba(117, 117, 117, 0.1);
+}
+
+.quote-fade {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .quotes-section__container {
   max-width: 75rem;
   margin: 0 auto;
+}
+
+/* EXTRAÍDO: Variante de caja contenedora angosta y centrada */
+.quotes-section__container--condensed {
+  max-width: 40rem;
+  text-align: center;
 }
 
 .quotes-section__title {
@@ -299,11 +368,36 @@ ul {
 
   &:hover {
     border-left-color: var(--color-accent);
-    background-color: #161616; /* Consistencia de propiedad */
+    background-color: var(--color-card-hover);
   }
 }
 
-/* Media Query de control para rejilla de tarjetas */
+.quote-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+}
+
+/* EXTRAÍDO: Tarjeta destacada de meditación (Inversión de bordes responsive) */
+.quote-card--featured {
+  border-left: none;
+  border-top: 3px solid var(--color-accent);
+
+  &:hover {
+    border-left-color: transparent;
+    border-top-color: var(--color-accent);
+  }
+}
+
+/* EXTRAÍDO: Ajustes de dimensiones y márgenes estructurales del botón meditar */
+.quote-card__button {
+  margin-top: var(--space-lg);
+  width: 100%;
+  max-width: 15rem;
+}
+
 @media (min-width: 48rem) {
   .quotes-section__grid {
     grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
@@ -319,6 +413,12 @@ ul {
       border-top-color: var(--color-accent);
       border-left-color: transparent;
     }
+  }
+
+  /* Asegura que la tarjeta destacada mantenga su naturaleza estructural en desktop */
+  .quote-card--featured {
+    border-top: 3px solid var(--color-accent);
+    border-left: none;
   }
 }
 
@@ -353,6 +453,8 @@ ul {
   padding: var(--space-lg) var(--space-md);
   text-align: center;
   border-top: 1px solid rgba(117, 117, 117, 0.2);
+  background-color: var(--color-bg-primary);
+  transition: background-color 0.4s ease;
 }
 
 .footer__text {
