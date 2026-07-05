@@ -15,8 +15,8 @@
   --color-card-hover: #161616;
   --hero-overlay: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8));
 
-  --font-primary: "Roboto", sans-serif;
-  --font-heading: "Playfair Display", serif;
+  --font-primary: "Roboto", system-ui, -apple-system, sans-serif;
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
 
   /* Jerarquía Tipográfica Base (Móvil) */
   --text-xs: 0.85rem;
@@ -191,7 +191,7 @@ ul {
 }
 
 .header__menu-toggle.is-active .header__menu-icon::after {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(45deg);
 }
 
 .header__menu-icon {
@@ -200,6 +200,7 @@ ul {
   height: 2px;
   background: var(--color-text-primary);
   position: absolute;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   transition: background-color 0.3s ease;
@@ -211,6 +212,7 @@ ul {
   position: absolute;
   width: 100%;
   height: 2px;
+  left: 0;
   background-color: var(--color-text-primary);
   transition: transform 0.3s ease;
 }
@@ -317,6 +319,8 @@ ul {
   padding: var(--space-xl) var(--space-md);
   background: var(--color-bg-secondary);
   transition: background-color 0.4s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 /* EXTRAÍDO: Separador superior estilizado para la sección interactiva */
@@ -437,6 +441,9 @@ ul {
   font-style: italic;
   margin-bottom: var(--space-md);
   flex-grow: 1;
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
 }
 
 .quote-card__author {

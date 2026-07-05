@@ -51,6 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "El impedimento a la acción avanza la acción. Lo que se interpone en el camino se convierte en el camino.",
       author: "Marco Aurelio",
     },
+    {
+      text: "Yo solo sé que no sé nada. Eso me diferencia de aquellos que creen saberlo todo",
+      author: "Sócrates",
+    },
   ];
 
   const quoteText = document.getElementById("quote-text");
