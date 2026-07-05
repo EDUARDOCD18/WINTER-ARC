@@ -473,3 +473,17 @@ ul {
   font-size: var(--text-xs);
   color: var(--color-text-secondary);
 }
+
+/* ==========================================================================
+   6. Accesibilidad (A11y) - Navegación por Teclado
+   ========================================================================== */
+/* Elimina el contorno por defecto solo si el usuario usa el ratón */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
