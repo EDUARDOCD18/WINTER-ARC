@@ -102,6 +102,17 @@ a {
   color: inherit;
 }
 
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+  transition: outline-offset var(--transition-fast);
+}
+
+a:focus {
+  outline: none;
+}
+
 /* ==========================================================================
    3. Estilos Base del Layout Global
    ========================================================================== */
@@ -1014,21 +1025,21 @@ a {
 /* ==========================================================================
    14. Ajustes Desktop para el Día 5 (Media Query > 768px)
    ========================================================================== */
-@media (min-width: 48rem){
-  .work-item{
+@media (min-width: 48rem) {
+  .work-item {
     padding: var(--space-lg);
   }
 
-  .work-item__role{
+  .work-item__role {
     font-size: var(--text-lg);
   }
 
-  .project-grid{
+  .project-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
   }
 
-  .project-card__body{
+  .project-card__body {
     padding: var(--space-lg);
   }
 }
