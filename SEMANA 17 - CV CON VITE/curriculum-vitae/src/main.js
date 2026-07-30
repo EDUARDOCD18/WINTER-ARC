@@ -1,0 +1,83 @@
+/**
+ * Arquitectura de Interacción y Control de Estado (Día 6)
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Inicialización de componentes UI
+  initMobileMenu();
+  initActiveNavLink();
+});
+
+/**
+ * 1. Control de Navegación Responsiva (Menú Hamburguesa)
+ */
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const headerNav = document.getElementById('header-nav');
+
+  if (!menuToggle || !headerNav) return;
+
+  // Alternar apertura/cierre al hacer clic en el botón
+  menuToggle.addEventListener('click', () => {
+    const isOpen = headerNav.classList.toggle('is-open');
+    menuToggle.classList.toggle('is-active');
+
+    // Actualización de estado accesible para lectores de pantalla
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Cerrar menú con la tecla 'Escape' (Mejora de Accesibilidad)
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && headerNav.classList.contains('is-open')) {
+      closeMenu(headerNav, menuToggle);
+      menuToggle.focus(); // Devuelve el foco al botón para navegación por teclado
+    }
+  });
+
+  // Cerrar menú si el usuario hace clic fuera de la navegación
+  document.addEventListener('click', (event) => {
+    const isClickInside = headerNav.contains(event.target) || menuToggle.contains(event.target);
+    
+    if (!isClickInside && headerNav.classList.contains('is-open')) {
+      closeMenu(headerNav, menuToggle);
+    }
+  });
+
+  // Restablecer estados si se amplía la ventana por encima del breakpoint de escritorio (768px / 48rem)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && headerNav.classList.contains('is-open')) {
+      closeMenu(headerNav, menuToggle);
+    }
+  });
+}
+
+/**
+ * Función auxiliar para unificar el cierre del menú
+ */
+function closeMenu(navElement, toggleButton) {
+  navElement.classList.remove('is-open');
+  toggleButton.classList.remove('is-active');
+  toggleButton.setAttribute('aria-expanded', 'false');
+}
+
+/**
+ * 2. Resaltado Dinámico de la Página Activa en el Header
+ */
+function initActiveNavLink() {
+  const navLinks = document.querySelectorAll('.header__link');
+  // Obtiene el nombre del archivo actual desde la URL (ej: "acerca.html")
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+  navLinks.forEach((link) => {
+    const linkHref = link.getAttribute('href');
+
+    // Limpia cualquier estado activo estático previo
+    link.classList.remove('header__link--active');
+    link.removeAttribute('aria-current');
+
+    // Compara la ruta actual con el atributo href del enlace
+    if (linkHref === currentPath || (currentPath === '' && linkHref === 'index.html')) {
+      link.classList.add('header__link--active');
+      link.setAttribute('aria-current', 'page'); // Estándar de accesibilidad HTML5
+    }
+  });
+}

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acerca de Mí | Trayectoria Personal</title>
+    <!-- En el <head> de todos tus archivos HTML -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Carga diferida del script de interacción -->
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <a href="index.html" class="header__logo">
+          Javier<span class="header__logo--accent">.Chacón</span>
+        </a>
+
+        <button
+          class="header__toggle"
+          id="menu-toggle"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+        >
+          <span class="header__icon"></span>
+        </button>
+
+        <nav class="header__nav" id="header-nav">
+          <ul class="header__menu">
+            <li class="header__item">
+              <a href="index.html" class="header__link header__link--active"
+                >Inicio</a
+              >
+            </li>
+            <li class="header__item">
+              <a href="acerca.html" class="header__link">Acerca de mí</a>
+            </li>
+            <li class="header__item">
+              <a href="formaciones.html" class="header__link">Formación</a>
+            </li>
+            <li class="header__item">
+              <a href="experiencia.html" class="header__link">Experiencia</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content container">
+      <section class="about-section">
+        <div class="about-grid">
+          <div class="about-grid__media">
+            <div class="about-grid__image-container">
+              <img
+                src="assets/profile-2.webp"
+                alt="Javier en entorno de trabajo técnico"
+                class="about-grid__image"
+                width="400"
+                height="400"
+              />
+            </div>
+          </div>
+          <div class="about-grid__content">
+            <h1 class="about-grid__title">Detrás del Código</h1>
+            <p class="about-grid__text">
+              Soy un Ingeniero en Informática apasionado por la construcción de
+              software con estándares profesionales de rendimiento,
+              accesibilidad y semántica. Mi trayectoria combina el desarrollo
+              front-end moderno con habilidades avanzadas de diagnóstico técnico
+              y optimización de flujos.
+            </p>
+            <p class="about-grid__text">
+              Entiendo la ingeniería como una práctica diaria de disciplina
+              operativa. No busco simplemente crear código que funcione de
+              manera superficial; me enfoco en estructurar soluciones
+              mantenibles, escalables y orientadas al usuario final.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles-section">
+        <h2 class="principles-section__title">
+          Filosofía de Trabajo y Enfoque
+        </h2>
+        <div class="principles-flex">
+          <article class="principle-card">
+            <div class="principle-card__header">
+              <span class="principle-card__number">01</span>
+              <h3 class="principle-card__title">Disciplina Consistente</h3>
+            </div>
+            <p class="principle-card__text">
+              La constancia supera a la motivación temporal. Estructuro mis
+              jornadas y mis proyectos con planes claros, asegurando entregas
+              continuas, control de versiones limpio y código modular.
+            </p>
+          </article>
+
+          <article class="principle-card">
+            <div class="principle-card__header">
+              <span class="principle-card__number">02</span>
+              <h3 class="principle-card__title">Rigor Semántico (A11y)</h3>
+            </div>
+            <p class="principle-card__text">
+              La accesibilidad y la semántica nativa del estándar HTML5 no son
+              opcionales. El software de calidad debe ser completamente operable
+              e inclusivo desde su primera línea de código.
+            </p>
+          </article>
+
+          <article class="principle-card">
+            <div class="principle-card__header">
+              <span class="principle-card__number">03</span>
+              <h3 class="principle-card__title">Mentalidad de Solución</h3>
+            </div>
+            <p class="principle-card__text">
+              Foco agudo en la resolución de problemas técnicos complejos bajo
+              escenarios de presión. Diagnosticar con precisión, ejecutar con
+              orden y documentar con claridad.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__info">
+          <p class="footer__copy">
+            &copy; 2026 Javier C. Todos los derechos reservados.
+          </p>
+          <p class="footer__meta">
+            Construido con semántica HTML5 y CSS estructurado.
+          </p>
+        </div>
+        <div class="footer__links">
+          <a
+            href="https://github.com/"
+            class="footer__social"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://linkedin.com/"
+            class="footer__social"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
