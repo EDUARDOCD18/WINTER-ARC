@@ -1,0 +1,37 @@
+/* ==========================================================================
+   1. Design Tokens (Variables Globales)
+   ========================================================================== */
+:root {
+  /* Paleta de Colores (Enfoque Técnico/Ingeniería) */
+  --color-bg-primary: #0f172a; /* Azul pizarra muy oscuro */
+  --color-bg-secondary: #1e293b; /* Azul slate para tarjetas/secciones */
+  --color-text-primary: #f8fafc; /* Blanco puro satinado */
+  --color-text-secondary: #94a3b8; /* Gris neutro para textos secundarios */
+  --color-accent: #38bdf8; /* Azul cian brillante para interacciones y enlaces */
+  --color-accent-hover: #0ea5e9; /* Azul más oscuro para estados hover */
+  --color-border: #334155; /* Borde sutil para separar elementos */
+
+  /* Tipografía */
+  --font-primary: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Escala Tipográfica Fluid/Rem */
+  --text-xs: 0.8rem;
+  --text-sm: 0.95rem;
+  --text-md: 1.1rem;
+  --text-lg: 1.3rem;
+  --text-xl: 1.8rem;
+  --text-xxl: clamp(2.2rem, 5vw, 3.5rem);
+
+  /* Sistema de Espaciado (Padding / Margins) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  /* Misceláneos */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}

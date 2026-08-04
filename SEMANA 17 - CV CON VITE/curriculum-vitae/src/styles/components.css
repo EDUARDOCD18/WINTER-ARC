@@ -1,0 +1,41 @@
+/* Tarjetas de Proyectos y Experiencia */
+.project-card,
+.work-item,
+.tech-category {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: border-color var(--transition-fast);
+}
+
+.project-card:hover,
+.work-item:hover {
+  border-color: var(--color-accent);
+}
+
+/* Badges y Tags */
+.tag {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.tag--code {
+  color: var(--color-text-primary);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}

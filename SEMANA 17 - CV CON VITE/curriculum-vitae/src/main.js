@@ -1,3 +1,5 @@
+import "./styles/index.css";
+
 /**
  * Arquitectura de Interacción y Control de Estado (Día 6)
  */
