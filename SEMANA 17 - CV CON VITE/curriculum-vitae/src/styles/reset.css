@@ -1,5 +1,5 @@
 /* ==========================================================================
-   2. Reset CSS Moderno
+   2. Reset CSS Moderno y Accesibilidad
    ========================================================================== */
 *,
 *::before,
@@ -10,7 +10,6 @@
 body,
 h1,
 h2,
-h3,
 p,
 ul,
 ol,
@@ -40,8 +39,6 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
-
-  /* CORRECCIÓN: Habilita el comportamiento 'margin-top: auto' del footer */
   display: flex;
   flex-direction: column;
 }
