@@ -1,8 +1,18 @@
+/* -- importación de estilos css -- */
 import "./styles/index.css";
+
+/* -- importación de datos -- */
 import { educationData } from "./data/education";
 import { skillsData } from "./data/skills";
 import { experienceData } from "./data/experience";
 import { projectsData } from "./data/projects";
+
+/* -- importación de componentes -- */
+
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { ProjectCard } from "./components/ProjectCard";
+import { TimeLineItem } from "./components/TimeLineItem";
 
 console.log("Datos cargados:", {
   educationData,
@@ -10,6 +20,43 @@ console.log("Datos cargados:", {
   experienceData,
   projectsData,
 });
+
+/**
+ * Renderización
+ */
+const renderApp = () => {
+  // 1. Inyectar cascarón global
+  const appContainer = document.querySelector("#app");
+  if (appContainer) {
+    appContainer.insertAdjacentHTML("beforebegin", Header());
+    appContainer.insertAdjacentHTML("afterend", Footer());
+  }
+
+  // 2. Inyectar Proyectos (si existe el contenedor)
+  const projectsContainer = document.querySelector("#projects-grid");
+  if (projectsContainer) {
+    projectsContainer.innerHTML = projectsData.map(ProjectCard).join("");
+  }
+
+  // 3. Inyectar Educación (si existe el contenedor)
+  const educationContainer = document.querySelector("#education-timeline");
+  if (educationContainer) {
+    educationContainer.innerHTML = educationData.map(TimelineItem).join("");
+  }
+
+  // 4. Lógica de Interacción: Menú Hamburguesa
+  const menuToggle = document.querySelector("#menu-toggle");
+  const mainNav = document.querySelector("#main-nav");
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("is-active");
+      mainNav.classList.toggle("is-open");
+    });
+  }
+};
+
+document.addEventListener("DOMContentLoaded", renderApp);
 
 /**
  * Arquitectura de Interacción y Control de Estado (Día 6)
