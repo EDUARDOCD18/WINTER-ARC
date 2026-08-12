@@ -14,6 +14,21 @@ import { Footer } from "./components/Footer";
 import { ProjectCard } from "./components/ProjectCard";
 import { TimeLineItem } from "./components/TimeLineItem";
 
+/* -- Importación de imágenes -- */
+import profilePic from "./assets/profile.webp";
+import profilePic2 from "./assets/profile-2.webp";
+
+const imgElement = document.querySelector(".hero__image");
+const imgElement2 = document.querySelector(".about-grid__image");
+
+if (imgElement) {
+  imgElement.src = profilePic;
+}
+
+if (imgElement2) {
+  imgElement2.src = profilePic2;
+}
+
 console.log("Datos cargados:", {
   educationData,
   skillsData,

@@ -2,8 +2,9 @@ export const TimeLineItem = (item) => {
   const { period, degree, role, institution, company, description, tags } =
     item;
 
-  title = degree || role;
-  subtitle = institution || company;
+  // Se añade 'const' para evitar el ReferenceError en modo estricto
+  const title = degree || role;
+  const subtitle = institution || company;
 
   return `
     <div class="timeline__item">
@@ -13,12 +14,16 @@ export const TimeLineItem = (item) => {
         <h3 class="timeline__degree">${title}</h3>
         <span class="placeholder-text">${subtitle}</span>
         <p class="timeline__description">${description}</p>
-        ${tags ? `
+        ${
+          tags
+            ? `
           <div class="work-item__tags">
-            ${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            ${tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
           </div>
-        ` : ''}
+        `
+            : ""
+        }
       </div>
     </div>
-  `
+  `;
 };

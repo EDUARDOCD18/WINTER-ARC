@@ -1,3 +1,6 @@
+// Función auxiliar para resolver la ruta de asset mediante Vite
+const getAssetUrl = (path) => new URL(`../assets/${path}`, import.meta.url).href;
+
 export const projectsData = [
   {
     id: "proj-1",
