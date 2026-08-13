@@ -4,19 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experiencia Laboral y Proyectos Ejecutados</title>
-    <!-- En el <head> de todos tus archivos HTML -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Carga diferida del script de interacción -->
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <main class="main-content container" id="app">
-      <!-- SECCIÓN 1: Trayectoria Laboral (Timeline de Trabajo) -->
+      <!-- SECCIÓN 1: Trayectoria Laboral -->
       <section class="work-section">
         <h1 class="main-subtitle">Trayectoria Profesional</h1>
         <p class="section-lead">
@@ -24,56 +22,8 @@
           de redes y operaciones de campo.
         </p>
 
-        <div class="work-timeline">
-          <!-- Puesto 1: Coordinación / Gestión -->
-          <article class="work-item">
-            <div class="work-item__badge">Actual</div>
-            <div class="work-item__content">
-              <span class="work-item__date">Julio 2026 - Presente</span>
-              <h2 class="work-item__role">Coordinador de Soporte de Campo</h2>
-              <h3 class="work-item__company">
-                Proveedor de Servicios de Internet (ISP)
-              </h3>
-              <p class="work-item__description">
-                Gestión, asignación y coordinación del personal técnico
-                destinado a actividades operativas de campo. Supervisión de
-                despliegues de fibra óptica, resolución de incidencias críticas
-                en nodos de distribución y optimización de los tiempos de
-                respuesta del departamento de soporte.
-              </p>
-              <div class="work-item__tags">
-                <span class="tag">Gestión de Personal</span>
-                <span class="tag">Operaciones ISP</span>
-                <span class="tag">Resolución de Incidencias</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Puesto 2: Soporte Técnico Especializado -->
-          <article class="work-item">
-            <div class="work-item__content">
-              <span class="work-item__date">Enero 2025 - Junio 2026</span>
-              <h2 class="work-item__role">
-                Técnico de Soporte e Infraestructura
-              </h2>
-              <h3 class="work-item__company">
-                Proveedor de Servicios de Internet (ISP)
-              </h3>
-              <p class="work-item__description">
-                Diagnóstico avanzado y soporte técnico en arquitecturas de red
-                WAN/LAN. Monitoreo de enlaces de datos, configuración de
-                enrutadores residenciales y empresariales, y soporte técnico
-                directo para asegurar la continuidad operativa del servicio.
-              </p>
-              <div class="work-item__tags">
-                <span class="tag">Soporte Técnico</span>
-                <span class="tag">Enrutamiento</span>
-                <span class="tag">Redes IP</span>
-                <span class="tag">Cisco / MikroTik</span>
-              </div>
-            </div>
-          </article>
-        </div>
+        <!-- Contenedor dinámico de experiencia -->
+        <div class="work-timeline" id="experience-timeline"></div>
       </section>
 
       <!-- SECCIÓN 2: Showroom de Proyectos -->
@@ -84,64 +34,8 @@
           avanzada.
         </p>
 
-        <div class="project-grid">
-          <!-- Proyecto 1: Landing Page Estoica -->
-          <article class="project-card">
-            <div class="project-card__body">
-              <span class="project-card__meta">Desarrollo Front-End</span>
-              <h3 class="project-card__title">Plataforma de Enfoque Estoico</h3>
-              <p class="project-card__text">
-                Landing page multipágina de alto rendimiento con arquitectura
-                CSS modular (BEM), optimización de Core Web Vitals (CLS/LCP),
-                cambio de tema dinámico y navegación operable por teclado.
-              </p>
-              <div class="project-card__tools">
-                <span class="tag tag--code">HTML5 Semántico</span>
-                <span class="tag tag--code">CSS Moderno</span>
-                <span class="tag tag--code">JavaScript (ES6+)</span>
-              </div>
-            </div>
-            <div class="project-card__footer">
-              <a
-                href="https://github.com"
-                class="project-card__link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Código Fuente &rarr;</a
-              >
-            </div>
-          </article>
-
-          <!-- Proyecto 2: App de Control de Finanzas / Criptoactivos -->
-          <article class="project-card">
-            <div class="project-card__body">
-              <span class="project-card__meta">Desarrollo Web / Lógica</span>
-              <h3 class="project-card__title">
-                Dashboard de Seguimiento de Activos
-              </h3>
-              <p class="project-card__text">
-                Aplicación web diseñada para rastrear movimientos financieros y
-                variaciones de tasas de cambio de divisas/criptoactivos en
-                tiempo real. Implementa un sistema preciso de cálculos
-                matemáticos para balances netos.
-              </p>
-              <div class="project-card__tools">
-                <span class="tag tag--code">JavaScript Nativo</span>
-                <span class="tag tag--code">CSS Grid</span>
-                <span class="tag tag--code">Data Tracking</span>
-              </div>
-            </div>
-            <div class="project-card__footer">
-              <a
-                href="https://github.com"
-                class="project-card__link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Código Fuente &rarr;</a
-              >
-            </div>
-          </article>
-        </div>
+        <!-- Contenedor dinámico de proyectos -->
+        <div class="project-grid" id="projects-grid"></div>
       </section>
     </main>
   </body>

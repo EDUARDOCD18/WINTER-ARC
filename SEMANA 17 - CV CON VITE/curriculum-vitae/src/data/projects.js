@@ -20,4 +20,13 @@ export const projectsData = [
     tools: ["HTML5", "CSS Grid", "JavaScript", "BEM"],
     link: "#",
   },
+  {
+    id: "proj-3",
+    title: "Currículum vitae con Vite",
+    category: "Layout Mobile-First",
+    description:
+      "Hoja de vida creada con la tecnología Vite",
+    tools: ["HTML5", "CSS Grid", "JavaScript", "BEM"],
+    link: "#",
+  },
 ];

@@ -10,7 +10,7 @@ export const skillsData = [
       },
       {
         name: "JavaScript ES6+ / DOM API",
-        percentage: 80,
+        percentage: 25,
         classModifier: "js",
       },
     ],
